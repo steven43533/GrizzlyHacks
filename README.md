@@ -1,5 +1,5 @@
 # GrizzlyHacks
-# Roles:
+# Team
 * Lead programmer :Josh Beers
 * UI/Ux design: Danielle Battle
 * Data modeler: Anne Joseph
@@ -7,3 +7,7 @@
 * client liaison: Josh Beers
 * Documentation lead: Danielle Battle
 * Testing lead: Anne Joseph
+
+* Josh Beers
+** lead Programmer
+** Project Manager
