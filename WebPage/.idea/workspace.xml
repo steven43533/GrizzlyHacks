@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a58cc6e0-7a51-4529-b18c-691218b92f05" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../API/readMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../API/readMe.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Database/readMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/readMe.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readMe.txt" afterDir="false" />
-    </list>
+    <list default="true" id="a58cc6e0-7a51-4529-b18c-691218b92f05" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +14,7 @@
   <component name="ProjectId" id="1Xd6rJcq2hn92dQixxmFFA0q6KO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -45,6 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581363821505</updated>
       <workItem from="1581363822731" duration="34000" />
+      <workItem from="1581955571922" duration="97000" />
     </task>
     <servers />
   </component>
@@ -56,7 +54,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
