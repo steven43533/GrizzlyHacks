@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a58cc6e0-7a51-4529-b18c-691218b92f05" name="Default Changelist" comment="" />
+    <list default="true" id="9ab562ea-6b61-4bae-8e55-c32b25141f00" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,13 +11,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1Xd6rJcq2hn92dQixxmFFA0q6KO" />
+  <component name="ProjectId" id="1YGpGZXgxq3FDCS2bqw2eXlElGv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../school/testing/PellGrantProject" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -36,30 +35,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a58cc6e0-7a51-4529-b18c-691218b92f05" name="Default Changelist" comment="" />
-      <created>1581363821505</created>
+      <changelist id="9ab562ea-6b61-4bae-8e55-c32b25141f00" name="Default Changelist" comment="" />
+      <created>1582578690506</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1581363821505</updated>
-      <workItem from="1581363822731" duration="34000" />
-      <workItem from="1581955571922" duration="97000" />
+      <updated>1582578690506</updated>
+      <workItem from="1582578693618" duration="554000" />
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
