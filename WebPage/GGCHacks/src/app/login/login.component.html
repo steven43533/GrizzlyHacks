@@ -1,0 +1,12 @@
+<h1> Login</h1>
+
+<form [formGroup]="loginForm">
+
+  <p> email</p>
+  <input formControlName="email">
+  <p>Password</p>
+  <input formControlName="password">
+
+  <button (click)="auth.loginUser(loginForm)">Login</button>
+
+</form>

@@ -1,0 +1,23 @@
+<!-- for error messages use get(THing name)().invalid" use dirty or touched to cause error to come up-->
+
+<form [formGroup]="createAccountForm">
+
+  <p>First Name</p>
+  <input formControlName="firstName">
+
+  <p>Last Name</p>
+  <input formControlName="lastName">
+
+  <p>Email</p>
+  <input formControlName="email">
+  <p *ngIf="getEmail().invalid">wrong email</p>
+
+  <p>Password</p>
+  <input formControlName="password">
+  <p ></p>
+
+  <p>Confirm Passwod</p>
+  <input formControlName="cPassword">
+
+  <button (click)="auth.createUser(createAccountForm)">Create Account</button>
+</form>
