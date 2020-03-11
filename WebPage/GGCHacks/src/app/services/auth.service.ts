@@ -4,8 +4,8 @@ import {User} from '../interfaces/user';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
-
-
+import {FormGroup} from '@angular/forms';
+import 'firebase/firestore';
 
 
 @Injectable({
@@ -31,21 +31,6 @@ export class AuthService implements OnDestroy {
     });
   }
 
-  async loginUser(em: string, pw: string) {
-    await this.afAuth.signInWithEmailAndPassword(em, pw).then( result => {
-      alert('Login succesfull');
-      this.attachUser(result.user);
-    }, error => {
-      alert( ' your account has been deleted make a new one');
-      this.router.navigate(['/newUser']);
-    });
-  }
-
-  async attachUser(user) {
-    this.setUser(user).then(() => console.log(this.user));
-  }
-
-
   async setUser(user) {
     return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
@@ -53,36 +38,37 @@ export class AuthService implements OnDestroy {
 
   }
 
-  private updateUserData(user, fN: string, lN: string) {
+  // stuff for creating users
+
+  private createUserData(user, form: FormGroup) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
 
     const data = {
       uid: user.uid,
       email: user.email,
-      firstName: fN,
-      lastName: lN,
+      firstName: form.get('firstName').value,
+      lastName: form.get('lastName').value,
       isAdmin: false
-
     };
     return userRef.set(data, {merge: true});
   }
 
-
-  public updateUser() {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${this.user.uid}`);
-    userRef.update(this.user);
-  }
-
-
-  async createUser(em: string, pw: string, fN: string, lN: string) {
-    await this.afAuth.createUserWithEmailAndPassword(em, pw).then( result => {
+  async createUser(form: FormGroup) {
+    await this.afAuth.createUserWithEmailAndPassword(form.get('email').value, form.get('password').value).then( result => {
       alert('Account Created');
-      this.router.navigate(['/userDashBoard']);
-      this.updateUserData(result.user, fN, lN);
-      this.attachUser(result.user);
+      this.createUserData(result.user, form);
     }, error => {
       alert('account creation failed' + error.toString());
       return;
+    });
+  }
+
+  async loginUser(form: FormGroup) {
+    console.log(form.get('email').value + "  " + form.get('password').value);
+    await this.afAuth.signInWithEmailAndPassword(form.get('email').value, form.get('password').value).then(result => {
+      alert('Login succesfull');
+    }, error => {
+      alert('something is wrong');
     });
   }
 
@@ -98,7 +84,19 @@ export class AuthService implements OnDestroy {
     this.sub.unsubscribe();
   }
 
+
+
+  /*
+
+
+
+
+
+
+
   private testSettingAdmin(user) {
     this.afs.doc((`users/${user.uid}`)).update({admin: true});
   }
+
+   */
 }
