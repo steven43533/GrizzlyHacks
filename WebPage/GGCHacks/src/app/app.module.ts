@@ -4,13 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { FireBaseStuffModule } from './modules/fire-base-stuff.module';
-import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
