@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { FireBaseStuffModule } from './modules/fire-base-stuff.module';
+
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FireBaseStuffModule
   ],
   providers: [],
   bootstrap: [AppComponent]
