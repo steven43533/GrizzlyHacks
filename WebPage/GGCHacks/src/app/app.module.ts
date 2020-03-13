@@ -8,11 +8,17 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { HeaderComponent } from './header/header.component';
+import {LandingpageComponent} from './landingpage/landingpage.component';
 
 
 
 const routes: Routes = [
-
+  { path: '' ,  component: LandingpageComponent},
+  { path: 'email/action', component: VerifyEmailComponent, data: { title: 'Confirm Email Address' }},
+  { path: 'createAccount', component: CreateAccountComponent},
+  { path: 'login', component: LoginComponent}
 ]
 
 
@@ -20,7 +26,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     CreateAccountComponent,
-    LoginComponent
+    LoginComponent,
+    VerifyEmailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

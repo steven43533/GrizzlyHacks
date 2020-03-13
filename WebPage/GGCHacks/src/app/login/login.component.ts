@@ -10,12 +10,14 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  passwordReset: boolean
 
   constructor(public auth: AuthService, private fb: FormBuilder) {
     this.loginForm = fb.group({
       email: '',
       password: ''
       });
+    this.passwordReset = false;
   }
 
   ngOnInit(): void {
