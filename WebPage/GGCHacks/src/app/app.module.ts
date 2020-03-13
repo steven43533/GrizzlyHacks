@@ -11,14 +11,18 @@ import { LoginComponent } from './login/login.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HeaderComponent } from './header/header.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
+import { EmailActionComponent } from './email-action/email-action.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 
 const routes: Routes = [
   { path: '' ,  component: LandingpageComponent},
-  { path: 'email/action', component: VerifyEmailComponent, data: { title: 'Confirm Email Address' }},
+  { path: 'email/action', component: EmailActionComponent, data: { title: 'Confirm Email Address' }},
   { path: 'createAccount', component: CreateAccountComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'dashboard', component: UserDashboardComponent}
 ]
 
 
@@ -28,7 +32,10 @@ const routes: Routes = [
     CreateAccountComponent,
     LoginComponent,
     VerifyEmailComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmailActionComponent,
+    ResetPasswordComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

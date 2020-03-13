@@ -90,6 +90,11 @@ export class AuthService implements OnDestroy {
     this.afAuth.sendPasswordResetEmail(email);
   }
 
+  updateUser(form: FormGroup) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${this.user.uid}`);
+    userRef.update(form.getRawValue());
+  }
+
   public sighOut() {
     this.afAuth.signOut().then( result => {
       alert(result);
@@ -121,4 +126,5 @@ export class AuthService implements OnDestroy {
   }
 
    */
+
 }
