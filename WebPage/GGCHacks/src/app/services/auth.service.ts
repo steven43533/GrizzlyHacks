@@ -16,15 +16,18 @@ export class AuthService implements OnDestroy {
 
   user: User;
   sub: Subscription;
+  verified: boolean;
 
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router
   ) {
-    afAuth.authState.subscribe( user => {
-      if (user != null) {
+    this.verified = false;
+    afAuth.user.subscribe( user => {
+      if (user && user.emailVerified ) {
         this.setUser(user);
+        this.verified = true;
       } else {
         this.user = null;
       }
@@ -39,7 +42,6 @@ export class AuthService implements OnDestroy {
   }
 
   // stuff for creating users
-
   private createUserData(user, form: FormGroup) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
 
@@ -57,22 +59,44 @@ export class AuthService implements OnDestroy {
     await this.afAuth.createUserWithEmailAndPassword(form.get('email').value, form.get('password').value).then( result => {
       alert('Account Created');
       this.createUserData(result.user, form);
+      result.user.sendEmailVerification();
     }, error => {
       alert('account creation failed' + error.toString());
       return;
     });
   }
 
+  // login stuff
   async loginUser(form: FormGroup) {
-    console.log(form.get('email').value + "  " + form.get('password').value);
+    // console.log(form.get('email').value + "  " + form.get('password').value);
     await this.afAuth.signInWithEmailAndPassword(form.get('email').value, form.get('password').value).then(result => {
+      // verification on email
+      if ( !result.user.emailVerified ) {
+        result.user.sendEmailVerification();
+        alert('Please Verify Email');
+      } else {
       alert('Login succesfull');
-    }, error => {
-      alert('something is wrong');
+      }
+    }, error => { // if there is a problem loging in
+      if (error === 'auth/user-disabled') {
+        alert('Your account has been disabled');
+      } else {
+        alert('Incorrect email or password');
+      }
     });
   }
 
+  public passwordRecovery(email: string) {
+    this.afAuth.sendPasswordResetEmail(email);
+  }
+
+  updateUser(form: FormGroup) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${this.user.uid}`);
+    userRef.update(form.getRawValue());
+  }
+
   public sighOut() {
+    this.verified = false;
     this.afAuth.signOut().then( result => {
       alert(result);
     }, error => {
@@ -80,9 +104,13 @@ export class AuthService implements OnDestroy {
     });
   }
 
+
+
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+
 
 
 
@@ -99,4 +127,5 @@ export class AuthService implements OnDestroy {
   }
 
    */
+
 }
