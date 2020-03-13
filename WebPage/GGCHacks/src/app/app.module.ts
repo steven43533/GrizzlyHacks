@@ -15,6 +15,7 @@ import { EmailActionComponent } from './email-action/email-action.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import {UserGuardGuard} from './guards/user-guard.guard';
+import { ApplicationComponent } from './ApplicationRealatedStuff/application/application.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
     HeaderComponent,
     EmailActionComponent,
     ResetPasswordComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ApplicationComponent
   ],
   imports: [
     BrowserModule,
