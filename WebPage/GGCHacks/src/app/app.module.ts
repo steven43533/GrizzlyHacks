@@ -14,6 +14,7 @@ import {LandingpageComponent} from './landingpage/landingpage.component';
 import { EmailActionComponent } from './email-action/email-action.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import {UserGuardGuard} from './guards/user-guard.guard';
 
 
 
@@ -22,9 +23,8 @@ const routes: Routes = [
   { path: 'email/action', component: EmailActionComponent, data: { title: 'Confirm Email Address' }},
   { path: 'createAccount', component: CreateAccountComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: UserDashboardComponent}
+  { path: 'dashboard', component: UserDashboardComponent, canActivate: [UserGuardGuard]}
 ]
-
 
 @NgModule({
   declarations: [

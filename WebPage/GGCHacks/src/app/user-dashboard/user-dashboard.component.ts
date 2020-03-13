@@ -14,13 +14,13 @@ export class UserDashboardComponent implements OnInit {
 
   constructor(public auth: AuthService, private fb: FormBuilder) {
     this.isEditing = false;
-    this.form = fb.group({
-      firstName: [auth.user.firstName,[ Validators.required ]],
-      lastName: [auth.user.lastName,[ Validators.required ]]
-    });
   }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      firstName: [this.auth.user.firstName,[ Validators.required ]],
+      lastName: [this.auth.user.lastName,[ Validators.required ]]
+    });
   }
 
   async submit() {
