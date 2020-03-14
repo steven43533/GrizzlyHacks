@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FireBaseStuffModule } from './modules/fire-base-stuff.module';
 import { CreateAccountComponent } from './create-account/create-account.component';
@@ -29,22 +35,29 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    LandingpageComponent,
+    UserdashboardComponent,
+    AdmindashboardComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
     CreateAccountComponent,
     LoginComponent,
     VerifyEmailComponent,
     HeaderComponent,
     EmailActionComponent,
     ResetPasswordComponent,
-    UserDashboardComponent
-  ],
-  imports: [
-    BrowserModule,
+    UserDashboardComponent,
     FireBaseStuffModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
