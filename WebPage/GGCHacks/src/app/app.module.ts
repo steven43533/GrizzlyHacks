@@ -16,7 +16,6 @@ import { RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HeaderComponent } from './header/header.component';
-import {LandingpageComponent} from './landingpage/landingpage.component';
 import { EmailActionComponent } from './email-action/email-action.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -37,12 +36,7 @@ const routes: Routes = [
     AppComponent,
     LandingpageComponent,
     UserdashboardComponent,
-    AdmindashboardComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
+    AdmindashboardComponent,
     CreateAccountComponent,
     LoginComponent,
     VerifyEmailComponent,
@@ -50,6 +44,12 @@ const routes: Routes = [
     EmailActionComponent,
     ResetPasswordComponent,
     UserDashboardComponent,
+
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+ //   AppRoutingModule,
     FireBaseStuffModule,
     FormsModule,
     ReactiveFormsModule,
