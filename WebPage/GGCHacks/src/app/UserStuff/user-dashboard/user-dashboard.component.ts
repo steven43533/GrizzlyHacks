@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApplicationService} from '../ApplicationRealatedStuff/application.service';
+import {ApplicationService} from '../../ApplicationRealatedStuff/application.service';
 
 @Component({
   selector: 'app-user-dashboard',

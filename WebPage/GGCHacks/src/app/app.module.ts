@@ -3,40 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
-import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import {HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './modules/app-routing.module';
 
 import { FireBaseStuffModule } from './modules/fire-base-stuff.module';
-import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateAccountComponent } from './UserStuff/create-account/create-account.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { RouterModule, Routes} from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { LoginComponent } from './UserStuff/login/login.component';
+import { VerifyEmailComponent } from './email-action/verify-email/verify-email.component';
 import { HeaderComponent } from './header/header.component';
 import { EmailActionComponent } from './email-action/email-action.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import {UserGuardGuard} from './guards/user-guard.guard';
+import { ResetPasswordComponent } from './email-action/reset-password/reset-password.component';
+import { UserDashboardComponent } from './UserStuff/user-dashboard/user-dashboard.component';
 import { ApplicationComponent } from './ApplicationRealatedStuff/application/application.component';
 
-
-
-const routes: Routes = [
-  { path: '' ,  component: LandingpageComponent},
-  { path: 'email/action', component: EmailActionComponent, data: { title: 'Confirm Email Address' }},
-  { path: 'createAccount', component: CreateAccountComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: UserDashboardComponent, canActivate: [UserGuardGuard]}
-]
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingpageComponent,
-    UserdashboardComponent,
     AdmindashboardComponent,
     CreateAccountComponent,
     LoginComponent,
@@ -50,11 +36,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
- //   AppRoutingModule,
+    AppRoutingModule,
     FireBaseStuffModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+   // RouterModule.forRoot(routes)
   ],
 
   providers: [],
