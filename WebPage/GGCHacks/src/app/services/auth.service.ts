@@ -13,9 +13,9 @@ import 'firebase/firestore';
 })
 export class AuthService implements OnDestroy {
 
-
   user: User;
   sub: Subscription;
+  sub2: Subscription;
   verified: boolean;
 
   constructor(
@@ -24,7 +24,7 @@ export class AuthService implements OnDestroy {
     private router: Router
   ) {
     this.verified = false;
-    afAuth.user.subscribe( user => {
+    this.sub2 = afAuth.user.subscribe( user => {
       if (user && user.emailVerified ) {
         this.setUser(user);
         this.verified = true;
@@ -108,6 +108,7 @@ export class AuthService implements OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+    this.sub2.unsubscribe();
   }
 
 
