@@ -13,10 +13,12 @@ const routes: Routes = [
   { path: 'home', component: LandingpageComponent },
   { path: 'user', component: UserDashboardComponent, canActivate: [UserGuardGuard] },
   { path: 'admin', component: AdmindashboardComponent },
-  { path: '**', redirectTo: '/home'},
+  { path: 'login', component: LoginComponent},
   { path: 'email/action', component: EmailActionComponent, data: { title: 'Confirm Email Address' }},
   { path: 'createAccount', component: CreateAccountComponent},
-  { path: 'login', component: LoginComponent},
+  { path: '**', redirectTo: '/home'}
+
+
 ];
 
 @NgModule({
