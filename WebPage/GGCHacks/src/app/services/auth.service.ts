@@ -50,7 +50,8 @@ export class AuthService implements OnDestroy {
       email: user.email,
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
-      isAdmin: false
+      isAdmin: false,
+      hasApplication: false
     };
     return userRef.set(data, {merge: true});
   }
@@ -75,7 +76,8 @@ export class AuthService implements OnDestroy {
         result.user.sendEmailVerification();
         alert('Please Verify Email');
       } else {
-      alert('Login succesfull');
+        alert('Login succesfull');
+        this.router.navigate(['user']);
       }
     }, error => { // if there is a problem loging in
       if (error === 'auth/user-disabled') {

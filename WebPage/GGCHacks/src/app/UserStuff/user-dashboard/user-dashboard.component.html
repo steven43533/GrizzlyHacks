@@ -3,8 +3,11 @@
   <p> email: {{auth.user.email}}</p>
 
   <button (click)="isEditing = true">Edit</button>
-</div>
 
+  <button routerLink="/application">Create Application</button>
+
+</div>
+{{auth.user | json}}
 <form [formGroup]="form" *ngIf="isEditing">
   firstName:  <input formControlName="firstName"><p></p>
   lastName: <input formControlName="lastName">
