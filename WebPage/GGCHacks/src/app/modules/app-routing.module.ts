@@ -7,7 +7,7 @@ import {CreateAccountComponent} from '../UserStuff/create-account/create-account
 import {LoginComponent} from '../UserStuff/login/login.component';
 import {UserGuardGuard} from '../guards/user-guard.guard';
 import {UserDashboardComponent} from '../UserStuff/user-dashboard/user-dashboard.component';
-import {ApplicationComponent} from '../ApplicationRealatedStuff/application/application.component';
+import {ApplicationComponent} from '../application/application.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

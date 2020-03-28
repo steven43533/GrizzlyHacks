@@ -1,9 +1,6 @@
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 export interface Application {
-     firstName: string;
-     lastName: string;
-     email: string;
      gender: string;
      ethnicity: string;
      preferredPronouns: string;
