@@ -1,8 +1,14 @@
+<body>
+<div class="card">
+  <div class="card-title">
+    <h5>Welcome {{auth.user}}!</h5>
+  </div>
+  <div class = "card-body">
 <div *ngIf="!isEditing">
   <p> name: {{auth.user.firstName}} {{auth.user.lastName}}</p>
   <p> email: {{auth.user.email}}</p>
 
-  <button (click)="isEditing = true">Edit</button>
+  <button class = "btn btn-primary" (click)="isEditing = true">Edit</button>
 </div>
 
 <form [formGroup]="form" *ngIf="isEditing">
@@ -10,7 +16,9 @@
   lastName: <input formControlName="lastName">
   <p> email: {{auth.user.email}}</p>
 
-  <button (click)="isEditing = false">back</button>
-  <button (click)="submit(); isEditing = false">makeChanges</button>
+  <button class = "btn btn-primary" (click)="isEditing = false">Back</button>
+  <button class = "btn btn-primary" (click)="submit(); isEditing = false">Make Changes</button>
 </form>
-
+  </div>
+</div>
+</body>

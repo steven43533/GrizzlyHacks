@@ -1,5 +1,10 @@
 <!-- for error messages use get(THing name)().invalid" use dirty or touched to cause error to come up-->
-
+<body>
+<div class = "card">
+  <div class ="card-title">
+    <h5>Create An Account</h5>
+  </div>
+  <div class = "card-body">
 <form [formGroup]="createAccountForm">
 
   <p>First Name</p>
@@ -29,10 +34,13 @@
 
 
 
-  <p>Confirm Passwod</p>
+  <p>Confirm Password</p>
   <input formControlName="cPassword">
   <p *ngIf="getCPassword().invalid && getCPassword().dirty" class="error">Passwords Must Match</p>
 
-  <button (click)="auth.createUser(createAccountForm)" [disabled]="createAccountForm.invalid">Create Account</button>
+  <button class = "btn btn-primary" (click)="auth.createUser(createAccountForm)" [disabled]="createAccountForm.invalid">Create Account</button>
 
 </form>
+  </div>
+</div>
+</body>

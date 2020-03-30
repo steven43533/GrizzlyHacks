@@ -1,4 +1,9 @@
-<h1> Login</h1>
+<body>
+<div class = "card">
+  <div class = "card-title">
+    <h5>Log In!</h5>
+  </div>
+  <div class = "card-body">
 <form [formGroup]="loginForm" *ngIf="!passwordReset">
   <p> email</p>
   <input formControlName="email">
@@ -7,12 +12,15 @@
 
   <p (click)="passwordReset = true" id="link">Reset Password</p>
 
-  <button (click)="auth.loginUser(loginForm)">Login</button>
+  <button class = "btn btn-primary" (click)="auth.loginUser(loginForm)">Login</button>
 </form>
 
 <div *ngIf="passwordReset">
   <p> email</p>
   <input #email>
-  <button (click)="auth.passwordRecovery(email.value)"> Reset Password</button>
-  <button (click)="passwordReset = false">back</button>
+  <button class = "btn btn-primary" (click)="auth.passwordRecovery(email.value)">Reset Password</button>
+  <button class = "btn btn-primary" (click)="passwordReset = false">Back</button>
 </div>
+</div>
+</div>
+</body>
