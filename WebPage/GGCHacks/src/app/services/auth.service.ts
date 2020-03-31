@@ -21,7 +21,7 @@ export class AuthService implements OnDestroy {
   verified: boolean;
 
   constructor(
-    private afAuth: AngularFireAuth,
+    public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
     public appSerivice: ApplicationServiceService
@@ -29,9 +29,10 @@ export class AuthService implements OnDestroy {
     this.verified = false;
     this.sub2 = afAuth.user.subscribe( user => {
       if (user && user.emailVerified ) {
-        this.setUser(user);
         this.verified = true;
+        this.setUser(user);
       } else {
+        this.verified = false;
         this.user = null;
       }
     });
@@ -87,7 +88,7 @@ export class AuthService implements OnDestroy {
         alert('Please Verify Email');
       } else {
         alert('Login succesfull');
-        this.router.navigate(['user']);
+        this.router.navigate(['home']);
       }
     }, error => { // if there is a problem loging in
       if (error === 'auth/user-disabled') {
@@ -102,9 +103,9 @@ export class AuthService implements OnDestroy {
     this.afAuth.sendPasswordResetEmail(email);
   }
 
-  updateUser(form: FormGroup) {
+  updateUser() {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${this.user.uid}`);
-    userRef.update(form.getRawValue());
+    userRef.update(this.user);
   }
 
   public sighOut() {

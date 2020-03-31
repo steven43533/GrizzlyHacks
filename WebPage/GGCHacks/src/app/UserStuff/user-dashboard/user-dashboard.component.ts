@@ -10,7 +10,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class UserDashboardComponent implements OnInit {
 
   isEditing: boolean;
-  form: FormGroup;
 
   constructor(public auth: AuthService, private fb: FormBuilder) {
     this.isEditing = false;
@@ -18,14 +17,9 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isEditing = false;
-
-    this.form = this.fb.group({
-      firstName: [this.auth.user.firstName,[ Validators.required ]],
-      lastName: [this.auth.user.lastName,[ Validators.required ]]
-    });
   }
 
   async submit() {
-    this.auth.updateUser(this.form);
+    this.auth.updateUser();
   }
 }
