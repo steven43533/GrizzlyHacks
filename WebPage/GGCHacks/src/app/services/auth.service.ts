@@ -111,9 +111,9 @@ export class AuthService implements OnDestroy {
   public sighOut() {
     this.verified = false;
     this.afAuth.signOut().then( result => {
-      alert(result);
+      alert('Signed Out');
     }, error => {
-      alert(error);
+      alert('Try Again');
     });
   }
 
