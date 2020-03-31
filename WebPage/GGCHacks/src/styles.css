@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-primary
+{
+  background-color: #00704a !important;
+  border-color: #0b2e13 !important;
+}
+
+.btn-primary:hover
+{
+  background-color: #0b2e13 !important;
+}
+
+.btn-primary:focus
+{
+  outline-color: transparent !important;
+  -webkit-appearance: none !important;
+  box-shadow: none !important;
+}

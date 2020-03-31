@@ -1,24 +1,31 @@
-<body>
-<div class="card">
+<div class = "everything">
+  <div class = "row justify-content-center"></div>
+<div class="card w-50">
   <div class="card-title">
     <h5>Welcome {{auth.user}}!</h5>
   </div>
   <div class = "card-body">
-<div *ngIf="!isEditing">
-  <p> name: {{auth.user.firstName}} {{auth.user.lastName}}</p>
-  <p> email: {{auth.user.email}}</p>
+    <div *ngIf="!isEditing">
+      <p> Name: {{auth.user.firstName}} {{auth.user.lastName}}</p>
+      <p> Email: {{auth.user.email}}</p>
 
   <button class = "btn btn-primary" (click)="isEditing = true">Edit</button>
 </div>
 
 <form [formGroup]="form" *ngIf="isEditing">
-  firstName:  <input formControlName="firstName"><p></p>
-  lastName: <input formControlName="lastName">
+  firstName:  <input class = "form-control" formControlName="firstName"><p></p>
+  lastName: <input class = "form-control" formControlName="lastName">
   <p> email: {{auth.user.email}}</p>
 
-  <button class = "btn btn-primary" (click)="isEditing = false">Back</button>
-  <button class = "btn btn-primary" (click)="submit(); isEditing = false">Make Changes</button>
+  <div class = "row justify-content-center">
+  <div class = "col">
+    <button class = "btn btn-primary" (click)="isEditing = false">Back</button>
+  </div>
+    <div class = "col">
+    <button class = "btn btn-primary" (click)="submit(); isEditing = false">Make Changes</button>
+    </div>
+    </div>
 </form>
   </div>
 </div>
-</body>
+</div>

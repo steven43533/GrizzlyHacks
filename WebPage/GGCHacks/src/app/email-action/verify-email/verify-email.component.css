@@ -1,0 +1,30 @@
+.everything{
+  background: linear-gradient(rgb(0,82,150), rgb(20,25,58));
+  background-size: cover;
+}
+
+header{
+  background: transparent;
+}
+
+body{
+  background: transparent;
+}
+
+footer{
+  background: transparent;
+}
+
+.form{
+  align-content: center;
+}
+
+.card
+{
+  margin: 50px;
+  padding: 75px;
+}
+
+.btn{
+  margin-top: 25px;
+}
