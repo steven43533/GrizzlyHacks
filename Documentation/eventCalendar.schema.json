@@ -1,0 +1,35 @@
+{ 
+    "title":"Event Calendar", 
+    "description":"JSON schema for the event calendar.", 
+    "type":"array",
+    "required": [
+        "day",
+        "events"
+    ],
+    "properties":{ 
+        "day":{  
+            "type":"array"
+        }, 
+        "events":{  
+            "type": "array",
+            "items":{ 
+                "type":"object",
+                "required": ["title", "startTime", "endTime"],
+                "properties":{ 
+                    "title":{  
+                        "type":"string", 
+                        "maxLength":50 
+                    },
+                    "startTime":{ 
+                        "type":"string", 
+                        "format":"time"
+                    }, 
+                    "endTime":{  
+                        "type":"string", 
+                        "format":"time"
+                    }
+                }
+            }
+        }
+    }
+}

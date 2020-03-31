@@ -1,0 +1,118 @@
+{
+    "title": "Registration Form",
+    "description": "JSON schema for the regestration form",
+    "type": "array",
+    "required": [
+      "firstName",
+      "lastName",
+      "gender",
+      "email",
+      "major",
+      "college",
+      "collegeStanding",
+      "Questionare"
+    ],
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "title": "First name"
+      },
+      "lastName": {
+        "type": "string",
+        "title": "Last name"
+      },
+      "email": {
+        "type": "string",
+        "format": "email",
+        "title": "Email",
+        "pattern": "^.+?@ggc.edu$"
+      },
+      "college":{
+        "type": "string",
+        "title": "College"
+      },
+      "collegeStanding":{
+        "type":"string",
+        "title": "College Standing",
+        "enum": ["freshmen", "sophomore", "junior", "senior"]
+      },
+      "major":{
+        "type": "string",
+        "title": "Major"
+      },
+      "gender": {
+        "type": "string",
+        "title": "Gender",
+        "enum": ["male", "female", "other"]
+      },
+      "telephone": {
+        "type": "string",
+        "pattern": "^\\D?(\\d{3})\\D?\\D?(\\d{3})\\D?(\\d{4})$",
+        "title": "Phone",
+        "minLength": 10
+      },
+      "shirtSize": {
+        "type": "string",
+        "title": "T-Shirt Size",
+        "enum": ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+      },
+      "foodAllergies": {
+        "type": "string",
+        "title": "Food Allergies"
+      },
+      "Questionare":{
+        "type": "array",
+        "required": [
+          "reason_for_attending",
+          "purpose_for_attending",
+          "need_travel_assistance?",
+          "how_did_you_hear_about_hackathon?",
+          "additional_thoughts"
+        ],
+        "properties": {
+          "reason_for_attending": {
+            "type": "string",
+            "title": "Why do you want to attend Grizzly Hacks?",
+            "maxLength": 500
+          },
+          "purpose_for_attending": {
+            "type": "array",
+            "title": "What do you want to learn at Grizzly Hacks?",
+            "description": "Multi select dropdown list",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Front End Development",
+                "Back End Development",
+                "Machine Learinng",
+                "Hardware",
+                "Virtual & Augmented Reality",
+                "Design",
+                "Cyber Security",
+                "Mobile Development",
+                "Cloud Computing",
+                "Entrepeneurship"
+              ]
+            },
+            "maxLength": 500
+          },
+          "need_travel_assistance?": {
+            "type": "string",
+            "title": "Will you need travel assistance?",
+            "enum": ["Yes", "No"],
+            "maxLength": 50
+          },
+          "how_did_you_hear_about_hackathon?": {
+            "type": "string",
+            "title": "How did you hear about the hackathon?",
+            "maxLength": 50
+          },
+          "additional_thoughts": {
+            "type": "string",
+            "title": "Is there anything else you would like to share?",
+            "maxLength": 500
+          }
+        }
+      }
+    }
+  }
