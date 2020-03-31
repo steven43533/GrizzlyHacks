@@ -16,7 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { EmailActionComponent } from './email-action/email-action.component';
 import { ResetPasswordComponent } from './email-action/reset-password/reset-password.component';
 import { UserDashboardComponent } from './UserStuff/user-dashboard/user-dashboard.component';
-import { ApplicationComponent } from './ApplicationRealatedStuff/application/application.component';
+import { ApplicationComponent } from './application/application.component';
 
 
 @NgModule({

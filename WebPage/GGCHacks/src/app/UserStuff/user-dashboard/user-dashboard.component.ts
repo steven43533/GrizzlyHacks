@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApplicationService} from '../../ApplicationRealatedStuff/application.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -13,11 +12,13 @@ export class UserDashboardComponent implements OnInit {
   isEditing: boolean;
   form: FormGroup;
 
-  constructor(public auth: AuthService, private fb: FormBuilder, public app: ApplicationService) {
+  constructor(public auth: AuthService, private fb: FormBuilder) {
     this.isEditing = false;
   }
 
   ngOnInit(): void {
+    this.isEditing = false;
+
     this.form = this.fb.group({
       firstName: [this.auth.user.firstName,[ Validators.required ]],
       lastName: [this.auth.user.lastName,[ Validators.required ]]
