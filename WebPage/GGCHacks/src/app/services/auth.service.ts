@@ -6,6 +6,8 @@ import {Router} from '@angular/router';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {FormGroup} from '@angular/forms';
 import 'firebase/firestore';
+import {ApplicationServiceService} from './application-service.service';
+import {Application} from '../interfaces/application';
 
 
 @Injectable({
@@ -21,7 +23,8 @@ export class AuthService implements OnDestroy {
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private router: Router
+    private router: Router,
+    public appSerivice: ApplicationServiceService
   ) {
     this.verified = false;
     this.sub2 = afAuth.user.subscribe( user => {
@@ -37,8 +40,14 @@ export class AuthService implements OnDestroy {
   async setUser(user) {
     return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
-    });
+      if (u.application !== null) {
+        this.appSerivice.setApp(u.application);
+      } else {
+        console.log('set user no app');
+        this.appSerivice.createEmptyApp();
+      }
 
+    });
   }
 
   // stuff for creating users
@@ -51,6 +60,7 @@ export class AuthService implements OnDestroy {
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
       isAdmin: false,
+      isRegistered: false,
       application: null
     };
     return userRef.set(data, {merge: true});
@@ -106,6 +116,14 @@ export class AuthService implements OnDestroy {
     });
   }
 
+  saveApplication() {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${this.user.uid}`);
+    userRef.update({
+      application: Object.assign({}, this.appSerivice.app)
+    }).then( res => console.log(res));
+  }
+
+
 
 
   ngOnDestroy(): void {
@@ -113,22 +131,8 @@ export class AuthService implements OnDestroy {
     this.sub2.unsubscribe();
   }
 
-
-
-
-
-  /*
-
-
-
-
-
-
-
-  private testSettingAdmin(user) {
-    this.afs.doc((`users/${user.uid}`)).update({admin: true});
+  submitApplication() {
+    this.appSerivice.app.submited = true;
+    this.saveApplication();
   }
-
-   */
-
 }

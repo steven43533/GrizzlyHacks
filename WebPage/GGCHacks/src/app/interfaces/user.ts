@@ -6,5 +6,6 @@ export interface User {
   lastName: string;
   email: string;
   isAdmin: boolean;
+  isRegistered: boolean;
   application: Application;
 }

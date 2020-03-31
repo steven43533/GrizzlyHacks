@@ -2,8 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Application} from '../interfaces/application';
 import {AuthService} from '../services/auth.service';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {Subscription} from 'rxjs';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Observable, of, Subscription} from 'rxjs';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {ApplicationServiceService} from '../services/application-service.service';
 
 @Component({
   selector: 'app-application',
@@ -13,86 +14,50 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 export class ApplicationComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
-  gender = ['male', 'female', 'other'];
+  gender = ['Male', 'Female', 'Non-binary', 'Prefer Not To Say', 'other'];
+  ethnicity = ['American Indian or Alaska Native', 'Asian', 'Black or African American', 'Hispanic or Latino',
+              'Native Hawaiian or Other Pacific Islander', 'White', 'Prefer Not To Say'];
+  preferedPronouns = ['He/His', 'She/Her', 'They/Them', 'Prefer Not To Say'];
+  graduationDates = ['2020', '2021', '2022', '2023', '2024'];
+  dietaryRestrictions = ['No Restrictions', 'Vegan', 'Vegetarian', 'Halal', 'Other...'];
+  majors = ['Biology', 'Business administration', 'Chemistry', 'Cinema and media arts production', 'Criminal justice/criminology'
+            , 'Elementary education', 'English', 'Environmental science', 'Exercise science', 'History',
+            'Human development and aging services', 'Information technology', 'Mathematics', 'Middle grades education', 'Nursing',
+            'Political science', 'Psychology', 'Special education'];
 
-  constructor(public auth: AuthService, private afs: AngularFirestore, private fb: FormBuilder) {
+  constructor(public auth: AuthService, private fb: FormBuilder, public appService: ApplicationServiceService) {
+    console.log('app service ' + appService.app);
     this.form = fb.group({
-      gender: ['', [Validators.required]],
-      ethnicity: ['', [Validators.required]],
-      preferredPronouns: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      major: ['', [Validators.required]],
-      college: ['', [Validators.required]],
-      expectedGraduationDate: ['', [Validators.required]],
-      whyAttend: ['', [Validators.required]],
-      whatDoYouWantToLearn: ['', [Validators.required]],
-      linkedIn: ['', [Validators.required]],
-      github: ['', [Validators.required]],
-      emergencyContactFirstName: ['', [Validators.required]],
-      emergencyContactLastName: ['', [Validators.required]],
-      relationshipToEmergencyContact: ['', [Validators.required]],
-      emergencyContactPhoneNumber: ['', [Validators.required]],
-      emergencyContactEmail: ['', [Validators.required]],
-      agreedToCodeOfConduct: [false, [Validators.required]]
+      gender: [ {value: this.appService.app.gender, disabled: appService.app.submited}, [Validators.required,
+                  Validators.minLength(4), Validators.maxLength(17)]],
+      ethnicity: [ {value: this.appService.app.ethnicity, disabled: appService.app.submited}, [Validators.required]],
+      preferredPronouns: [ {value: this.appService.app.preferredPronouns, disabled: appService.app.submited}, [Validators.required]],
+      phoneNumber: [ {value: this.appService.app.phone, disabled: appService.app.submited}, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      major: [ {value: this.appService.app.major, disabled: appService.app.submited}, [Validators.required]],
+      college: [ {value: this.appService.app.college, disabled: appService.app.submited}, [Validators.required]],
+      expectedGraduationDate: [ {value: this.appService.app.expectedGraduationDate, disabled: appService.app.submited},
+                                [Validators.required]],
+      whyAttend: [ {value: this.appService.app.whyAttend, disabled: appService.app.submited}, [Validators.required,, Validators.maxLength(200)]],
+      whatDoYouWantToLearn: [ {value: this.appService.app.whatDoYouWantToLearn, disabled: appService.app.submited}, [Validators.required, Validators.maxLength(200)]],
+      linkedIn: [ {value: this.appService.app.linkedIn, disabled: appService.app.submited}, [Validators.maxLength(70)]],
+      github: [ {value: this.appService.app.gitHub, disabled: appService.app.submited}, [ Validators.maxLength(70)]],
+      emergencyContactFirstName: [ {value: this.appService.app.emergencyContactFirstName, disabled: appService.app.submited},
+                                    [Validators.required, Validators.maxLength(25)]],
+      emergencyContactLastName: [ {value: this.appService.app.emergencyContactLastName, disabled: appService.app.submited},
+                                  [Validators.required, Validators.maxLength(25)]],
+      emergencyContactRelationWithApplicant: [ {value: this.appService.app.emergencyContactRelationWithApplicant,
+                                                disabled: appService.app.submited}, [Validators.required, Validators.maxLength(25)]],
+      emergencyContactPhoneNumber: [ {value: this.appService.app.emCPhoneNumber, disabled: appService.app.submited}, [Validators.required,
+                                      Validators.minLength(10), Validators.maxLength(10)]],
+      agreedToCodeOfConduct: [ {value: this.appService.app.agreedToCodeOfConduct, disabled: appService.app.submited}, [Validators.required]]
     });
   }
 
   ngOnInit(): void {
-    if (this.auth.user.application !== null) {
-      this.setForm();
-    } else {
-      this.emptyForm();
-    }
-  }
 
-  setForm(): void {
-    const app = this.auth.user.application;
-    this.form = this.fb.group({
-      gender: [app.gender, [Validators.required]],
-      ethnicity: [app.ethnicity, [Validators.required]],
-      preferredPronouns: [app.preferredPronouns, [Validators.required]],
-      phoneNumber: [app.phone, [Validators.required]],
-      major: [app.major, [Validators.required]],
-      college: [app.college, [Validators.required]],
-      expectedGraduationDate: [app.expectedGraduationDate, [Validators.required]],
-      whyAttend: [app.whyAttend, [Validators.required]],
-      whatDoYouWantToLearn: [app.whatDoYouWantToLearn, [Validators.required]],
-      linkedIn: [app.linkedIn, [Validators.required]],
-      github: [app.gitHub, [Validators.required]],
-      emergencyContactFirstName: [app.emCFN, [Validators.required]],
-      emergencyContactLastName: [app.emCLN, [Validators.required]],
-      relationshipToEmergencyContact: [app.relationshipToEC, [Validators.required]],
-      emergencyContactPhoneNumber: [app.emCPhoneNumber, [Validators.required]],
-      emergencyContactEmail: [app.emCEmail, [Validators.required]],
-      agreedToCodeOfConduct: [app.agreedToCodeOfConduct, [Validators.required]]
-    });
-  }
-
-  emptyForm(): void {
-    this.form = this.fb.group({
-      uid: ['', [Validators.required]],
-      gender: ['', [Validators.required]],
-      ethnicity: ['', [Validators.required]],
-      preferredPronouns: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      major: ['', [Validators.required]],
-      college: ['', [Validators.required]],
-      expectedGraduationDate: ['', [Validators.required]],
-      whyAttend: ['', [Validators.required]],
-      whatDoYouWantToLearn: ['', [Validators.required]],
-      linkedIn: ['', [Validators.required]],
-      github: ['', [Validators.required]],
-      emergencyContactFirstName: ['', [Validators.required]],
-      emergencyContactLastName: ['', [Validators.required]],
-      relationshipToEmergencyContact: ['', [Validators.required]],
-      emergencyContactPhoneNumber: ['', [Validators.required]],
-      emergencyContactEmail: ['', [Validators.required]],
-      agreedToCodeOfConduct: [false, [Validators.required]]
-    });
   }
 
   ngOnDestroy(): void {
 
   }
-
 }
