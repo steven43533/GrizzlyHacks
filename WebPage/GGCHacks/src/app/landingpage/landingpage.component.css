@@ -1,0 +1,10 @@
+.all_the_stuffs {
+  background: url("../../assets/background.png") no-repeat bottom center fixed,
+  linear-gradient(rgb(0,82,150), rgb(20,25,58));
+  background-size: cover;
+  margin: 0px;
+}
+
+.Main_section {
+  margin-top: 100px;
+}

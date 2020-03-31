@@ -13,13 +13,11 @@
 -->
 
 <nav class="navbar navbar-dark bg-dark">
-  <!--
   <div>
   <a class="navbar-brand" href="#">
     <img src="/assets/logo.png" width="150" height="150" alt="">
   </a>
   </div>
-  -->
 <div class="justify-content-end">
   <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);"  *ngIf="auth.user === null">Log In</button>
 
