@@ -1,12 +1,16 @@
 .navbar-brand {
-  position: absolute;
-  margin-top: -30px;
+  position: fixed !important;
+  margin-top: -30px !important;
 }
 
 .navbar {
-  height: 60px;
+  height: 60px !important;
+  width: 100% !important;
+  position: fixed !important;
+  z-index: 1000 !important;
 }
 
 button {
-  margin-right: 5px;
+  margin-right: 5px !important;
+  margin-top: -5px !important;
 }

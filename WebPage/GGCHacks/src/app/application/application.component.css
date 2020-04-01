@@ -1,0 +1,8 @@
+.row{
+  padding-top: 15px;
+}
+
+.form-group .required{
+  content: "*";
+  color: red;
+}

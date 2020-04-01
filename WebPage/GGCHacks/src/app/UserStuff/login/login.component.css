@@ -3,21 +3,22 @@
   cursor: pointer;
 }
 
-.everything{
-  background: linear-gradient(rgb(0,82,150), rgb(20,25,58));
+.everything {
+  background: linear-gradient(rgb(0, 82, 150), rgb(20, 25, 58));
   background-size: cover;
+  height: 100vh;
 }
 
 header{
-  background: transparent;
+  background: transparent !important;
 }
 
 body{
-  background: transparent;
+  background: transparent !important;
 }
 
 footer{
-  background: transparent;
+  background: transparent !important;
 }
 
 .form{

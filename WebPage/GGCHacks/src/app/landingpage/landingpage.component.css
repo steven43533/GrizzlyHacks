@@ -3,8 +3,63 @@
   linear-gradient(rgb(0,82,150), rgb(20,25,58));
   background-size: cover;
   margin: 0px;
+  padding: 50px;
+}
+.about{
+  color: white;
+}
+.header
+{
+  margin: 100px;
+  color: white;
+}
+.event{
+  color: white;
+}
+
+.bottom{
+  color: white;
+  background-color: #343A40;
+  font-size: 13px;
+}
+
+.faq{
+  color: white;
+}
+
+.card{
+  background: transparent !important;
+}
+
+a,
+.btn-link,
+#link{
+  color: #00704a;
+  cursor: pointer;
+}
+
+h6{
+  color: #00704a;
+}
+
+.sponsors{
+  color: white;
 }
 
 .Main_section {
   margin-top: 100px;
 }
+
+.row{
+  padding: 25px;
+}
+
+table{
+  color: white !important;
+}
+
+body{
+  color: transparent;
+}
+
+
