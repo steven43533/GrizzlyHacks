@@ -54,7 +54,8 @@ export class ResetPasswordComponent implements OnInit {
       alert('You have succesfully updates Password');
       this.router.navigate(['login']);
     }, error => {
-      alert('try again');
+
+      alert('try again ' + error.message);
     });
   }
 
