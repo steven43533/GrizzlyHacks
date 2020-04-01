@@ -15,7 +15,7 @@
 
   <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified">User Dashboard</button>
 
-  <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified && auth.user.isAdmin">Admin Dashboard</button>
+  <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin" *ngIf="auth.user !== null && auth.verified && auth.user.isAdmin">Admin Dashboard</button>
 
 </div>
 </nav>

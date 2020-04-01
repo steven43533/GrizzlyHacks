@@ -40,7 +40,6 @@ import { ApplicationComponent } from './application/application.component';
     FireBaseStuffModule,
     FormsModule,
     ReactiveFormsModule,
-   // RouterModule.forRoot(routes)
   ],
 
   providers: [],

@@ -1,26 +1,42 @@
 <div class="everything">
   <div class="row justify-content-center  pt-lg-5">
     <div class="card w-50">
-      <div class="card-title">
-        <h5>Administration Dashboard</h5>
-      </div>
-      <div class="card-body">
-        <div class="row justify-content-center">
-          <div class="col">
-            <button class="btn btn-primary">Review Applications</button>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col">
-            <button class="btn btn-primary">Account Audit</button>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col">
-            <button class="btn btn-primary">Create New Admin Account</button>
-          </div>
-        </div>
-      </div>
+
+            <div>
+              <div *ngFor="let user of users" >
+              <!--  <div *ngIf="user.uid !== auth.user.uid"> -->
+                  Name: {{user.firstName}} {{user.lastName}}, email: {{user.email}}, admin: {{user.isAdmin}}
+                  <button *ngIf="user.application !== null">View Application</button>
+                  <button *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button> <button *ngIf="user.isAdmin" (click)="takeAdmin(user)">take away Adminship</button>
+                  <button>Delete Account</button>
+                <!--   </div> -->
+               </div>
+
+             </div>
+       <!--
+                  <div class="card-title">
+                    <h5>Administration Dashboard</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="row justify-content-center">
+                      <div class="col">
+                        <button class="btn btn-primary">Review Applications</button>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col">
+                        <button class="btn btn-primary" routerLink="/audit">View Accounts</button>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col">
+                        <button class="btn btn-primary">Create New Admin Account</button>
+                      </div>
+                    </div>
+
+            </div>
+            -->
     </div>
   </div>
 </div>
+
