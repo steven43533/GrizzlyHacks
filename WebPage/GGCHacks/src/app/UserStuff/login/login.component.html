@@ -27,14 +27,14 @@
             <button class="btn btn-primary" (click)="isLoginButtonUnuseable = true; loginUser(loginForm)"
                     [disabled]="isLoginButtonUnuseable">Login
             </button>
-            <div *ngIf="passwordReset">
-              <p> email</p>
-              <input #email>
-              <button class="btn btn-primary" (click)="auth.passwordRecovery(email.value)">Reset Password</button>
-              <button class="btn btn-primary" (click)="passwordReset = false">Back</button>
-            </div>
           </div>
         </form>
+        <div *ngIf="passwordReset">
+          <p> email</p>
+          <input #email>
+          <button class="btn btn-primary" (click)="auth.passwordRecovery(email.value)">Reset Password</button>
+          <button class="btn btn-primary" (click)="passwordReset = false">Back</button>
+        </div>
       </div>
     </div>
   </div>

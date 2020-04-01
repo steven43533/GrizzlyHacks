@@ -6,6 +6,6 @@ export interface User {
   lastName: string;
   email: string;
   isAdmin: boolean;
-  isRegistered: boolean;
+  isRegisteredFor2020: boolean;
   application: Application;
 }

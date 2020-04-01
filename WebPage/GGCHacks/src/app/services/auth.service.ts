@@ -8,6 +8,7 @@ import {FormGroup} from '@angular/forms';
 import 'firebase/firestore';
 import {ApplicationServiceService} from './application-service.service';
 import {Application} from '../interfaces/application';
+import {error} from 'selenium-webdriver';
 
 
 @Injectable({
@@ -41,13 +42,13 @@ export class AuthService implements OnDestroy {
   async setUser(user) {
     return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
-      if (u.application !== null) {
-        this.appSerivice.setApp(u.application);
-      } else {
+      if (u.application === undefined || u.application == null) {
         console.log('set user no app');
         this.appSerivice.createEmptyApp();
+      } else {
+        this.appSerivice.setApp(u.application);
+        console.log(u);
       }
-
     });
   }
 
@@ -61,7 +62,7 @@ export class AuthService implements OnDestroy {
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
       isAdmin: false,
-      isRegistered: false,
+      isRegisteredFor2020: false,
       application: null
     };
     return userRef.set(data, {merge: true});
@@ -100,7 +101,12 @@ export class AuthService implements OnDestroy {
   }
 
   public passwordRecovery(email: string) {
-    this.afAuth.sendPasswordResetEmail(email);
+    this.afAuth.sendPasswordResetEmail(email).then(result => {
+      alert('Email sent to ' + email );
+      this.router.navigate(['/home']);
+    }, error => {
+      alert('Something didnt work.');
+    });
   }
 
   updateUser() {

@@ -18,6 +18,7 @@ export class Application {
   emCPhoneNumber: number;
   agreedToCodeOfConduct: boolean;
   submited: boolean;
+  hack: string;
 
   constructor() {
     this.gender = '';
@@ -38,6 +39,7 @@ export class Application {
     this.emCPhoneNumber = null;
     this.agreedToCodeOfConduct = false;
     this.submited = false;
+    this.hack = 'Grizzly Hacks 2020';
   }
 
 
