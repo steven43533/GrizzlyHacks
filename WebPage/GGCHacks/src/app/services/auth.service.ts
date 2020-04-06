@@ -130,6 +130,12 @@ export class AuthService implements OnDestroy {
     }).then( res => console.log(res));
   }
 
+  deleteApp() {
+    this.user.application = null;
+    this.updateUser();
+  }
+
+
 
 
 

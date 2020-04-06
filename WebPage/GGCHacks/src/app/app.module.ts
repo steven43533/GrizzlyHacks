@@ -17,6 +17,8 @@ import { EmailActionComponent } from './email-action/email-action.component';
 import { ResetPasswordComponent } from './email-action/reset-password/reset-password.component';
 import { UserDashboardComponent } from './UserStuff/user-dashboard/user-dashboard.component';
 import { ApplicationComponent } from './application/application.component';
+import { UserQueryPipe } from './admindashboard/user-query.pipe';
+import { CheckFilerPipe } from './admindashboard/check-filer.pipe';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ApplicationComponent } from './application/application.component';
     EmailActionComponent,
     ResetPasswordComponent,
     UserDashboardComponent,
-    ApplicationComponent
+    ApplicationComponent,
+    UserQueryPipe,
+    CheckFilerPipe
   ],
   imports: [
     BrowserModule,

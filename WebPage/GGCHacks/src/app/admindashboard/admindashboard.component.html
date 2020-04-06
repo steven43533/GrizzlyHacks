@@ -2,41 +2,41 @@
   <div class="row justify-content-center  pt-lg-5">
     <div class="card w-50">
 
+
             <div>
-              <div *ngFor="let user of users" >
-              <!--  <div *ngIf="user.uid !== auth.user.uid"> -->
-                  Name: {{user.firstName}} {{user.lastName}}, email: {{user.email}}, admin: {{user.isAdmin}}
-                  <button *ngIf="user.application !== null">View Application</button>
+              <input [(ngModel)]="search">
+              is a Admin:
+              <input type="checkbox" [(ngModel)]="checkboxes.isAdminBox" (keyup)="updateCheckBoxes()">
+              is not a Admin:
+              <input type="checkbox" [(ngModel)]="checkboxes.noAdmin" (click)="updateCheckBoxes()">
+              has Application:
+              <input type="checkbox" [(ngModel)]="checkboxes.hasApplication" (click)="updateCheckBoxes()">
+              doesnt have Application:
+              <input type="checkbox" [(ngModel)]="checkboxes.noApplication" (click)="updateCheckBoxes()">
+              accepted to hack:
+              <input type="checkbox" [(ngModel)]="checkboxes.acceptedToHack" (click)="updateCheckBoxes()">
+              not accepted to hack:
+              <input type="checkbox" [(ngModel)]="checkboxes.notAcceptedToHack" (click)="updateCheckBoxes()">
+              <hr/>
+              {{checkboxes | json}}
+              <hr/>
+              <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search  | checkFiler:checkboxes:thing" >
+                <!--<div *ngIf="(user.uid !== auth.user.uid)"> -->
+                  Name: {{user.firstName}} {{user.lastName}}, email: {{user.email}}, admin: {{user.isAdmin}}, Is registered for 2020: {{user.isRegisteredFor2020}}
+                  <button *ngIf="user.application !==null && user.application.submited">View Application</button>
                   <button *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button> <button *ngIf="user.isAdmin" (click)="takeAdmin(user)">take away Adminship</button>
-                  <button>Delete Account</button>
-                <!--   </div> -->
+                  <button *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
+                  <button *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
+
+                  <!-- make acordian -->
+                    <div #application >{{user.application | json}}</div>
+
+
+                   <!-- </div>-->
                </div>
-
              </div>
-       <!--
-                  <div class="card-title">
-                    <h5>Administration Dashboard</h5>
-                  </div>
-                  <div class="card-body">
-                    <div class="row justify-content-center">
-                      <div class="col">
-                        <button class="btn btn-primary">Review Applications</button>
-                      </div>
-                    </div>
-                    <div class="row justify-content-center">
-                      <div class="col">
-                        <button class="btn btn-primary" routerLink="/audit">View Accounts</button>
-                      </div>
-                    </div>
-                    <div class="row justify-content-center">
-                      <div class="col">
-                        <button class="btn btn-primary">Create New Admin Account</button>
-                      </div>
-                    </div>
 
-            </div>
-            -->
+
     </div>
   </div>
 </div>
-
