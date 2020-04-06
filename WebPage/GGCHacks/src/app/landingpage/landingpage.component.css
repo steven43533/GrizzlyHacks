@@ -19,7 +19,6 @@
 
 .bottom{
   color: white;
-  background-color: #343A40;
   font-size: 13px;
 }
 
@@ -31,10 +30,17 @@
   background: transparent !important;
 }
 
-a,
+td{
+  justify-content: right;
+}
 .btn-link,
 #link{
   color: #00704a;
+  cursor: pointer;
+}
+
+a{
+  color: white;
   cursor: pointer;
 }
 
