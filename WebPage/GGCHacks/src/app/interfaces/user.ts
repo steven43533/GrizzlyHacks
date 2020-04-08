@@ -7,5 +7,6 @@ export interface User {
   email: string;
   isAdmin: boolean;
   isRegisteredFor2020: boolean;
+  pastHacks: string[];
   application: Application;
 }

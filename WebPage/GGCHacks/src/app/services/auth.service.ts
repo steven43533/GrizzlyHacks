@@ -63,6 +63,7 @@ export class AuthService implements OnDestroy {
       lastName: form.get('lastName').value,
       isAdmin: false,
       isRegisteredFor2020: false,
+      pastHacks: [],
       application: null
     };
     return userRef.set(data, {merge: true});
@@ -129,6 +130,12 @@ export class AuthService implements OnDestroy {
       application: Object.assign({}, this.appSerivice.app)
     }).then( res => console.log(res));
   }
+
+  deleteApp() {
+    this.user.application = null;
+    this.updateUser();
+  }
+
 
 
 
