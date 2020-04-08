@@ -29,13 +29,14 @@ export class AuthService implements OnDestroy {
   ) {
     this.verified = false;
     this.sub2 = afAuth.user.subscribe( user => {
-      if (user && user.emailVerified ) {
-        this.verified = true;
+      this.verified = false;
+      if (user) {
+        this.verified = user.emailVerified;
         this.setUser(user);
       } else {
-        this.verified = false;
         this.user = null;
       }
+
     });
   }
 
@@ -49,6 +50,8 @@ export class AuthService implements OnDestroy {
         this.appSerivice.setApp(u.application);
         console.log(u);
       }
+      console.log(this.verified + '  ' + this.user);
+
     });
   }
 
@@ -74,8 +77,9 @@ export class AuthService implements OnDestroy {
       alert('Account Created');
       this.createUserData(result.user, form);
       result.user.sendEmailVerification();
-    }, error => {
-      alert('account creation failed' + error.toString());
+      this.router.navigate(['/verifyEmail']);
+    }, otherError => {
+      alert('account creation failed' + otherError.toString());
       return;
     });
   }
@@ -83,29 +87,32 @@ export class AuthService implements OnDestroy {
   // login stuff
   async loginUser(form: FormGroup) {
     // console.log(form.get('email').value + "  " + form.get('password').value);
+
     await this.afAuth.signInWithEmailAndPassword(form.get('email').value, form.get('password').value).then(result => {
+
       // verification on email
       if ( !result.user.emailVerified ) {
         result.user.sendEmailVerification();
-        alert('Please Verify Email');
+        this.router.navigate(['/verifyEmail']);
       } else {
         alert('Login succesfull');
         this.router.navigate(['home']);
       }
-    }, error => { // if there is a problem loging in
-      if (error === 'auth/user-disabled') {
+    }, otherError => { // if there is a problem loging in
+      if (otherError === 'auth/user-disabled') {
         alert('Your account has been disabled');
       } else {
         alert('Incorrect email or password');
       }
     });
+
   }
 
   public passwordRecovery(email: string) {
     this.afAuth.sendPasswordResetEmail(email).then(result => {
       alert('Email sent to ' + email );
       this.router.navigate(['/home']);
-    }, error => {
+    }, otherError => {
       alert('Something didnt work.');
     });
   }
@@ -119,7 +126,8 @@ export class AuthService implements OnDestroy {
     this.verified = false;
     this.afAuth.signOut().then( result => {
       alert('Signed Out');
-    }, error => {
+      this.router.navigate(['/home']);
+    }, otherError => {
       alert('Try Again');
     });
   }
@@ -136,6 +144,10 @@ export class AuthService implements OnDestroy {
     this.updateUser();
   }
 
+  sendVerifivationEmail() {
+    this.afAuth.currentUser.then(user => user.sendEmailVerification().then(result => alert('Email Sent'  ),
+        otherError => alert('Something went wong. Try again later.')));
+  }
 
 
 

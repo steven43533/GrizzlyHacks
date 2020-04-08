@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {AngularFireAuth} from '@angular/fire/auth';
+
 
 @Component({
   selector: 'app-login',
@@ -27,6 +29,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(loginForm: FormGroup) {
-    this.auth.loginUser(loginForm).then(u => {this.isLoginButtonUnuseable = false; });
+    const b = this.auth.loginUser(loginForm).then(u => {
+      this.isLoginButtonUnuseable = false;
+    });
+
   }
+
 }

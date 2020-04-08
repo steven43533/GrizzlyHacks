@@ -13,7 +13,7 @@ export class UserGuardGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if ( this.auth.afAuth.user.subscribe) {
+    if ( this.auth.afAuth.user && this.auth.verified) {
       return true;
     }
     return false;

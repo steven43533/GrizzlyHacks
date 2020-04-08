@@ -7,11 +7,11 @@
 <div class="justify-content-end">
   <button class="btn btn-sm btn-outline-secondary" type="button"  routerLink="/home">Home</button>
 
-  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);"  *ngIf="auth.user === null">Log In</button>
+  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);"  *ngIf="auth.user === null || !auth.verified">Log In</button>
 
-  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null">Create Account</button>
+  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null || !auth.verified">Create Account</button>
 
-  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['']); auth.sighOut()" *ngIf="auth.user !== null">Sign Out</button>
+  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['']); auth.sighOut()" *ngIf="auth.user !== null && !(!auth.verified && auth.user !== null)">Sign Out</button>
 
   <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified">User Dashboard</button>
 
