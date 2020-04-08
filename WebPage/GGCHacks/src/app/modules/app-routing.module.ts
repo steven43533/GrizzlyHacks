@@ -8,6 +8,7 @@ import {LoginComponent} from '../UserStuff/login/login.component';
 import {UserGuardGuard} from '../guards/user-guard.guard';
 import {UserDashboardComponent} from '../UserStuff/user-dashboard/user-dashboard.component';
 import {ApplicationComponent} from '../application/application.component';
+import {AdminGuard} from '../guards/admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'email/action', component: EmailActionComponent, data: { title: 'Confirm Email Address' }},
   { path: 'createAccount', component: CreateAccountComponent},
   { path: 'application', component: ApplicationComponent},
+  { path: 'admin', component: AdmindashboardComponent, canActivate: [UserGuardGuard, AdminGuard]},
   { path: '**', redirectTo: '/home'}
 ];
 

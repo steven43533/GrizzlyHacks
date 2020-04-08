@@ -159,6 +159,10 @@
             </button>
           </div>
           <div class="col-6 col-sm-3">
+            <button class="btn btn-primary" (click)="auth.deleteApp()" *ngIf="!appService.app.submited">Delete
+            </button>
+          </div>
+          <div class="col-6 col-sm-3">
             <button class="btn btn-primary" (click)="auth.submitApplication()"
                     [disabled]="!form.valid || !appService.app.agreedToCodeOfConduct" *ngIf="!appService.app.submited">
               Submit
