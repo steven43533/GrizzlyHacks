@@ -16,9 +16,13 @@ export class CheckFilerPipe implements PipeTransform {
       //    is admin box                   is not admin
         if ((k.isAdminBox && !u.isAdmin) || (k.noAdmin && u.isAdmin) ||
         // has application checked but user doest have app
-        (k.hasApplication && (u.application === null || u.application.submited)) ||
+        (k.hasApplication && (u.application === null || !u.application.submited)) ||
         // has no app checked and
-        (k.noApplication && (u.application !== null && !u.application.submited))) {
+        (k.noApplication && (u.application !== null && u.application.submited)) ||
+          // has been accepted but is not accpeted
+          (k.acceptedToHack && !u.isRegisteredFor2020) ||
+          // has not been accepted checked and user is accpeted
+          (k.notAcceptedToHack && u.isRegisteredFor2020)) {
         return false;
         }
         return true;

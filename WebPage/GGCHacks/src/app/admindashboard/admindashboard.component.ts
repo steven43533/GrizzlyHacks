@@ -69,8 +69,64 @@ export class AdmindashboardComponent implements OnInit, OnDestroy {
     } else {
       this.thing = true;
     }
-
   }
+
+
+  toggleIsAd() {
+    if (this.checkboxes.isAdminBox) {
+      this.checkboxes.isAdminBox = false;
+    } else {
+      this.checkboxes.isAdminBox = true;
+    }
+    this.updateCheckBoxes();
+  }
+
+  toggleIsNoAd() {
+    if (this.checkboxes.noAdmin) {
+      this.checkboxes.noAdmin = false;
+    } else {
+      this.checkboxes.noAdmin = true;
+    }
+    this.updateCheckBoxes();
+  }
+
+  toggleHasApp() {
+    if (this.checkboxes.hasApplication) {
+      this.checkboxes.hasApplication = false;
+    } else {
+      this.checkboxes.hasApplication = true;
+    }
+    this.updateCheckBoxes();
+  }
+
+  toggleNoHasApp() {
+    if (this.checkboxes.noApplication) {
+      this.checkboxes.noApplication = false;
+    } else {
+      this.checkboxes.noApplication = true;
+    }
+    this.updateCheckBoxes();
+  }
+
+  toggleAccepted() {
+    if (this.checkboxes.acceptedToHack) {
+      this.checkboxes.acceptedToHack = false;
+    } else {
+      this.checkboxes.acceptedToHack = true;
+    }
+    this.updateCheckBoxes();
+  }
+
+
+  toggleNotAccepted() {
+    if (this.checkboxes.notAcceptedToHack) {
+      this.checkboxes.notAcceptedToHack = false;
+    } else {
+      this.checkboxes.notAcceptedToHack = true;
+    }
+    this.updateCheckBoxes();
+  }
+
 }
 
 export class Checkboxes {
@@ -89,26 +145,6 @@ export class Checkboxes {
     this.noApplication = false;
     this.acceptedToHack = false;
     this.notAcceptedToHack = false;
-  }
-
-  toggleIsAd() {
-    if (this.isAdminBox) {
-      this.isAdminBox = false;
-    } else {
-      this.isAdminBox = true;
-    }
-  }
-
-  toggleIsNoAd() {
-    if (this.noAdmin) {
-      this.noAdmin = false;
-    } else {
-      this.noAdmin = true;
-    }
-  }
-
-  toggleHasApp() {
-
   }
 }
 

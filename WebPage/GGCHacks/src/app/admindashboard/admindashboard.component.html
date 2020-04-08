@@ -6,37 +6,36 @@
             <div>
               <input [(ngModel)]="search">
               is a Admin:
-              <input type="checkbox" [(ngModel)]="checkboxes.isAdminBox" (keyup)="updateCheckBoxes()">
+              <input type="checkbox" [ngModel]="checkboxes.isAdminBox" (click)="toggleIsAd()">
               is not a Admin:
-              <input type="checkbox" [(ngModel)]="checkboxes.noAdmin" (click)="updateCheckBoxes()">
+              <input type="checkbox" [ngModel]="checkboxes.noAdmin" (click)="toggleIsNoAd()">
               has Application:
-              <input type="checkbox" [(ngModel)]="checkboxes.hasApplication" (click)="updateCheckBoxes()">
+              <input type="checkbox" [ngModel]="checkboxes.hasApplication" (click)="toggleHasApp()">
               doesnt have Application:
-              <input type="checkbox" [(ngModel)]="checkboxes.noApplication" (click)="updateCheckBoxes()">
+              <input type="checkbox" [ngModel]="checkboxes.noApplication" (click)="toggleNoHasApp()">
               accepted to hack:
-              <input type="checkbox" [(ngModel)]="checkboxes.acceptedToHack" (click)="updateCheckBoxes()">
+              <input type="checkbox" [ngModel]="checkboxes.acceptedToHack" (click)="toggleAccepted()">
               not accepted to hack:
-              <input type="checkbox" [(ngModel)]="checkboxes.notAcceptedToHack" (click)="updateCheckBoxes()">
-              <hr/>
-              {{checkboxes | json}}
-              <hr/>
+              <input type="checkbox" [ngModel]="checkboxes.notAcceptedToHack" (click)="toggleNotAccepted()">
+
               <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search  | checkFiler:checkboxes:thing" >
                 <!--<div *ngIf="(user.uid !== auth.user.uid)"> -->
-                  Name: {{user.firstName}} {{user.lastName}}, email: {{user.email}}, admin: {{user.isAdmin}}, Is registered for 2020: {{user.isRegisteredFor2020}}
-                  <button *ngIf="user.application !==null && user.application.submited">View Application</button>
-                  <button *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button> <button *ngIf="user.isAdmin" (click)="takeAdmin(user)">take away Adminship</button>
-                  <button *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
-                  <button *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
+                Name: {{user.firstName}} {{user.lastName}}, email: {{user.email}}, admin: {{user.isAdmin}}, Is registered for 2020: {{user.isRegisteredFor2020}}
+                <div *ngIf="user.pastHacks !==null && user.pastHacks !== undefined && user.pastHacks.length>0">
+                  Past Hacks:{{user.pastHacks}}
+                </div>
+                <button *ngIf="user.application !==null && user.application.submited">View Application</button>
+                <button *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button> <button *ngIf="user.isAdmin" (click)="takeAdmin(user)">take away Adminship</button>
+                <button *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
+                <button *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
 
-                  <!-- make acordian -->
-                    <div #application >{{user.application | json}}</div>
+                  <!-- make acordian and make prety -->
+                <div #application >{{user.application | json}}</div>
 
 
                    <!-- </div>-->
                </div>
              </div>
-
-
     </div>
   </div>
 </div>

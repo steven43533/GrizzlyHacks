@@ -63,6 +63,7 @@ export class AuthService implements OnDestroy {
       lastName: form.get('lastName').value,
       isAdmin: false,
       isRegisteredFor2020: false,
+      pastHacks: [],
       application: null
     };
     return userRef.set(data, {merge: true});
