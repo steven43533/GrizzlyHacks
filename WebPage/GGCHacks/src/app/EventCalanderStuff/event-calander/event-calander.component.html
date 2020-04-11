@@ -1,0 +1,28 @@
+<button *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true">Edit</button>
+<button *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false">exit</button>
+
+<div *ngFor="let day of eventSer.days.keys()">
+    {{day }}
+    <div *ngFor="let event of eventSer.days.get(day)">
+      <div *ngIf="isEditing else notEditing">
+        title: <input [(ngModel)]="event.title">
+        startTime: <input [(ngModel)]="event.startTime"> Must be format 00:00AM/PM
+        end time: <input [(ngModel)]="event.endTime">
+        <button (click)="eventSer.updateEvent(event)">update</button>
+        <button (click)="eventSer.deleteEvent(event)">Delete</button>
+      </div>
+      <ng-template #notEditing>{{event | json}}</ng-template>
+    </div>
+</div>
+
+<div *ngIf="isEditing">new Event:
+  title: <input [(ngModel)]="tempEvent.title">
+  startTime: <input [(ngModel)]="tempEvent.startTime"> Must be format 00:00AM/PM
+  end time: <input [(ngModel)]="tempEvent.endTime">
+  day:
+  <select [(ngModel)]="tempEvent.day">
+    <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
+  </select>
+  <button (click)="eventSer.createEvent(tempEvent)">add</button>
+</div>
+
