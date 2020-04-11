@@ -1,0 +1,14 @@
+
+
+<button *ngIf="auth.user && auth.user.isAdmin" (click)="isEditing = true">Edit</button>
+<div *ngFor="let day of days.keys()">
+    {{day}}
+    <div *ngFor="let event of days.get(day)">
+      <div *ngIf="!isEditing else notEditing">
+        title: <input [(ngModel)]="event.title">  startTime
+      </div>
+      <ng-template #notEditing>{{event | json}}</ng-template>
+    </div>
+</div>
+
+

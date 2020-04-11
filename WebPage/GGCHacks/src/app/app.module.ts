@@ -19,6 +19,7 @@ import { UserDashboardComponent } from './UserStuff/user-dashboard/user-dashboar
 import { ApplicationComponent } from './application/application.component';
 import { UserQueryPipe } from './admindashboard/user-query.pipe';
 import { CheckFilerPipe } from './admindashboard/check-filer.pipe';
+import { EventCalanderComponent } from './EventCalanderStuff/event-calander/event-calander.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CheckFilerPipe } from './admindashboard/check-filer.pipe';
     UserDashboardComponent,
     ApplicationComponent,
     UserQueryPipe,
-    CheckFilerPipe
+    CheckFilerPipe,
+    EventCalanderComponent
   ],
   imports: [
     BrowserModule,
