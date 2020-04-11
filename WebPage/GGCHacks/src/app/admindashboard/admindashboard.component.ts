@@ -18,9 +18,6 @@ export class AdmindashboardComponent implements OnInit, OnDestroy {
   thing: boolean;
 
 
-
-
-
   constructor(private afs: AngularFirestore, public auth: AuthService) {
     this.checkboxes = new Checkboxes();
     this.thing = false;
