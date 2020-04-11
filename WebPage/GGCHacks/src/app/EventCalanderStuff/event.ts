@@ -5,10 +5,8 @@ export class Event {
   public startTime: string;
   public endTime: string;
   public day: string;
-  public dayPlace: number;
 
   constructor() {
-    this.dayPlace = 0;
     this.id = '';
     this.title = '';
     this.startTime = '';
