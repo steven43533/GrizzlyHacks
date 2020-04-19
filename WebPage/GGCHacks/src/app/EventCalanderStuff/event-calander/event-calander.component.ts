@@ -15,7 +15,7 @@ import {CalanderServiceService} from '../calander-service.service';
 export class EventCalanderComponent {
   isEditing: boolean;
   tempEvent: Event;
-  days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   constructor(public eventSer: CalanderServiceService, public auth: AuthService) {
     this.tempEvent = new Event();

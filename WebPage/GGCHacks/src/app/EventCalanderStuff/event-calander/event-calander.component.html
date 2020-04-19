@@ -13,7 +13,6 @@
       </div>
       <ng-template #notEditing>{{event | json}}</ng-template>
     </div>
-</div>
 
 <div *ngIf="isEditing">new Event:
   title: <input [(ngModel)]="tempEvent.title">
@@ -26,3 +25,35 @@
   <button (click)="eventSer.createEvent(tempEvent)">add</button>
 </div>
 
+<h5>Day One</h5>
+<table class="table table-borderless">
+  <thead>
+  <tr>
+    <th scope="col">Time</th>
+    <th scope="col" colspan="2">Event</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">12:00 AM</th>
+    <td colspan="2">Event 1</td>
+  </tr>
+  <tr>
+    <th scope="row">12:00 AM</th>
+    <td colspan="2">Event 2</td>
+  </tr>
+  <tr>
+    <th scope="row">12:00 AM</th>
+    <td colspan="2">Event 3</td>
+  </tr>
+  <tr>
+    <th scope="row">12:00 AM</th>
+    <td colspan="2">Event 4</td>
+  </tr>
+  <tr>
+    <th scope="row">12:00 AM</th>
+    <td colspan="2">Event 5</td>
+  </tr>
+  </tbody>
+</table>
+</div>
