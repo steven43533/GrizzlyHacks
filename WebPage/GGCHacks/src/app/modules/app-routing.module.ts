@@ -15,12 +15,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingpageComponent },
   { path: 'user', component: UserDashboardComponent, canActivate: [UserGuardGuard] },
-  { path: 'admin', component: AdmindashboardComponent, canActivate: [UserGuardGuard, AdminGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'email/action', component: EmailActionComponent, data: { title: 'Confirm Email Address' }},
   { path: 'createAccount', component: CreateAccountComponent},
   { path: 'application', component: ApplicationComponent},
   { path: 'verifyEmail', component: VerifyEmailComponent},
+  { path: 'admin', component: AdmindashboardComponent, canActivate: [UserGuardGuard, AdminGuard]},
   { path: '**', redirectTo: '/home'}
 ];
 
