@@ -1,5 +1,5 @@
 <div class="everything">
-  <div class="row justify-content-center pt-lg-5">
+  <div class="row justify-content-center">
     <div class="card w-50">
       <div class="card-title">
         <h5>Hackathon Application</h5>
@@ -154,21 +154,23 @@
           </div>
         </form>
         <div class="row">
-          <div class="col-6 col-sm-3">
+          <div class="col-sm-3">
             <button class="btn btn-primary" (click)="auth.saveApplication()" *ngIf="!appService.app.submited">Save
             </button>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class=" col-sm-3">
             <button class="btn btn-primary" (click)="auth.deleteApp()" *ngIf="!appService.app.submited">Delete
             </button>
           </div>
-          <div class="col-6 col-sm-3">
+        </div>
+        <div class = "row">
+          <div class="col-sm-3">
             <button class="btn btn-primary" (click)="auth.submitApplication()"
                     [disabled]="!form.valid || !appService.app.agreedToCodeOfConduct" *ngIf="!appService.app.submited">
               Submit
             </button>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class="col-sm-3">
             <button class="btn btn-primary" routerLink="/user">Back</button>
           </div>
         </div>

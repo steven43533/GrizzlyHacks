@@ -1,5 +1,5 @@
 <div class="everything">
-  <div class="row justify-content-center pt-lg-5">
+  <div class="row justify-content-center">
     <div class="card w-50">
 
       <div *ngIf="!isEditing">
@@ -50,14 +50,12 @@
 
         <p class="pt-3">Email: {{auth.user.email}}</p>
 
-        <div class="row">
-          <div class="col-sm-1">
+          <div class="row">
             <button class="btn btn-primary" (click)="isEditing = false">Back</button>
           </div>
-          <div class="col-sm-5">
+          <div class="row">
             <button class="btn btn-primary" (click)="submit(); isEditing = false">Make Changes</button>
           </div>
-        </div>
       </div>
     </div>
   </div>
