@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+h1{
+  font-size: 80px !important;
+}
+
+h3{
+  font-size: 40px;
+}
+
+@media screen and (max-width: 600px){
+  h1{
+    font-size: 40px !important;
+  }
+}
+
+h1, h3, h5{
+  font-family: 'Luckiest Guy', cursive;
+  text-shadow: 2px 2px 2px black;
+}
+
 .about{
   color: white;
 }
@@ -50,7 +71,7 @@ h6{
 
 
 .row{
-  padding: 5%;
+  padding: 2%;
 }
 
 table{

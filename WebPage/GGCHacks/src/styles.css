@@ -1,15 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
 html,
 body {
 
-}
-h1{
-  font-size: 80px !important;
-}
-@media screen and (max-width: 600px){
-  h1{
-    font-size: 40px !important;
-  }
 }
 
 .btn-link,
@@ -133,7 +126,7 @@ footer{
 }
 
 .shootingstar:nth-child(1){
-  top: calc(75% - 200px);
+  top: calc(30% - 200px);
   left: 0;
   right: 100%;
   animation-delay: 1400ms;
@@ -177,4 +170,3 @@ footer{
     transform: translateX(100vw);
   }
 }
-
