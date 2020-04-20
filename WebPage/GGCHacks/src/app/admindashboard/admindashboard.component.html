@@ -49,7 +49,9 @@
                   <p>Past Hacks:{{user.pastHacks}}</p>
                 </div>
                 <div class = "row">
-                  <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited" (click)="app.hidden = false">Application</button>
+                  <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited && app.hidden" (click)="app.hidden = false">Application</button>
+                  <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited && !app.hidden" (click)="app.hidden = true">Application</button>
+
                   <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
                   <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Remove Admin</button>
                   <button class = "btn btn-primary" *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
