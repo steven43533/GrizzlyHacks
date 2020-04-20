@@ -1,9 +1,17 @@
 .accounts{
-  margin: 5%;
+  margin: 10%;
   padding: 3%;
   background-color: #ccf0e4;
-  width: 65%;
-  height: 65%;
+  width: calc(100% - 5px);
+  height: 75%;
   overflow-x: hidden;
-  overflow-x: auto;
+  overflow-y: scroll;
+}
+
+.btn-primary{
+  margin: 2%;
+}
+
+.search{
+  width: 100%;
 }
