@@ -1,43 +1,57 @@
 <div class="everything">
   <div class="row justify-content-center">
     <div class="card w-50">
-      <div>
         <div class = "row">
           <div class = "form-check">
-            <input type = "text" class = "form-control" [(ngModel)]="search">
+            <input type = "text" class = "form-control" placeholder="Search" [(ngModel)]="search">
 
+            <div class = "row">
             <input class = "form-check-inline" type="checkbox" id = "chk1" [ngModel]="checkboxes.isAdminBox" (click)="toggleIsAd()">
             <label class = "form-check-label" for = "chk1">Is a Admin:</label>
+            </div>
 
-
+            <div class = "row">
             <input class = "form-check-inline" type="checkbox" id = "chk2" [ngModel]="checkboxes.noAdmin" (click)="toggleIsNoAd()">
-            <label class = "form-check-label" for = "chk2">Is not a Admin:</label>
+            <label class = "form-check-label" for = "chk2">Is not a Admin</label>
+            </div>
 
+            <div class = "row">
             <input class = "form-check-inline" type="checkbox" id = "chk3" [ngModel]="checkboxes.hasApplication" (click)="toggleHasApp()">
-            <label class = "form-check-label" for = "chk3">Has Application:</label>
+            <label class = "form-check-label" for = "chk3">Has Application</label>
+            </div>
 
+            <div class = "row">
             <input class = "form-check-inline" type="checkbox" id = "chk4" [ngModel]="checkboxes.noApplication" (click)="toggleNoHasApp()">
-            <label class = "form-check-label" for = "chk4">Doesnt have Application:</label>
+            <label class = "form-check-label" for = "chk4">Doesnt have Application</label>
+            </div>
 
+            <div class = "row">
             <input class = "form-check-inline" type="checkbox" id = "chk5" [ngModel]="checkboxes.acceptedToHack" (click)="toggleAccepted()">
-            <label class = "form-check-label" for = "chk5">Accepted to Hackathon:</label>
+            <label class = "form-check-label" for = "chk5">Accepted to Hackathon</label>
+            </div>
 
+            <div class = "row">
             <input class = "form-check-inline" type="checkbox" id = "chk6" [ngModel]="checkboxes.notAcceptedToHack" (click)="toggleNotAccepted()">
-            <label class = "form-check-label" for = "chk6">Not accepted to Hackathon:</label>
-          </div>
+            <label class = "form-check-label" for = "chk6">Not accepted to Hackathon</label>
+            </div>
+            </div>
         </div>
 
-        <div class = "row">
+        <div class = "row justify-content-center">
           <div class = "accounts">
             <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search  | checkFiler:checkboxes:thing" >
               <!--<div *ngIf="(user.uid !== auth.user.uid)"> -->
-              Name: {{user.firstName}} {{user.lastName}}, Email: {{user.email}}, admin: {{user.isAdmin}}, Is registered for 2020: {{user.isRegisteredFor2020}}
+              <p>Name: {{user.firstName}} {{user.lastName}}</p>
+              <p>Email: {{user.email}}</p>
+              <p>Admin: {{user.isAdmin}}</p>
+              <p>Is registered for 2020: {{user.isRegisteredFor2020}}</p>
               <div *ngIf="user.pastHacks !==null && user.pastHacks !== undefined && user.pastHacks.length>0">
-                Past Hacks:{{user.pastHacks}}
+                <p>Past Hacks:{{user.pastHacks}}</p>
               </div>
               <div class = "row">
                 <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited">View Application</button>
-                <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button> <button *ngIf="user.isAdmin" (click)="takeAdmin(user)">Take Away Admin Privileges?</button>
+                <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
+                <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Take Away Admin Privileges?</button>
                 <button class = "btn btn-primary" *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
                 <button class = "btn btn-primary" *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
               </div>
@@ -50,4 +64,3 @@
       </div>
     </div>
   </div>
-</div>
