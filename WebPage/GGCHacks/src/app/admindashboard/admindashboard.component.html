@@ -36,16 +36,37 @@
                 Past Hacks:{{user.pastHacks}}
               </div>
               <div class = "row">
-                <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited">View Application</button>
-                <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button> <button *ngIf="user.isAdmin" (click)="takeAdmin(user)">Take Away Admin Privileges?</button>
+                <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited" (click)="app.hidden = false">View Application</button>
+                <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
+                <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Remove Admin Status</button>
                 <button class = "btn btn-primary" *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
                 <button class = "btn btn-primary" *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
               </div>
-              <!-- make acordian and make prety -->
-              <div #application >{{user.application | json}}</div>
+
+              <div hidden="true" #app>
+                <p></p>
+                <p>gender: {{user.application.gender}}</p>
+                <p>Preferred Pronouns: {{user.application.preferredPronouns}}</p>
+                <p>Ethnicity: {{user.application.ethnicity}}</p>
+                <p>Phone number: {{user.application.phone}}</p>
+                <p> college: {{user.application.college}}</p>
+                <p> Major: {{user.application.major}}</p>
+                <p>  Expected Graduation date: {{user.application.expectedGraduationDate}}</p>
+                <p> Why attend: {{user.application.whyAttend}}</p>
+                <p> what to learn: {{user.application.whatDoYouWantToLearn}}</p>
+                <p> linkedin: {{user.application.whatDoYouWantToLearn}}</p>
+                <p>  github: {{user.application.gitHub}}</p>
+                <p>  emergency contact</p>
+                <p>  first name: {{user.application.emergencyContactFirstName}}</p>
+                <p>  last name: {{user.application.emergencyContactLastName}}</p>
+                <p>  phone: {{user.application.emCPhoneNumber}}</p>
+                <p>  relation: {{user.application.emergencyContactRelationWithApplicant}}</p>
+
+                <button class = "btn btn-primary" (click)="app.hidden = true" >close</button>
+              </div>
+              <hr/>
             </div>
           </div>
-          <!-- </div>-->
         </div>
       </div>
     </div>

@@ -37,8 +37,6 @@ export class CalanderServiceService {
         return this.timeCompare(e1.startTime, e2.startTime);
       });
     }
-
-
   }
 
   updateEvent(e: Event) {

@@ -20,6 +20,7 @@ export class AuthService implements OnDestroy {
   sub: Subscription;
   sub2: Subscription;
   verified: boolean;
+  isAdmin: boolean;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -27,6 +28,7 @@ export class AuthService implements OnDestroy {
     private router: Router,
     public appSerivice: ApplicationServiceService
   ) {
+    this.isAdmin = false;
     this.verified = false;
     this.sub2 = afAuth.user.subscribe( user => {
       this.verified = false;
@@ -43,6 +45,7 @@ export class AuthService implements OnDestroy {
   async setUser(user) {
     return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
+      this.isAdmin = this.user.isAdmin;
       if (u.application === undefined || u.application == null) {
         console.log('set user no app');
         this.appSerivice.createEmptyApp();
@@ -124,6 +127,7 @@ export class AuthService implements OnDestroy {
 
   public sighOut() {
     this.verified = false;
+    this.isAdmin = false;
     this.afAuth.signOut().then( result => {
       alert('Signed Out');
       this.router.navigate(['/home']);
@@ -160,5 +164,6 @@ export class AuthService implements OnDestroy {
   submitApplication() {
     this.appSerivice.app.submited = true;
     this.saveApplication();
+    this.router.navigate(['/user']);
   }
 }
