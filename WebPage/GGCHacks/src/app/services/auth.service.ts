@@ -45,7 +45,7 @@ export class AuthService implements OnDestroy {
   async setUser(user) {
     return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
-      this.isAdmin = user.isAdmin;
+      this.isAdmin = u.isAdmin;
       if (u.application === undefined || u.application == null) {
         console.log('set user no app');
         this.appSerivice.createEmptyApp();
