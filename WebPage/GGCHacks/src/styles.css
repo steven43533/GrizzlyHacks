@@ -11,6 +11,18 @@ h1{
     font-size: 40px !important;
   }
 }
+
+.btn-link,
+#link{
+  color: #00704a;
+  cursor: pointer;
+}
+
+a{
+  color: #00704a;
+  cursor: pointer;
+}
+
 .btn-primary,
 .btn-outline-secondary
 {
