@@ -39,22 +39,27 @@
 
         <div class = "row justify-content-center">
           <div class = "accounts">
-            <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search  | checkFiler:checkboxes:thing" >
-              <!--<div *ngIf="(user.uid !== auth.user.uid)"> -->
-              <p>Name: {{user.firstName}} {{user.lastName}}</p>
-              <p>Email: {{user.email}}</p>
-              <p>Admin: {{user.isAdmin}}</p>
-              <p>Is registered for 2020: {{user.isRegisteredFor2020}}</p>
-              <div *ngIf="user.pastHacks !==null && user.pastHacks !== undefined && user.pastHacks.length>0">
-                <p>Past Hacks:{{user.pastHacks}}</p>
-              </div>
-              <div class = "row">
-                <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited" (click)="app.hidden = false">View Application</button>
-                <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
-                <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Remove Admin Status</button>
-                <button class = "btn btn-primary" *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
-                <button class = "btn btn-primary" *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
-              </div>
+            <div *ngIf="users">
+              <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search  | checkFiler:checkboxes:thing" >
+                <!--<div *ngIf="(user.uid !== auth.user.uid)"> -->
+                <p>Name: {{user.firstName}} {{user.lastName}}</p>
+                <p>Email: {{user.email}}</p>
+                <p>Is registered for 2020: {{user.isRegisteredFor2020}}</p>
+                <div *ngIf="user.pastHacks !==null && user.pastHacks !== undefined && user.pastHacks.length>0">
+                  <p>Past Hacks:{{user.pastHacks}}</p>
+                </div>
+                <div class = "row">
+                  <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited && app.hidden" (click)="app.hidden = false">Application</button>
+                  <button class = "btn btn-primary" *ngIf="user.application !==null && user.application.submited && !app.hidden" (click)="app.hidden = true">Application</button>
+
+                  <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
+                  <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Remove Admin</button>
+                  <button class = "btn btn-primary" *ngIf="!user.isRegisteredFor2020" (click)="accept(user)">Accept</button>
+                  <button class = "btn btn-primary" *ngIf="user.isRegisteredFor2020" (click)="revoke(user)">Revoke</button>
+                </div>
+
+                <div #app hidden="true">
+                  <div *ngIf="user.application !== null">
 
               <div hidden="true" #app>
                 <p></p>
@@ -75,12 +80,15 @@
                 <p>Phone: {{user.application.emCPhoneNumber}}</p>
                 <p>Relation: {{user.application.emergencyContactRelationWithApplicant}}</p>
 
-                <button class = "btn btn-primary" (click)="app.hidden = true">Close</button>
+                  <button class = "btn btn-primary" (click)="app.hidden = true">Close</button>
+                  </div>
+                </div>
+                <hr/>
               </div>
-              <hr/>
             </div>
-          </div>
+           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
