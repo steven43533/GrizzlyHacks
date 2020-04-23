@@ -1,7 +1,7 @@
 <div>
   <div *ngFor="let day of eventSer.days.keys()">
     <div *ngFor="let event of eventSer.days.get(day)">
-      <div class = "row">
+      <div class = "row justify-content-end">
         <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; editRow1.contentEditable = true;  editRow2.contentEditable = true; editRow3.contentEditable = true;">Edit</button>
         <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; editRow1.contentEditable = false;  editRow2.contentEditable = false; editRow3.contentEditable = false; add.hidden = true">Exit</button>
         <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="add.hidden = false">New Event</button>

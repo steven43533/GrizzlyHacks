@@ -20,8 +20,9 @@ a{
 .btn-outline-secondary
 {
   background-color: #00704a !important;
-  border-color: #0b2e13 !important;
+  border: none !important;
   color: white !important;
+  border-radius: 0px !important;
 }
 
 .guts{
@@ -38,10 +39,11 @@ a{
   background-color: #0b2e13 !important;
 }
 
-.btn-primary:focus
+.btn-primary:focus,
+.btn-primary:active
 {
-  outline-color: transparent !important;
-  -webkit-appearance: none !important;
+  border: none !important;
+  outline: none !important;
   box-shadow: none !important;
 }
 
