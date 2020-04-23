@@ -146,6 +146,22 @@
               That is a good question and you can totally expect that answer in this box right here!
             </div>
           </div>
+          <div class="card-header" id="hTwo">
+            <h6 class="mb-0">
+              <button *ngIf="faqAnswer2.hidden" class="btn btn-link" data-toggle="collapse" data-target="#colOne" aria-expanded="false" aria-controls="colOne" (click)="faqAnswer2.hidden = false">
+                What do you do there?
+              </button>
+              <button *ngIf="!faqAnswer2.hidden" class="btn btn-link" data-toggle="collapse" data-target="#colOne" aria-expanded="false" aria-controls="colOne" (click)="faqAnswer2.hidden = true">
+                What do you do there?
+              </button>
+            </h6>
+          </div>
+          <div #faqAnswer2 hidden="true"  id = "colTwo" class="collapse show" aria-labelledby="hOne" data-parent="#accordion">
+            <div class = "card-body">
+              You make things!
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
