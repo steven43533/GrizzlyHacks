@@ -1,4 +1,4 @@
-<div class = "row justify-content-center">
+<div>
   <div class = "row justify-content-end">
     <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; add.hidden = false">Edit Calander</button>
     <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; add.hidden = true">Exit</button>
@@ -54,20 +54,20 @@
               <thead>
               <tr>
                 <th scope = "col" style = "width: 200px;">Event</th>
-                <th scope = "col">Start Time <p></p><b style="color: red">Must be included and in form 00:00AM/PM or it will fail</b></th>
+                <th scope = "col">Start Time <p></p><b style="color: #b2001b">Must be included and in form 00:00AM/PM or it will fail</b></th>
                 <th scope = "col">End Time</th>
               </tr>
               </thead>
               <tbody>
               <tr *ngFor="let event of eventSer.days.get(day)">
                 <td>
-                  <input [(ngModel)]="event.title">
+                  <input class = "form-control" [(ngModel)]="event.title">
                 </td>
                 <td>
-                  <input [(ngModel)]="event.startTime">
+                  <input class = "form-control-sm" [(ngModel)]="event.startTime">
                 </td>
                 <td>
-                  <input [(ngModel)]="event.endTime">
+                  <input class = "form-control-sm" [(ngModel)]="event.endTime">
                 </td>
                 <td>
                   <button class="btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.updateEvent(event)">Update</button>
@@ -108,16 +108,16 @@
               <tbody>
               <tr>
                 <td>
-                  <input [(ngModel)]="tempEvent.title">
+                  <input class = "form-control" [(ngModel)]="tempEvent.title">
                 </td>
                 <td>
-                  <input [(ngModel)]="tempEvent.startTime">
+                  <input class = "form-control-sm" [(ngModel)]="tempEvent.startTime">
                 </td>
                 <td>
-                  <input [(ngModel)]="tempEvent.endTime">
+                  <input class = "form-control-sm" [(ngModel)]="tempEvent.endTime">
                 </td>
                 <td>
-                  <select [(ngModel)]="tempEvent.day">
+                  <select class = "form-control-sm" [(ngModel)]="tempEvent.day">
                     <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
                   </select>
                 </td>
