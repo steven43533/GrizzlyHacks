@@ -1,8 +1,9 @@
 table{
   color: white !important;
+  width: 100%;
 }
 
-h5{
+h4, h5{
   font-family: 'Luckiest Guy', cursive;
   text-shadow: 2px 2px 2px black;
 }
@@ -16,3 +17,12 @@ p{
   font-size: 8px;
   text-shadow: .5px .5px .5px black;
 }
+
+.btn{
+  margin: 0px !important;
+}
+
+input, option{
+  border-radius: 2px;
+}
+
