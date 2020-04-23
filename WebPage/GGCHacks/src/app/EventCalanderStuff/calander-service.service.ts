@@ -58,9 +58,7 @@ export class CalanderServiceService implements OnDestroy{
     ref.delete();
   }
 
-  public trackKeys(): string[] {
-    return this.keys;
-  }
+
 
 
   // just the raw data of the event
