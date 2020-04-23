@@ -1,14 +1,15 @@
-<button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; add.hidden = false">Edit Calander</button>
-<button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; add.hidden = true">Exit</button>
-
-<!-- not editing -->
-<div *ngIf="!isEditing">
-  <div *ngFor="let day of eventSer.keys">
-    <h5>{{ day }}</h5>
-
+<div class = "row justify-content-center">
+  <div class = "row justify-content-end">
+    <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; add.hidden = false">Edit Calander</button>
+    <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; add.hidden = true">Exit</button>
+  </div>
+  <!-- not editing -->
+  <div class = "row justify-content-end text-center">
+    <div *ngIf="!isEditing">
+      <div *ngFor="let day of eventSer.keys">
+        <h5>{{ day }}</h5>
         <div class = "calander">
           <div class = "table-editable">
-
             <table class="table table-borderless">
               <thead>
               <tr>
@@ -30,29 +31,25 @@
                 </td>
               </tr>
               </tbody>
-
             </table>
-
           </div>
         </div>
+
         <div class = "calander">
           <div #add hidden = "true">
             <div class = "table-editable">
               <h5>New Event</h5>
             </div>
-
           </div>
-  </div>
-  </div>
-</div>
+        </div>
+      </div>
+    </div>
 
-
-<div *ngIf="isEditing">
-  <div *ngFor="let day of eventSer.keys">
-    <h5>{{ day }}</h5>
+    <div *ngIf="isEditing">
+      <div *ngFor="let day of eventSer.keys">
+        <h5>{{ day }}</h5>
         <div class = "calander">
           <div class = "table-editable">
-
             <table class="table table-borderless">
               <thead>
               <tr>
@@ -90,59 +87,54 @@
             </div>
           </div>
         </div>
-  </div>
-</div>
-
-
-
-
-
-
-<div #add hidden = "true">
-  <div class = "row justify-content-end">
-  </div>
-  <div>
-    <div class = "calander">
-      <div class = "table-editable">
-        <h5>Add Event</h5>
-        <table class="table table-borderless">
-          <thead>
-          <tr>
-            <th scope = "col">Event</th>
-            <th scope = "col">Start Time <p></p><b style="color: red">Must be included and in form 00:00AM/PM or it will fail</b></th>
-            <th scope = "col">End Time</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>
-              <input [(ngModel)]="tempEvent.title">
-            </td>
-            <td>
-              <input [(ngModel)]="tempEvent.startTime">
-            </td>
-            <td>
-              <input [(ngModel)]="tempEvent.endTime">
-            </td>
-            <td>
-              <select [(ngModel)]="tempEvent.day">
-                <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
-              </select>
-            </td>
-            <td>
-              <button class="btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.createEvent(tempEvent)">Add</button>
-            </td>
-          </tr>
-          </tbody>
-
-        </table>
-
       </div>
     </div>
-    <div class = "calander">
-      <div #add hidden = "true">
-        <div class = "table-editable">
-          <h5>New Event</h5>
+
+    <div #add hidden = "true">
+      <div class = "row justify-content-end">
+      </div>
+      <div>
+        <div class = "calander">
+          <div class = "table-editable">
+            <h5>Add Event</h5>
+            <table class="table table-borderless">
+              <thead>
+              <tr>
+                <th scope = "col">Event</th>
+                <th scope = "col">Start Time <p></p><b style="color: red">Must be included and in form 00:00AM/PM or it will fail</b></th>
+                <th scope = "col">End Time</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>
+                  <input [(ngModel)]="tempEvent.title">
+                </td>
+                <td>
+                  <input [(ngModel)]="tempEvent.startTime">
+                </td>
+                <td>
+                  <input [(ngModel)]="tempEvent.endTime">
+                </td>
+                <td>
+                  <select [(ngModel)]="tempEvent.day">
+                    <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.createEvent(tempEvent)">Add</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class = "calander">
+          <div #add hidden = "true">
+            <div class = "table-editable">
+              <h5>New Event</h5>
+            </div>
+          </div>
         </div>
       </div>
     </div>

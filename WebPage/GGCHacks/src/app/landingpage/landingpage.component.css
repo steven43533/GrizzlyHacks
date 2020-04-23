@@ -47,7 +47,11 @@ h1, h3, h5{
   color: white;
   font-size: 13px;
 }
+.header, .about, .faq,
+.event, .bottom{
+ width: 100vw;
 
+}
 .faq{
   color: white;
 }
@@ -95,4 +99,11 @@ body{
   color: transparent;
 }
 
+.accordion{
+  width: 75%;
+}
 
+.card{
+  border: none !important;
+  outline: none !important;
+}
