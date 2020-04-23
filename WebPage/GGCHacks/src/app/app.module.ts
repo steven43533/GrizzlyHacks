@@ -20,7 +20,7 @@ import { ApplicationComponent } from './application/application.component';
 import { UserQueryPipe } from './admindashboard/user-query.pipe';
 import { CheckFilerPipe } from './admindashboard/check-filer.pipe';
 import { EventCalanderComponent } from './EventCalanderStuff/event-calander/event-calander.component';
-
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { EventCalanderComponent } from './EventCalanderStuff/event-calander/even
     ApplicationComponent,
     UserQueryPipe,
     CheckFilerPipe,
-    EventCalanderComponent
+    EventCalanderComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,7 @@ import { EventCalanderComponent } from './EventCalanderStuff/event-calander/even
     FireBaseStuffModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule
   ],
 
   providers: [],

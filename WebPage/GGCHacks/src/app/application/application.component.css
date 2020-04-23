@@ -1,8 +1,12 @@
-.row{
-  padding-top: 15px;
-}
-
 .form-group .required{
   content: "*";
   color: red;
 }
+
+.btn-primary{
+  margin-right: 100% !important;
+  margin-top: 10% !important;
+}
+
+
+

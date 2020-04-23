@@ -1,30 +1,17 @@
-.everything{
-  background: linear-gradient(rgb(0,82,150), rgb(20,25,58));
-  background-size: cover;
+.accounts{
+  margin: 2%;
+  padding: 3%;
+  background-color: #ccf0e4;
+  width: 100%;
+  height: 75%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-header{
-  background: transparent;
+.btn-primary{
+  margin: 2%;
 }
 
-body{
-  background: transparent;
-}
-
-footer{
-  background: transparent;
-}
-
-.form{
-  align-content: center;
-}
-
-.card
-{
-  margin: 50px;
-  padding: 75px;
-}
-
-.btn{
-  margin-top: 25px;
+.search{
+  width: 100%;
 }

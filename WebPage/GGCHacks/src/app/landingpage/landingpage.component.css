@@ -1,18 +1,44 @@
-.all_the_stuffs {
-  background: url("../../assets/background.png") no-repeat bottom center fixed,
-  linear-gradient(rgb(0,82,150), rgb(20,25,58));
-  background-size: cover;
-  margin: 0px;
-  padding: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+h1{
+  font-size: 80px !important;
 }
+
+h3{
+  font-size: 40px;
+}
+
+@media screen and (max-width: 600px){
+  h1{
+    font-size: 40px !important;
+  }
+}
+
+.btn-lg{
+  font-family: 'Luckiest Guy', cursive;
+  text-shadow: 2px 2px 2px #003c1d;
+  font-size: 30px;
+}
+
+.btn-link{
+  color: white !important;
+  font-size: 20px;
+}
+
+h1, h3, h5{
+  font-family: 'Luckiest Guy', cursive;
+  text-shadow: 2px 2px 2px black;
+}
+
 .about{
   color: white;
 }
 .header
 {
-  margin: 100px;
   color: white;
+  margin-top: 10% !important;
 }
+
 .event{
   color: white;
 }
@@ -33,6 +59,7 @@
 td{
   justify-content: right;
 }
+
 .btn-link,
 #link{
   color: #00704a;
@@ -41,7 +68,7 @@ td{
 
 a{
   color: white;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 h6{
@@ -52,12 +79,12 @@ h6{
   color: white;
 }
 
-.Main_section {
-  margin-top: 100px;
+.bt-large{
+
 }
 
 .row{
-  padding: 25px;
+  padding: 2%;
 }
 
 table{

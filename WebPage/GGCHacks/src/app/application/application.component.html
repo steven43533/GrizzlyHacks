@@ -1,5 +1,5 @@
 <div class="everything">
-  <div class="row justify-content-center pt-lg-5">
+  <div class="row justify-content-center">
     <div class="card w-50">
       <div class="card-title">
         <h5>Hackathon Application</h5>
@@ -42,7 +42,9 @@
           <div class="row">
             <div class="form-group required col-md">
               <label>Phone Number *</label>
-              <input class="form-control" formControlName="phoneNumber" [(ngModel)]="appService.app.phone">
+              <input class="form-control" formControlName="phoneNumber" [(ngModel)]="appService.app.phone" type="number"
+                    name="asdfadf"
+              >
             </div>
           </div>
           <div class="row">
@@ -134,7 +136,9 @@
               <div class="form-group required">
                 <label>Phone Number *</label>
                 <input class="form-control" formControlName="emergencyContactPhoneNumber"
-                       [(ngModel)]="appService.app.emCPhoneNumber" maxlength="20">
+                       [(ngModel)]="appService.app.emCPhoneNumber" maxlength="20"
+                       type="number"
+                >
               </div>
             </div>
             <div class="col-md">
@@ -154,25 +158,27 @@
           </div>
         </form>
         <div class="row">
-          <div class="col-6 col-sm-3">
+          <div class="col-sm-3">
             <button class="btn btn-primary" (click)="auth.saveApplication()" *ngIf="!appService.app.submited">Save
             </button>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class=" col-sm-3">
             <button class="btn btn-primary" (click)="auth.deleteApp()" *ngIf="!appService.app.submited">Delete
             </button>
           </div>
-          <div class="col-6 col-sm-3">
+        </div>
+        <div class = "row">
+          <div class="col-sm-3">
             <button class="btn btn-primary" (click)="auth.submitApplication()"
                     [disabled]="!form.valid || !appService.app.agreedToCodeOfConduct" *ngIf="!appService.app.submited">
               Submit
             </button>
           </div>
-          <div class="col-6 col-sm-3">
+          <div class="col-sm-3">
             <button class="btn btn-primary" routerLink="/user">Back</button>
           </div>
         </div>
       </div>
-    </div>
+  </div>
   </div>
 </div>

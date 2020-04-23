@@ -1,59 +1,99 @@
-<button *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true">Edit</button>
-<button *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false">exit</button>
-
-<div *ngFor="let day of eventSer.days.keys()">
-    {{day }}
+<div>
+  <div *ngFor="let day of eventSer.days.keys()">
     <div *ngFor="let event of eventSer.days.get(day)">
-      <div *ngIf="isEditing else notEditing">
-        title: <input [(ngModel)]="event.title">
-        startTime: <input [(ngModel)]="event.startTime"> Must be format 00:00AM/PM
-        end time: <input [(ngModel)]="event.endTime">
-        <button (click)="eventSer.updateEvent(event)">update</button>
-        <button (click)="eventSer.deleteEvent(event)">Delete</button>
+      <div class = "row justify-content-end">
+        <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; editRow1.contentEditable = true;  editRow2.contentEditable = true; editRow3.contentEditable = true;">Edit</button>
+        <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; editRow1.contentEditable = false;  editRow2.contentEditable = false; editRow3.contentEditable = false; add.hidden = true">Exit</button>
+        <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="add.hidden = false">New Event</button>
       </div>
-      <ng-template #notEditing>{{event | json}}</ng-template>
-    </div>
+      <div>
+        <div class = "calander">
+          <div class = "table-editable">
+            <h5>{{ day }}</h5>
+            <table class="table table-borderless">
+              <thead>
+              <tr>
+                <th scope = "col">Event</th>
+                <th scope = "col">Start Time</th>
+                <th scope = "col">End Time</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>
+                  <span #editRow1 contenteditable="false"> {{ event.title }}</span>
+                </td>
+                <td>
+                  <span #editRow2 contenteditable="false"> {{ event.startTime }}</span>
+                </td>
+                <td>
+                  <span #editRow3 contenteditable="false"> {{ event.endTime }}</span>
+                </td>
+              </tr>
+              </tbody>
 
-<div *ngIf="isEditing">new Event:
-  title: <input [(ngModel)]="tempEvent.title">
-  startTime: <input [(ngModel)]="tempEvent.startTime"> Must be format 00:00AM/PM
-  end time: <input [(ngModel)]="tempEvent.endTime">
-  day:
-  <select [(ngModel)]="tempEvent.day">
-    <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
-  </select>
-  <button (click)="eventSer.createEvent(tempEvent)">add</button>
+            </table>
+            <button class="btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.updateEvent(event)">Update</button>
+            <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.deleteEvent(event)">Delete</button>
+          </div>
+        </div>
+        <div class = "calander">
+          <div #add hidden = "true">
+            <div class = "table-editable">
+              <h5>New Event</h5>
+              <table class="table table-borderless">
+                <thead>
+                <tr>
+                  <th scope = "col">Event</th>
+                  <th scope = "col">Start Time</th>
+                  <th scope = "col">End Time</th>
+                  <th scope = "col">Day</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <span contenteditable="true" name="test3" [(ngModel)]="tempEvent.title"></span>
+                  </td>
+                  <td>
+                    <span contenteditable="true" dataToggle="tooltip" data-placement="top" title="Must be format 00:00AM/PM" name="test1" [(ngModel)]="tempEvent.startTime"></span>
+                  </td>
+                  <td>
+                    <span contenteditable="true" dataToggle="tooltip" data-placement="top" title="Must be format 00:00AM/PM" name="test2 "[(ngModel)]="tempEvent.endTime"></span>
+                  </td>
+                  <td>
+              <span>
+                <select name="test" [(ngModel)]="tempEvent.day">
+                  <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
+                </select>
+              </span>
+                  </td>
+                </tbody>
+              </table>
+              <button class = "btn btn-primary" (click)="eventSer.createEvent(tempEvent); add.hidden = true">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<h5>Day One</h5>
-<table class="table table-borderless">
-  <thead>
-  <tr>
-    <th scope="col">Time</th>
-    <th scope="col" colspan="2">Event</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">12:00 AM</th>
-    <td colspan="2">Event 1</td>
-  </tr>
-  <tr>
-    <th scope="row">12:00 AM</th>
-    <td colspan="2">Event 2</td>
-  </tr>
-  <tr>
-    <th scope="row">12:00 AM</th>
-    <td colspan="2">Event 3</td>
-  </tr>
-  <tr>
-    <th scope="row">12:00 AM</th>
-    <td colspan="2">Event 4</td>
-  </tr>
-  <tr>
-    <th scope="row">12:00 AM</th>
-    <td colspan="2">Event 5</td>
-  </tr>
-  </tbody>
-</table>
+
+
+
+<div #add hidden = "true">
+  <div *ngIf="isEditing">new Event:
+    title: <input [(ngModel)]="tempEvent.title">
+    startTime: <input [(ngModel)]="tempEvent.startTime"> Must be format 00:00AM/PM
+    end time: <input [(ngModel)]="tempEvent.endTime">
+    day:
+    <select [(ngModel)]="tempEvent.day">
+      <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
+    </select>
+    <button class = "btn btn-primary" (click)="eventSer.createEvent(tempEvent); add.hidden = true">Add</button>
+  </div>
+    <div>
 </div>
