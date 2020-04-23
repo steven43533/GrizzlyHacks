@@ -46,6 +46,7 @@ h1, h3, h5{
 .bottom{
   color: white;
   font-size: 13px;
+  margin-top: 20%;
 }
 .header, .about, .faq,
 .event, .bottom{
@@ -106,4 +107,5 @@ body{
 .card{
   border: none !important;
   outline: none !important;
+  margin-bottom: -15% !important;
 }
