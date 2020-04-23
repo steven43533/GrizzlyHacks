@@ -12,11 +12,13 @@ export class CalanderServiceService {
 
   days: TreeMap<string, Event[]>;
   isEditing: boolean;
+  isReady: boolean;
   sub: Subscription;
 
   constructor(private afs: AngularFirestore) {
     this.days = new TreeMap< string, Event[]>(((a, b) => this.compare(a, b)));
-    this.isEditing = true;
+    this.isEditing = false;
+    this.isReady = true;
     this.afs.collection<Event>(`events`).valueChanges( ).subscribe(events => this.createEvents(events));
 
 

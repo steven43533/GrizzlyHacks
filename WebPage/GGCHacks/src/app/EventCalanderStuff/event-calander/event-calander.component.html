@@ -1,6 +1,7 @@
-<div>
+<!--<div>
   <div *ngFor="let day of eventSer.days.keys()">
     <div *ngFor="let event of eventSer.days.get(day)">
+
       <div class = "row">
         <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; editRow1.contentEditable = true;  editRow2.contentEditable = true; editRow3.contentEditable = true;">Edit</button>
         <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; editRow1.contentEditable = false;  editRow2.contentEditable = false; editRow3.contentEditable = false; add.hidden = true">Exit</button>
@@ -31,6 +32,7 @@
                 </td>
               </tr>
               </tbody>
+
             </table>
             <button class="btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.updateEvent(event)">Update</button>
             <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="eventSer.deleteEvent(event)">Delete</button>
@@ -52,34 +54,38 @@
                 <tbody>
                 <tr>
                   <td>
-                    <span contenteditable="true" [(ngModel)]="tempEvent.title"></span>
+                    <span contenteditable="true" name="test3" [(ngModel)]="tempEvent.title"></span>
                   </td>
                   <td>
-                    <span contenteditable="true" dataToggle="tooltip" data-placement="top" title="Must be format 00:00AM/PM" [(ngModel)]="tempEvent.startTime"></span>
+                    <span contenteditable="true" dataToggle="tooltip" data-placement="top" title="Must be format 00:00AM/PM" name="test1" [(ngModel)]="tempEvent.startTime"></span>
                   </td>
                   <td>
-                    <span contenteditable="true" dataToggle="tooltip" data-placement="top" title="Must be format 00:00AM/PM" [(ngModel)]="tempEvent.endTime"></span>
+                    <span contenteditable="true" dataToggle="tooltip" data-placement="top" title="Must be format 00:00AM/PM" name="test2 "[(ngModel)]="tempEvent.endTime"></span>
                   </td>
                   <td>
               <span>
-                <select class = "form-control" [(ngModel)]="tempEvent.day">
+                <select name="test" [(ngModel)]="tempEvent.day">
                   <option *ngFor="let opt of days" [value]="opt">{{opt}}</option>
                 </select>
               </span>
                   </td>
-                </tr>
                 </tbody>
               </table>
               <button class = "btn btn-primary" (click)="eventSer.createEvent(tempEvent); add.hidden = true">Add</button>
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </div>
+-->
 
-  <!--<div #add hidden = "true">
+
+
+<div #add hidden = "true">
   <div *ngIf="isEditing">new Event:
     title: <input [(ngModel)]="tempEvent.title">
     startTime: <input [(ngModel)]="tempEvent.startTime"> Must be format 00:00AM/PM
@@ -91,4 +97,4 @@
     <button class = "btn btn-primary" (click)="eventSer.createEvent(tempEvent); add.hidden = true">Add</button>
   </div>
     <div>
-</div>-->
+</div>
