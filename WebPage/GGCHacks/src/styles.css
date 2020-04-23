@@ -172,3 +172,7 @@ footer{
     transform: translateX(100vw);
   }
 }
+
+input, option, .form-control{
+  border-radius: 2px !important;
+}
