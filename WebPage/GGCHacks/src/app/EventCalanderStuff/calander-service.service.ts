@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import TreeMap from 'ts-treemap';
 import {Event} from './event';
 import {Subscription} from 'rxjs';
@@ -8,20 +8,18 @@ import {AuthService} from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CalanderServiceService {
+export class CalanderServiceService implements OnDestroy{
 
   days: TreeMap<string, Event[]>;
   isEditing: boolean;
-  isReady: boolean;
+  keys: string[];
   sub: Subscription;
 
   constructor(private afs: AngularFirestore) {
     this.days = new TreeMap< string, Event[]>(((a, b) => this.compare(a, b)));
+    this.keys = Array.from(this.days.keys());
     this.isEditing = false;
-    this.isReady = true;
-    this.afs.collection<Event>(`events`).valueChanges( ).subscribe(events => this.createEvents(events));
-
-
+    this.sub = this.afs.collection<Event>(`events`).valueChanges( ).subscribe(events => this.createEvents(events));
   }
 
 
@@ -39,6 +37,8 @@ export class CalanderServiceService {
         return this.timeCompare(e1.startTime, e2.startTime);
       });
     }
+    this.keys = Array.from(this.days.keys());
+    console.log(this.keys);
   }
 
   updateEvent(e: Event) {
@@ -58,6 +58,10 @@ export class CalanderServiceService {
     ref.delete();
   }
 
+  public trackKeys(): string[] {
+    return this.keys;
+  }
+
 
   // just the raw data of the event
   createEvent(e: Event) {
@@ -74,10 +78,6 @@ export class CalanderServiceService {
     }
 
     ref.set(data, {merge: true});
-  }
-
-
-  testAdd() {
   }
 
 
@@ -135,6 +135,10 @@ export class CalanderServiceService {
 
     console.log(temp1 - temp2);
     return temp1 - temp2;
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
 }
