@@ -1,8 +1,15 @@
-<div *ngIf="action === 'verifyEmail'">
-<app-verify-email></app-verify-email>
-</div>
+<div class = "everything">
+  <div class = "row justify-content-center">
+    <div class = "card w-50">
+      <div class = "card-body">
+        <div *ngIf="action === 'verifyEmail'">
+          <app-verify-email></app-verify-email>
+        </div>
 
-<div *ngIf="action === 'resetPassword'">
-<app-reset-password></app-reset-password>
+        <div *ngIf="action === 'resetPassword'">
+          <app-reset-password></app-reset-password>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

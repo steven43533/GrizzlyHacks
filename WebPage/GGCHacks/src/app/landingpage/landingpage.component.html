@@ -6,6 +6,9 @@
       </div>
       <div class="row justify-content-center">
         <button type="button" class="btn btn-primary btn-lg m-5">Register Today!</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);"  *ngIf="auth.user === null || !auth.verified">Log In</button>
+
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null || !auth.verified">Create Account</button>
         <!-- Route buttons like login (if blah blah) -->
       </div>
     </div>
