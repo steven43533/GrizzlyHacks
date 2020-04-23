@@ -38,6 +38,7 @@ export class CalanderServiceService implements OnDestroy{
       });
     }
     this.keys = Array.from(this.days.keys());
+    this.keys.sort(((a, b) => this.compare(a, b)));
     console.log(this.keys);
   }
 
@@ -100,6 +101,7 @@ export class CalanderServiceService implements OnDestroy{
       aa = 6;
     }
 
+    b = b.toLocaleLowerCase();
     if (b === 'monday') {
       bb = 0;
     } else if (b === 'tuesday') {
