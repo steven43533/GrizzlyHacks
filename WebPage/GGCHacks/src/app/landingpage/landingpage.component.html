@@ -131,12 +131,15 @@
         <div class="card">
           <div class="card-header" id="hOne">
             <h6 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#colOne" aria-expanded="false" aria-controls="colOne">
+              <button *ngIf="faqAnswer1.hidden" class="btn btn-link" data-toggle="collapse" data-target="#colOne" aria-expanded="false" aria-controls="colOne" (click)="faqAnswer1.hidden = false">
+                What is a hackathon?
+              </button>
+              <button *ngIf="!faqAnswer1.hidden" class="btn btn-link" data-toggle="collapse" data-target="#colOne" aria-expanded="false" aria-controls="colOne" (click)="faqAnswer1.hidden = true">
                 What is a hackathon?
               </button>
             </h6>
           </div>
-          <div id = "colOne" class="collapse show" aria-labelledby="hOne" data-parent="#accordion">
+          <div #faqAnswer1 hidden="true"  id = "colOne" class="collapse show" aria-labelledby="hOne" data-parent="#accordion">
             <div class = "card-body">
               That is a good question and you can totally expect that answer in this box right here!
             </div>
