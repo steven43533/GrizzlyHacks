@@ -31,8 +31,8 @@
             </div>
           </form>
           <div *ngIf="passwordReset">
-            <p> email</p>
-            <input #email>
+            <p> Email</p>
+            <input class="form-control" #email>
             <button class="btn btn-primary" (click)="auth.passwordRecovery(email.value)">Reset Password</button>
             <button class="btn btn-primary" (click)="passwordReset = false">Back</button>
           </div>

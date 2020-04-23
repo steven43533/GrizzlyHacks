@@ -22,6 +22,7 @@ code;
       .then(() => {
         // do something after successful verification
         alert('succesfull verification');
+        this.router.navigate(['/login']);
       })
       .catch(err => {
         // show error message

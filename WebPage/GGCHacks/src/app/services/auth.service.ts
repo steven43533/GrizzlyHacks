@@ -1,4 +1,4 @@
-import {Injectable, OnDestroy} from '@angular/core';
+import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import { Subscription} from 'rxjs';
 import {User} from '../interfaces/user';
 import {AngularFireAuth} from '@angular/fire/auth';
@@ -47,13 +47,13 @@ export class AuthService implements OnDestroy {
       this.user = u;
       this.isAdmin = u.isAdmin;
       if (u.application === undefined || u.application == null) {
-        console.log('set user no app');
+       //  console.log('set user no app');
         this.appSerivice.createEmptyApp();
       } else {
         this.appSerivice.setApp(u.application);
-        console.log(u);
+      //   console.log(u);
       }
-      console.log(this.verified + '  ' + this.user);
+      // console.log(this.verified + '  ' + this.user);
 
     });
   }
@@ -96,6 +96,7 @@ export class AuthService implements OnDestroy {
 
       // verification on email
       if ( !result.user.emailVerified ) {
+        alert('You must verify your email');
         result.user.sendEmailVerification();
         this.router.navigate(['/verifyEmail']);
       } else {

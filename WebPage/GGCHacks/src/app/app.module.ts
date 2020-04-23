@@ -21,6 +21,8 @@ import { UserQueryPipe } from './admindashboard/user-query.pipe';
 import { CheckFilerPipe } from './admindashboard/check-filer.pipe';
 import { EventCalanderComponent } from './EventCalanderStuff/event-calander/event-calander.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-email-user.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UserQueryPipe,
     CheckFilerPipe,
     EventCalanderComponent,
+    VerifyEmailUserComponent
   ],
   imports: [
     BrowserModule,
