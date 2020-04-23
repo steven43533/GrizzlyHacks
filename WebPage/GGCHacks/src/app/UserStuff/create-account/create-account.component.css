@@ -5,7 +5,7 @@
 .everything{
   background: linear-gradient(rgb(0,82,150), rgb(20,25,58));
   background-size: cover;
-  height: 100vh;
+  height: 150vh !important;
 }
 
 header{

@@ -5,7 +5,7 @@
 <div *ngIf="!isEditing">
   <div *ngFor="let day of eventSer.keys">
     <h5>{{ day }}</h5>
-    <div >
+
         <div class = "calander">
           <div class = "table-editable">
 
@@ -39,19 +39,17 @@
           <div #add hidden = "true">
             <div class = "table-editable">
               <h5>New Event</h5>
-          </div>
+            </div>
 
-        </div>
-      </div>
+          </div>
   </div>
-</div>
+  </div>
 </div>
 
 
 <div *ngIf="isEditing">
   <div *ngFor="let day of eventSer.keys">
     <h5>{{ day }}</h5>
-      <div>
         <div class = "calander">
           <div class = "table-editable">
 
@@ -92,7 +90,6 @@
             </div>
           </div>
         </div>
-      </div>
   </div>
 </div>
 
@@ -147,7 +144,6 @@
         <div class = "table-editable">
           <h5>New Event</h5>
         </div>
-
       </div>
     </div>
   </div>
