@@ -8,7 +8,10 @@ describe('CreateAccountComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule
+      ],
       declarations: [ CreateAccountComponent ]
     })
     .compileComponents();
