@@ -47,6 +47,6 @@ ng serve<br /><br />
  * Contact
  * Admin backend
  
- All the features are demonstrated in https://www.youtube.com/watch?v=1dRrcsm5qKo. 
- You can also view our cite by going to https://grizzly-hacks.web.app.
+ All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).
+ You can also view our website by clicking on this [link](https://grizzly-hacks.web.app).
  
