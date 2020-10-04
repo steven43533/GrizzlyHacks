@@ -20,19 +20,49 @@ The Grizzly Hacks web application allows users to access information about hacka
 ## Installation
 Use the following commands to install Angular, creating a new project, and serving it. <br /><br />
 
-\# clone the repo<br />
-git clone https://github.com/GGC-SD/GrizzlyHacks<br /><br />
+1. clone the repo
+    ```
+    git clone https://github.com/GGC-SD/GrizzlyHacks
+    ```
+1. change directory
+    ```
+    cd GrizzlyHacks/WebPage/GGCHacks
+    ```
+1. install the repo with npm
+    ```
+    npm install
+    ```
+1. install the Angular command-line tool
+    ```
+    npm install -g @angular/cli
+    ```
+1. create file `environments/environment.ts` with the following content and replace the `...` section with the correct Firebase keys.
+```
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 
-\# change directory<br />
-cd GrizzlyHacks<br /><br />
+export const environment = {
+  production: false,
+  firebase : {
+    ...
+  }
+};
 
-\# install the repo with npm<br />
-npm install -g @angular/cli<br /><br />
-
-\# serve the project<br />
-ng serve<br /><br />
- 
- After these steps, go to http://localhost:4200 in your browser.<br />Below is a screenshot od the home page of the website.Only the admins will be able to see the Admin Dashboard.<br /><br />
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+```
+1. serve the project
+```
+ng serve
+```
+1. After these steps, go to http://localhost:4200 in your browser.<br />Below is a screenshot od the home page of the website.Only the admins will be able to see the Admin Dashboard.<br /><br />
  
  ![](Documentation/WebPage.png)<br /><br />
  
