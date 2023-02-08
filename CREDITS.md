@@ -5,3 +5,6 @@
 * **Szavior McRae** :technologist:
   * Team Manager
   * Client Liaison
+* **Riley Housden** :keyboard:
+  * Documentation Lead
+  * Code Architect
