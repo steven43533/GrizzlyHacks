@@ -3,5 +3,5 @@
   * Data Modeler (Primary Role)
   * Code Architect (Secondary Role)
 * **Szavior McRae** :technologist:
-  * Team Manager
-  * Client Liaison
+  * Team Manager (Primary Role)
+  * Client Liaison (Secondary Role)
