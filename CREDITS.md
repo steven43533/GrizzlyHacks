@@ -5,3 +5,6 @@
 * **Szavior McRae** :technologist:
   * Team Manager (Primary Role)
   * Client Liaison (Secondary Role)
+* **Riley Housden** :octopus:
+  * Documentation Lead (Primary Role)
+  * Code Architect (Secondary Role)
