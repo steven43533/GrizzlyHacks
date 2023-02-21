@@ -8,3 +8,6 @@
 * **Riley Housden** :octopus:
   * Documentation Lead (Primary Role)
   * Code Architect (Secondary Role)
+* **Jordan Moats** 
+  * UI/UX Design Lead (Primary Role)
+  * Testing Lead (Secondary Role)
