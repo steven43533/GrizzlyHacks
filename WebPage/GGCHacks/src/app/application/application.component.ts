@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Application} from '../interfaces/application';
 import {AuthService} from '../services/auth.service';
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {Observable, of, Subscription} from 'rxjs';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ApplicationServiceService} from '../services/application-service.service';

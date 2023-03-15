@@ -1,14 +1,15 @@
 import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import { Subscription} from 'rxjs';
 import {User} from '../interfaces/user';
-import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {Router} from '@angular/router';
-import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import {FormGroup} from '@angular/forms';
-import 'firebase/firestore';
+import 'firebase/compat/firestore';
 import {ApplicationServiceService} from './application-service.service';
 import {Application} from '../interfaces/application';
 import {error} from 'selenium-webdriver';
+
 
 
 @Injectable({

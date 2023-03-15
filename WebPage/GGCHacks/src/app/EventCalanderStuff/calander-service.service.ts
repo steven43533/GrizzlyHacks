@@ -2,7 +2,7 @@ import {Injectable, OnDestroy} from '@angular/core';
 import TreeMap from 'ts-treemap';
 import {Event} from './event';
 import {Subscription} from 'rxjs';
-import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import {AuthService} from '../services/auth.service';
 
 @Injectable({

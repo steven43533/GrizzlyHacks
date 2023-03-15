@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireModule} from '@angular/fire';
-import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
-import { AngularFireStorageModule} from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule} from '@angular/fire/compat/storage';
 import {environment} from '../../environments/environment';
 
 
@@ -13,8 +13,8 @@ import {environment} from '../../environments/environment';
   declarations: [],
   imports: [
     CommonModule,
-    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
