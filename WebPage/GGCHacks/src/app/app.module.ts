@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './modules/app-routing.module';
 
 import { FireBaseStuffModule } from './modules/fire-base-stuff.module';
 import { CreateAccountComponent } from './UserStuff/create-account/create-account.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './UserStuff/login/login.component';
 import { VerifyEmailComponent } from './email-action/verify-email/verify-email.component';
 import { HeaderComponent } from './header/header.component';
