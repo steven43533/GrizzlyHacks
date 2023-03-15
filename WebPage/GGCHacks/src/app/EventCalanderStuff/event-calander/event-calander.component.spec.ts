@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventCalanderComponent } from './event-calander.component';
 
@@ -6,7 +6,7 @@ describe('EventCalanderComponent', () => {
   let component: EventCalanderComponent;
   let fixture: ComponentFixture<EventCalanderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ EventCalanderComponent ]
     })
