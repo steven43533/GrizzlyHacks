@@ -14,7 +14,7 @@
 
   <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null || !auth.verified">Create Account</button>
 
-  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['']); auth.sighOut()" *ngIf="auth.user !== null && !(!auth.verified && auth.user !== null)">Sign Out</button>
+  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['']); auth.signOut()" *ngIf="auth.user !== null && !(!auth.verified && auth.user !== null)">Sign Out</button>
 
   <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified">User Dashboard</button>
 

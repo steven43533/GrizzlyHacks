@@ -128,7 +128,7 @@ export class AuthService implements OnDestroy {
     userRef.update(this.user);
   }
 
-  public sighOut() {
+  public signOut() {
     this.verified = false;
     this.isAdmin = false;
     this.afAuth.signOut().then( result => {
