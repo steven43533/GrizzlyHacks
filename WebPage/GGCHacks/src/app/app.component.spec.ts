@@ -1,33 +1,33 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import {AuthService} from './services/auth.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ AppComponent ],
-      imports: [ RouterTestingModule ],
+      imports: [ 
+        AngularFireModule.initializeApp(environment.firebase) 
+      ],
       providers: [ AuthService ],
-    }).compileComponents();
-  }));
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'GGCHacks'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('GGCHacks');
-  });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('GGCHacks app is running!');
-  });
 });

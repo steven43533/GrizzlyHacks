@@ -1,21 +1,25 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account.component';
+import { AuthService } from '../../services/auth.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../../../environments/environment';
 
 describe('CreateAccountComponent', () => {
   let component: CreateAccountComponent;
   let fixture: ComponentFixture<CreateAccountComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
-        FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
       ],
-      declarations: [ CreateAccountComponent ]
+      declarations: [ CreateAccountComponent ],
+      providers: [ AuthService ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CreateAccountComponent);
@@ -26,4 +30,5 @@ describe('CreateAccountComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
