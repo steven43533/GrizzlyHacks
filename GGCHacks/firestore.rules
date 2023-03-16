@@ -12,7 +12,7 @@ service cloud.firestore {
     	//allow write if they are an admin or a user that ownes the doc and are not tring to change isAdmin or acceptedToHack
       allow write: if( 
       //if is owner and not changing their admin status and not trying to accept to hack
-      ( isOwner( UserID ) && adminFeildSafe()  && hackAccptanceSafe()));
+      ( isOwner( UserID ) && adminFieldSafe()  && hackAcceptanceSafe()));
       allow read: if (isOwner(UserID));
     }
     
@@ -33,11 +33,11 @@ service cloud.firestore {
     }
     
     //checks to make sure incoming document doesnt change the admin feild
-    function adminFeildSafe(){
+    function adminFieldSafe(){
       return !request.resource.data.isAdmin;
     }
     
-    function hackAccptanceSafe(){
+    function hackAcceptanceSafe(){
     		return (request.resource.data.isRegisteredFor2020 == false ||
         request.resource.data.isRegisteredFor2020 == get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isRegisteredFor2020);
     
