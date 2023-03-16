@@ -1,17 +1,38 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { VerifyEmailComponent } from './verify-email.component';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('VerifyEmailUserComponent', () => {
+describe('VerifyEmailComponent', () => {
   let component: VerifyEmailComponent;
   let fixture: ComponentFixture<VerifyEmailComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ VerifyEmailComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        AngularFireModule.initializeApp(environment.firebase),
+        RouterTestingModule,
+      ],
+      declarations: [ VerifyEmailComponent ],
+      providers: [
+        AngularFireAuth,
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              queryParams: {
+                oobCode: 'testCode',
+              },
+            },
+          },
+        },
+      ],
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VerifyEmailComponent);
@@ -22,4 +43,5 @@ describe('VerifyEmailUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
