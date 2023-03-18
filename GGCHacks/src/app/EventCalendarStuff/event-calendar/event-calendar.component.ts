@@ -5,19 +5,19 @@ import TreeMap from 'ts-treemap';
 import {AuthService} from '../../services/auth.service';
 import {range, Subscription} from 'rxjs';
 import set = Reflect.set;
-import {CalanderServiceService} from '../calander-service.service';
+import {CalendarServiceService} from '../calendar-service.service';
 
 @Component({
-  selector: 'app-event-calander',
-  templateUrl: './event-calander.component.html',
-  styleUrls: ['./event-calander.component.css']
+  selector: 'app-event-calendar',
+  templateUrl: './event-calendar.component.html',
+  styleUrls: ['./event-calendar.component.css']
 })
-export class EventCalanderComponent {
+export class EventCalendarComponent {
   isEditing: boolean;
   tempEvent: Event;
   days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-  constructor(public eventSer: CalanderServiceService, public auth: AuthService) {
+  constructor(public eventSer: CalendarServiceService, public auth: AuthService) {
     this.tempEvent = new Event();
   }
 

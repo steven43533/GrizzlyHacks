@@ -8,7 +8,7 @@ import {AuthService} from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CalanderServiceService implements OnDestroy{
+export class CalendarServiceService implements OnDestroy{
 
   days: TreeMap<string, Event[]>;
   isEditing: boolean;

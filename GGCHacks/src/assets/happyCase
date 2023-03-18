@@ -25,4 +25,4 @@
       </div>
       <div class="row justify-content-center text-center">
         <div class="col-6 justify-content-center">
-         <app-event-calander></app-event-calander>-->
+         <app-event-calendar></app-event-calendar>-->

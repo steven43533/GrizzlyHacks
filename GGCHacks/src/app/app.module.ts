@@ -27,7 +27,7 @@ import { UserDashboardComponent } from './UserStuff/user-dashboard/user-dashboar
 import { ApplicationComponent } from './application/application.component';
 import { UserQueryPipe } from './admindashboard/user-query.pipe';
 import { CheckFilerPipe } from './admindashboard/check-filer.pipe';
-import { EventCalanderComponent } from './EventCalanderStuff/event-calander/event-calander.component';
+import { EventCalendarComponent } from './EventCalendarStuff/event-calendar/event-calendar.component';
 import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-email-user.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
@@ -49,7 +49,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     ApplicationComponent,
     UserQueryPipe,
     CheckFilerPipe,
-    EventCalanderComponent,
+    EventCalendarComponent,
     VerifyEmailUserComponent
   ],
   imports: [

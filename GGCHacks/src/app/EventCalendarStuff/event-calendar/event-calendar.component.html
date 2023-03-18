@@ -1,6 +1,6 @@
 <div>
   <div class = "row justify-content-end">
-    <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; add.hidden = false">Edit Calander</button>
+    <button class  = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && !isEditing" (click)="isEditing = true; add.hidden = false">Edit Calendar</button>
     <button class = "btn btn-primary" *ngIf="auth.user && auth.user.isAdmin && isEditing" (click)="isEditing = false; add.hidden = true">Exit</button>
   </div>
   <!-- not editing -->
@@ -9,7 +9,7 @@
       <div class = "col-lg">
       <div *ngFor="let day of eventSer.keys">
         <h4>{{ day }}</h4>
-        <div class = "calander">
+        <div class = "calendar">
           <div class = "table-editable">
             <table class="table table-borderless">
               <thead>
@@ -42,7 +42,7 @@
     <div *ngIf="isEditing">
       <div *ngFor="let day of eventSer.keys">
         <h4>{{ day }}</h4>
-        <div class = "calander">
+        <div class = "calendar">
           <div class = "table-editable">
             <table class="table table-borderless">
               <thead>
@@ -81,7 +81,7 @@
       <div class = "row justify-content-end">
       </div>
       <div>
-        <div class = "calander">
+        <div class = "calendar">
           <div class = "table-editable">
             <h4>Add Event</h4>
             <table class="table table-borderless">
