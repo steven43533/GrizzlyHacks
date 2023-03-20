@@ -27,7 +27,7 @@ export class AuthService implements OnDestroy {
     public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
-    public appSerivice: ApplicationServiceService
+    public appService: ApplicationServiceService
   ) {
     this.isAdmin = false;
     this.verified = false;
@@ -49,9 +49,9 @@ export class AuthService implements OnDestroy {
       this.isAdmin = u.isAdmin;
       if (u.application === undefined || u.application == null) {
        //  console.log('set user no app');
-        this.appSerivice.createEmptyApp();
+        this.appService.createEmptyApp();
       } else {
-        this.appSerivice.setApp(u.application);
+        this.appService.setApp(u.application);
       //   console.log(u);
       }
       // console.log(this.verified + '  ' + this.user);
@@ -142,7 +142,7 @@ export class AuthService implements OnDestroy {
   saveApplication() {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${this.user.uid}`);
     userRef.update({
-      application: Object.assign({}, this.appSerivice.app)
+      application: Object.assign({}, this.appService.app)
     }).then( res => console.log(res));
   }
 
@@ -156,9 +156,6 @@ export class AuthService implements OnDestroy {
         otherError => alert('Something went wong. Try again later.')));
   }
 
-
-
-
   ngOnDestroy(): void {
     if (this.sub != null) {
       this.sub.unsubscribe();
@@ -169,7 +166,7 @@ export class AuthService implements OnDestroy {
   }
 
   submitApplication() {
-    this.appSerivice.app.submitted = true;
+    this.appService.app.submitted = true;
     this.saveApplication();
     this.router.navigate(['/user']);
   }

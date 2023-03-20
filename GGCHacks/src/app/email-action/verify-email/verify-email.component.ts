@@ -21,12 +21,12 @@ code;
       .applyActionCode(code)
       .then(() => {
         // do something after successful verification
-        alert('succesfull verification');
+        alert('successful verification');
         this.router.navigate(['/login']);
       })
       .catch(err => {
         // show error message
-        alert('unsucessfull');
+        alert('unsuccessful');
       });
   }
 }
