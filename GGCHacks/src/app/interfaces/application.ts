@@ -17,7 +17,7 @@ export class Application {
   emergencyContactRelationWithApplicant: string;
   emCPhoneNumber: number;
   agreedToCodeOfConduct: boolean;
-  submited: boolean;
+  submitted: boolean;
   hack: string;
 
   constructor() {
@@ -38,7 +38,7 @@ export class Application {
     this.emergencyContactRelationWithApplicant = '';
     this.emCPhoneNumber = null;
     this.agreedToCodeOfConduct = false;
-    this.submited = false;
+    this.submitted = false;
     this.hack = 'Grizzly Hacks 2020';
   }
 

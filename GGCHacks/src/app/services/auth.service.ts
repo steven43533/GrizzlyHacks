@@ -169,7 +169,7 @@ export class AuthService implements OnDestroy {
   }
 
   submitApplication() {
-    this.appSerivice.app.submited = true;
+    this.appSerivice.app.submitted = true;
     this.saveApplication();
     this.router.navigate(['/user']);
   }
