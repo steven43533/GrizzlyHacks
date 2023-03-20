@@ -13,10 +13,10 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   passwordReset: boolean;
-  isLoginButtonUnuseable: boolean;
+  isLoginButtonUnusable: boolean;
 
   constructor(public auth: AuthService, private fb: FormBuilder) {
-    this.isLoginButtonUnuseable = false;
+    this.isLoginButtonUnusable = false;
     this.loginForm = fb.group({
       email: '',
       password: ''
@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isLoginButtonUnuseable = false;
+    this.isLoginButtonUnusable = false;
   }
 
   loginUser(loginForm: FormGroup) {
     const b = this.auth.loginUser(loginForm).then(u => {
-      this.isLoginButtonUnuseable = false;
+      this.isLoginButtonUnusable = false;
     });
 
   }
