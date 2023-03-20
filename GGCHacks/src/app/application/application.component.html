@@ -159,18 +159,18 @@
         </form>
         <div class="row">
           <div class="col-sm-3">
-            <button class="btn btn-primary" (click)="auth.saveApplication()" *ngIf="!appService.app.submited">Save
+            <button class="btn btn-primary" (click)="auth.saveApplication()" *ngIf="!appService.app.submitted">Save
             </button>
           </div>
           <div class=" col-sm-3">
-            <button class="btn btn-primary" (click)="auth.deleteApp()" *ngIf="!appService.app.submited">Delete
+            <button class="btn btn-primary" (click)="auth.deleteApp()" *ngIf="!appService.app.submitted">Delete
             </button>
           </div>
         </div>
         <div class = "row">
           <div class="col-sm-3">
             <button class="btn btn-primary" (click)="auth.submitApplication()"
-                    [disabled]="!form.valid || !appService.app.agreedToCodeOfConduct" *ngIf="!appService.app.submited">
+                    [disabled]="!form.valid || !appService.app.agreedToCodeOfConduct" *ngIf="!appService.app.submitted">
               Submit
             </button>
           </div>
