@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {ActivatedRoute, Router} from '@angular/router';
 
+/**
+ * Component that verifies the email.
+ * @remarks
+ * This component is responsible for verifying the email of the user after signup.
+ */
 @Component({
   selector: 'app-verify-email',
   templateUrl: './verify-email.component.html',
