@@ -3,6 +3,12 @@ import {User} from '../interfaces/user';
 import {Observable} from 'rxjs';
 import {Checkboxes} from './admindashboard.component';
 
+/**
+ * @Pipe
+ * @param name - The name of the pipe.
+ * @returns A new instance of the pipe.
+ * @description This is a custom pipe that filters an array of users based on the checkboxes selected.
+ */
 @Pipe({
   name: 'checkFiler'
 })
@@ -28,5 +34,4 @@ export class CheckFilerPipe implements PipeTransform {
         return true;
     });
   }
-
 }
