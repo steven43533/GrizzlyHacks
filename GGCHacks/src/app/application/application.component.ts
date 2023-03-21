@@ -6,6 +6,14 @@ import {Observable, of, Subscription} from 'rxjs';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ApplicationServiceService} from '../services/application-service.service';
 
+/**
+ * @Component
+ * @selector - The selector for the component.
+ * @template - The template for the component.
+ * @styles - The styles for the component.
+ * @remarks
+ * This is the Hackathon application component.
+ */
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
@@ -14,16 +22,16 @@ import {ApplicationServiceService} from '../services/application-service.service
 export class ApplicationComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
-  gender = ['Male', 'Female', 'Non-binary', 'Prefer Not To Say', 'other'];
+  gender = ['Male', 'Female', 'Non-Binary', 'Other', 'Prefer Not To Say'];
   ethnicity = ['American Indian or Alaska Native', 'Asian', 'Black or African American', 'Hispanic or Latino',
               'Native Hawaiian or Other Pacific Islander', 'White', 'Prefer Not To Say'];
-  preferedPronouns = ['He/His', 'She/Her', 'They/Them', 'Prefer Not To Say'];
-  graduationDates = ['2020', '2021', '2022', '2023', '2024'];
-  dietaryRestrictions = ['No Restrictions', 'Vegan', 'Vegetarian', 'Halal', 'Other...'];
-  majors = ['Biology', 'Business administration', 'Chemistry', 'Cinema and media arts production', 'Criminal justice/criminology'
-            , 'Elementary education', 'English', 'Environmental science', 'Exercise science', 'History',
-            'Human development and aging services', 'Information technology', 'Mathematics', 'Middle grades education', 'Nursing',
-            'Political science', 'Psychology', 'Special education'];
+  preferedPronouns = ['He/His', 'She/Her', 'They/Them', 'Other', 'Prefer Not To Say'];
+  graduationDates = ['2023', '2024', '2025', '2026', '2027'];
+  dietaryRestrictions = ['No Restrictions', 'Vegan', 'Vegetarian', 'Halal', 'Other'];
+  majors = ['Biology', 'Business Administration', 'Chemistry', 'Cinema and Media Arts Production', 'Criminal Justice / Criminology'
+            , 'Education', 'English', 'Environmental Science', 'Exercise Science', 'Health Science','History',
+            'Human Services', 'Information Technology', 'Integrative Studies', 'Management Information Systems', 'Mathematics', 'Nursing',
+            'Political Science', 'Psychology', 'Undeclared'];
 
   constructor(public auth: AuthService, private fb: FormBuilder, public appService: ApplicationServiceService) {
     console.log('app service ' + appService.app);
