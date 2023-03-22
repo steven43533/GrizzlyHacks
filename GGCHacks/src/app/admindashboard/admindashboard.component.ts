@@ -49,26 +49,6 @@ export class AdmindashboardComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Makes the user an admin.
-   * @param user - The user object.
-   */
-  makeAdmin(user: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    user.isAdmin = true;
-    userRef.update(user);
-  }
-
-  /**
-   * Takes away the user's admin status.
-   * @param user - The user object.
-   */
-  takeAdmin(user: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    user.isAdmin = false;
-    userRef.update(user);
-  }
-
-  /**
    * Accepts the user's application to the hackathon.
    * @param user - The user object.
    */
