@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../interfaces/user';
 import { Subscription } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -37,7 +37,7 @@ export class SuperAdminDashboardComponent {
 
   makeSuperAdmin(user: User) {
     if (confirm(`Are you sure you want to make ${user.firstName} ${user.lastName} a super admin?`)) {
-      const userRef = this.afs.doc(`users/${user.uid}`);
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
       user.isSuperAdmin = true;
       userRef.update(user);
       }
@@ -48,14 +48,15 @@ export class SuperAdminDashboardComponent {
       return;
     }
     if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s super admin status?`)) {
-      const userRef = this.afs.doc(`users/${user.uid}`);
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
       user.isSuperAdmin = false;
       userRef.update(user);
     }
   }
+
   makeAdmin(user: User) {
     if (confirm(`Are you sure you want to make ${user.firstName} ${user.lastName} an admin?`)) {
-      const userRef = this.afs.doc(`users/${user.uid}`);
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
       user.isAdmin = true;
       userRef.update(user);
     }
@@ -63,16 +64,9 @@ export class SuperAdminDashboardComponent {
 
   takeAdmin(user: User) {
     if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s admin status?`)) {  
-      const userRef = this.afs.doc(`users/${user.uid}`);
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
       user.isAdmin = false;
       userRef.update(user);
     }
   }
-
-  filterRole(role: string) {
-    this.sub = this.afs.collection<User>(`users`, ref => ref.where(role, '==', true)).valueChanges().subscribe( us => {
-      this.users = us;
-    });
-  }
 }
-

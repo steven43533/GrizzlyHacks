@@ -5,22 +5,7 @@ div class="everything">
             <p>SuperAdminDashboard will go here! you are currently </p>
         </div>
         <div class="row">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
-            </div>
-            <div class="col">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Filter Roles
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" (click)="filterRole('all')">All</a>
-                        <a class="dropdown-item" (click)="filterRole('admin')">Admin</a>
-                        <a class="dropdown-item" (click)="filterRole('superAdmin')">Super Admin</a>
-                        <a class="dropdown-item" (click)="filterRole('user')">User</a>
-                    </div>
-                </div>
-              </div>
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
         </div>
         <div class="row justify-content-center">
             <div class = "accounts">
@@ -34,12 +19,11 @@ div class="everything">
                             <div class='row justify-content-end'>
                                 <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
                                 <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Take Admin</button>
-                            </div>
-                            <div class="row justify-content-end">
-                                <button class = "btn btn-primary" *ngIf="!user.isSuperAdmin" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
+                                <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
                                 <button class = "btn btn-primary" *ngIf="user.isSuperAdmin" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                             </div>
                         </div>
+                        <br>
                     </div>
                 </div>
             </div>
