@@ -11,6 +11,7 @@ import {ApplicationComponent} from '../application/application.component';
 import {AdminGuard} from '../guards/admin.guard';
 import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-email-user.component';
 import { SuperAdminDashboardComponent } from '../super-admin-dashboard/super-admin-dashboard.component';
+import { SuperAdminGuard } from '../guards/super-admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,8 +22,8 @@ const routes: Routes = [
   { path: 'createAccount', component: CreateAccountComponent},
   { path: 'application', component: ApplicationComponent},
   { path: 'verifyEmail', component: VerifyEmailUserComponent},
-  { path: 'admin', component: AdmindashboardComponent, canActivate: [UserGuardGuard, AdminGuard]},
-  { path: 'superAdmin', component: SuperAdminDashboardComponent, canActivate: [UserGuardGuard, AdminGuard]},
+  { path: 'admin', component: AdmindashboardComponent, canActivate: [AdminGuard, SuperAdminGuard]},
+  { path: 'superAdmin', component: SuperAdminDashboardComponent, canActivate: [SuperAdminGuard]},
   
   { path: '**', redirectTo: '/home'}
 ];
