@@ -3,6 +3,7 @@ import { User } from '../interfaces/user';
 import { Subscription } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AuthService } from '../services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-super-admin-dashboard',
@@ -14,6 +15,7 @@ export class SuperAdminDashboardComponent {
   users: User[];
   sub: Subscription;
   search: string;
+  currentFilter: string = 'All';
 
   constructor(private afs: AngularFirestore, public auth: AuthService) { 
 
@@ -25,6 +27,7 @@ export class SuperAdminDashboardComponent {
   ngOnInit(): void {
     this.sub = this.afs.collection<User>(`users`).valueChanges().subscribe( us => {
       this.users = us;
+      this.users.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
     });
   }
 
@@ -67,6 +70,28 @@ export class SuperAdminDashboardComponent {
       const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
       user.isAdmin = false;
       userRef.update(user);
+    }
+  }
+
+  filterUsers(filter: string) {
+    if (filter === 'All') {
+      this.currentFilter = 'All';
+      this.sub = this.afs.collection<User>(`users`).valueChanges().subscribe( us => {
+        this.users = us;
+        this.users.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
+      });
+    }
+    if (filter === 'Admin') {
+      this.currentFilter = 'Admin';
+      this.sub = this.afs.collection<User>(`users`, ref => ref.where('isAdmin', '==', true)).valueChanges().subscribe( us => {
+        this.users = us;
+      });
+    }
+    if (filter === 'Super Admin') {
+      this.currentFilter = 'Super Admin';
+      this.sub = this.afs.collection<User>(`users`, ref => ref.where('isSuperAdmin', '==', true)).valueChanges().subscribe( us => {
+        this.users = us;
+      });
     }
   }
 }
