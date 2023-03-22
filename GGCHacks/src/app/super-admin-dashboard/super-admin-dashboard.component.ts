@@ -15,8 +15,6 @@ export class SuperAdminDashboardComponent {
   sub: Subscription;
   search: string;
 
-
-
   constructor(private afs: AngularFirestore, public auth: AuthService) { 
 
   }
@@ -45,6 +43,10 @@ export class SuperAdminDashboardComponent {
       }
   }
   takeSuperAdmin(user: User) {
+    if (user === this.auth.user) {
+      alert('You cannot take your own super admin status.');
+      return;
+    }
     if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s super admin status?`)) {
       const userRef = this.afs.doc(`users/${user.uid}`);
       user.isSuperAdmin = false;
@@ -66,4 +68,11 @@ export class SuperAdminDashboardComponent {
       userRef.update(user);
     }
   }
+
+  filterRole(role: string) {
+    this.sub = this.afs.collection<User>(`users`, ref => ref.where(role, '==', true)).valueChanges().subscribe( us => {
+      this.users = us;
+    });
+  }
 }
+
