@@ -38,23 +38,32 @@ export class SuperAdminDashboardComponent {
   }
 
   makeSuperAdmin(user: User) {
-    const userRef = this.afs.doc(`users/${user.uid}`);
-    user.isSuperAdmin = true;
-    userRef.update(user);
+    if (confirm(`Are you sure you want to make ${user.firstName} ${user.lastName} a super admin?`)) {
+      const userRef = this.afs.doc(`users/${user.uid}`);
+      user.isSuperAdmin = true;
+      userRef.update(user);
+      }
   }
   takeSuperAdmin(user: User) {
-    const userRef = this.afs.doc(`users/${user.uid}`);
-    user.isSuperAdmin = false;
-    userRef.update(user);
+    if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s super admin status?`)) {
+      const userRef = this.afs.doc(`users/${user.uid}`);
+      user.isSuperAdmin = false;
+      userRef.update(user);
+    }
   }
   makeAdmin(user: User) {
-    const userRef = this.afs.doc(`users/${user.uid}`);
-    user.isAdmin = true;
-    userRef.update(user);
+    if (confirm(`Are you sure you want to make ${user.firstName} ${user.lastName} an admin?`)) {
+      const userRef = this.afs.doc(`users/${user.uid}`);
+      user.isAdmin = true;
+      userRef.update(user);
+    }
   }
+
   takeAdmin(user: User) {
-    const userRef = this.afs.doc(`users/${user.uid}`);
-    user.isAdmin = false;
-    userRef.update(user);
+    if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s admin status?`)) {  
+      const userRef = this.afs.doc(`users/${user.uid}`);
+      user.isAdmin = false;
+      userRef.update(user);
+    }
   }
 }

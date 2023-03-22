@@ -6,17 +6,15 @@ div class="everything">
             <div class = "accounts">
                 <div *ngIf="users">
                     <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search">
-                        
                         <p>Name: {{user.firstName}} {{user.lastName}}</p>
                         <p>Email: {{user.email}}</p>
-                        
-                        <div class='row'>
+                        <div class='row justify-content-end'>
                             <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
                             <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Take Admin</button>
                             <button class = "btn btn-primary" *ngIf="!user.isSuperAdmin" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
                             <button class = "btn btn-primary" *ngIf="user.isSuperAdmin" (click)="takeSuperAdmin(user)">Take Super Admin</button>
-
                         </div>
+                        <hr>
                     </div>
                 </div>
             </div>
