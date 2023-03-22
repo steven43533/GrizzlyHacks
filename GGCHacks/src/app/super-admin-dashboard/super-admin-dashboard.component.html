@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="card w-50">
         <div class="row">
-            <p>SuperAdminDashboard will go here! you are currently </p>
+            <p>SuperAdminDashboard will go here!</p>
         </div>
         <div class="row">
             <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
@@ -18,7 +18,7 @@
                         <div class="col">
                             <div class='row justify-content-end'>
                                 <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
-                                <button class = "btn btn-primary" *ngIf="user.isAdmin" (click)="takeAdmin(user)">Take Admin</button>
+                                <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="takeAdmin(user)">Take Admin</button>
                                 <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
                                 <button class = "btn btn-primary" *ngIf="user.isSuperAdmin" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                             </div>

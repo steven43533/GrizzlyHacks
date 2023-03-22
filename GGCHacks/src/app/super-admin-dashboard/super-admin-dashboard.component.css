@@ -6,17 +6,12 @@
     height: 75%;
     overflow-x: hidden;
     overflow-y: scroll;
-  }
+}
   
-  .btn-primary{
+.btn-primary{
     margin: 2%;
-  }
+}
   
-  .search{
+.search{
     width: 100%;
-  }
-  
-  #dropDownMenuButton{
-    margin: 2%;
-  }
-  
+}
