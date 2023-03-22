@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit, ɵbypassSanitizationTrustHtml} from '@angular/core';
-import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
-import {User} from '../interfaces/user';
-import {Observable, of, Subscription} from 'rxjs';
-import {AuthService} from '../services/auth.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { User} from '../interfaces/user';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 /**
  * This is the admin dashboard component.
