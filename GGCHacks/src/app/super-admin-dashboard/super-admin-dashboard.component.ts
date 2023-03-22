@@ -46,7 +46,7 @@ export class SuperAdminDashboardComponent {
       }
   }
   takeSuperAdmin(user: User) {
-    if (user === this.auth.user) {
+    if (user.email === this.auth.user.email) {
       alert('You cannot take your own super admin status.');
       return;
     }
