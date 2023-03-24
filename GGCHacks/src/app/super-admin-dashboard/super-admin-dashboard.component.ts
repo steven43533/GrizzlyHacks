@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class SuperAdminDashboardComponent {
   
   users: User[];
+  fullUserArray: User[];
   sub: Subscription;
   search: string;
   currentFilter: string = 'All';
@@ -26,6 +27,7 @@ export class SuperAdminDashboardComponent {
    */
   ngOnInit(): void {
     this.sub = this.afs.collection<User>(`users`).valueChanges().subscribe( us => {
+      this.fullUserArray = us;
       this.users = us;
       this.users.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
     });
@@ -76,22 +78,15 @@ export class SuperAdminDashboardComponent {
   filterUsers(filter: string) {
     if (filter === 'All') {
       this.currentFilter = 'All';
-      this.sub = this.afs.collection<User>(`users`).valueChanges().subscribe( us => {
-        this.users = us;
-        this.users.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
-      });
+      this.users = this.fullUserArray;
     }
     if (filter === 'Admin') {
       this.currentFilter = 'Admin';
-      this.sub = this.afs.collection<User>(`users`, ref => ref.where('isAdmin', '==', true)).valueChanges().subscribe( us => {
-        this.users = us;
-      });
+      this.users = this.fullUserArray.filter( u => u.isAdmin);
     }
     if (filter === 'Super Admin') {
       this.currentFilter = 'Super Admin';
-      this.sub = this.afs.collection<User>(`users`, ref => ref.where('isSuperAdmin', '==', true)).valueChanges().subscribe( us => {
-        this.users = us;
-      });
+      this.users = this.fullUserArray.filter( u => u.isSuperAdmin);
     }
   }
 }
