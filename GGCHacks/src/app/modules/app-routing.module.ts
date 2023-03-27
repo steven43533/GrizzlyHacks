@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'createAccount', component: CreateAccountComponent},
   { path: 'application', component: ApplicationComponent},
   { path: 'verifyEmail', component: VerifyEmailUserComponent},
-  { path: 'admin', component: AdmindashboardComponent, canActivate: [AdminGuard, SuperAdminGuard]},
+  { path: 'admin', component: AdmindashboardComponent, canActivate: [AdminGuard]},
   { path: 'superAdmin', component: SuperAdminDashboardComponent, canActivate: [SuperAdminGuard]},
   
   { path: '**', redirectTo: '/home'}
