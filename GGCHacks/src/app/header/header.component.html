@@ -8,7 +8,9 @@
   </div>
 <div class="justify-content-end">
   <button class="btn btn-sm btn-outline-secondary" type="button"  routerLink="/home">Home</button>
-
+  
+  <button class="btn btn-sm btn-outline-secondary" type="button"  routerLink="/blogHome">Blog</button>
+  
   <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);"  *ngIf="auth.user === null || !auth.verified">Log In</button>
 
   <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null || !auth.verified">Create Account</button>

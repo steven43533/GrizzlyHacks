@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule} from '@angular/fire/compat/storage';
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 //Components
 import { AppComponent } from './app.component';
@@ -32,6 +32,8 @@ import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-e
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
+import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { BlogPostingPageComponent } from './blog-posting-page/blog-posting-page.component';
 
 
 
@@ -52,7 +54,9 @@ import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admi
     CheckFilerPipe,
     EventCalendarComponent,
     VerifyEmailUserComponent,
-    SuperAdminDashboardComponent
+    SuperAdminDashboardComponent,
+    BlogHomeComponent,
+    BlogPostingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,7 @@ import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admi
     AngularFireStorageModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
   ],
 
   providers: [],

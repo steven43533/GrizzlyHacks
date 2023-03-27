@@ -1,0 +1,29 @@
+<div class="everything">
+    <div class="col">
+        <div class="row justify-content-center">
+            <div *ngIf="auth.user.isSuperAdmin">
+                <div class="row justify-content-center">
+                    <h1>Admin Tools</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <button class="btn btn-primary" routerLink="/blogPostingPage">Post Blog</button>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let Blog of blogList">
+            <div class="row justify-content-center">
+                <div class="card w-50 h-80">
+                    <div class="row justify-content-center">
+                        <h1>{{Blog.title}}</h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h6>Author: {{Blog.author}}, {{convertDate(Blog)}}</h6>
+                    </div>
+                    <div class="row justify-content-center">
+                    </div>
+                    <p>{{Blog.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
