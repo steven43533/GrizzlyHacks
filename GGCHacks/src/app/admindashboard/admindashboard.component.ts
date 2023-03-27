@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit, ɵbypassSanitizationTrustHtml} from '@angular/core';
-import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
-import {User} from '../interfaces/user';
-import {Observable, of, Subscription} from 'rxjs';
-import {AuthService} from '../services/auth.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { User} from '../interfaces/user';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 /**
  * This is the admin dashboard component.
@@ -46,26 +46,6 @@ export class AdmindashboardComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this.sub.unsubscribe();
-  }
-
-  /**
-   * Makes the user an admin.
-   * @param user - The user object.
-   */
-  makeAdmin(user: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    user.isAdmin = true;
-    userRef.update(user);
-  }
-
-  /**
-   * Takes away the user's admin status.
-   * @param user - The user object.
-   */
-  takeAdmin(user: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    user.isAdmin = false;
-    userRef.update(user);
   }
 
   /**

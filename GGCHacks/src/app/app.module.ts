@@ -31,6 +31,7 @@ import { EventCalendarComponent } from './EventCalendarStuff/event-calendar/even
 import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-email-user.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
 
 
 
@@ -50,7 +51,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     UserQueryPipe,
     CheckFilerPipe,
     EventCalendarComponent,
-    VerifyEmailUserComponent
+    VerifyEmailUserComponent,
+    SuperAdminDashboardComponent
   ],
   imports: [
     BrowserModule,
