@@ -1,26 +1,44 @@
 <div class="everything">
   <div class="row justify-content-center">
     <div class="card w-50 h-80">
+        <h1>Admin Dashboard</h1>
+        <h3>Filters</h3>
         <div class="row justify-content-center">
-            <div class="col-9">
-                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
-            </div>
-            <div class="col-3">
-                <div class="row">
-                    <p>Filter: </p>
-                    <div ngbDropdown class="d-inline-block">
-                        <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
-                            {{this.currentFilter}}
-                        </button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button ngbDropdownItem (click)="filterUsers('All')">All</button>
-                            <button ngbDropdownItem (click)="filterUsers('Admin')">Admin</button>
-                            <button ngbDropdownItem (click)="filterUsers('Super Admin')">Super Admin</button>
-                        </div>
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+        </div>
+        <table>
+            <tr>
+              <th>Admin Level</th>
+              <th>Application</th>
+              <th>Hackathon</th>
+            </tr>
+            <tr>
+              <td>
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                        {{this.currentFilter}}
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem (click)="filterUsers('Non-Admin')">Non-Admin</button>
+                        <button ngbDropdownItem (click)="filterUsers('Admin')">Admin</button>
+                        <button ngbDropdownItem (click)="filterUsers('Super Admin')">Super Admin</button>
                     </div>
                 </div>
-            </div>
-        </div>
+              </td>
+              <td>
+                <div class = "row">
+                    <label class = "form-check-label" for = "chk1">Has an Application:</label>
+                    <input class = "form-check-inline" type="checkbox" id = "chk1" [ngModel]="checkboxHasApplication" (click)="toggleHasApplicationCheckbox()">
+                </div>
+              </td>
+              <td>
+                <div class = "row">
+                    <label class = "form-check-label" for = "chk1">Accepted to Hackathon:</label>
+                    <input class = "form-check-inline" type="checkbox" id = "chk1" [ngModel]="checkboxAcceptedToHackathon" (click)="toggleAcceptedToHackathon()">
+                </div>
+              </td>
+            </tr>
+          </table>
         <div class="row justify-content-center">
             <div class = "accounts">
                 <div *ngIf="users">
@@ -32,10 +50,10 @@
                         <div class="col">
                             <div class='row justify-content-end'>
                                 <div class="btn-group">
-                                    <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
-                                    <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="takeAdmin(user)">Take Admin</button>
-                                    <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
-                                    <button class = "btn btn-primary" *ngIf="user.isSuperAdmin" (click)="takeSuperAdmin(user)">Take Super Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                                 </div>
                             </div>
                         </div>
@@ -45,4 +63,5 @@
         </div>
     </div>
 </div>
+<!-- auth.adminLevel > 0 -->
         
