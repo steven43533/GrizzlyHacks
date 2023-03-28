@@ -21,6 +21,7 @@ export class AuthService implements OnDestroy {
   sub: Subscription;
   sub2: Subscription;
   verified: boolean;
+  adminLevel: number;
   isAdmin: boolean;
   isSuperAdmin: boolean;
 
@@ -30,6 +31,7 @@ export class AuthService implements OnDestroy {
     private router: Router,
     public appService: ApplicationServiceService
   ) {
+    this.adminLevel = 0;
     this.isAdmin = false;
     this.isSuperAdmin = false;
     this.verified = false;
@@ -48,6 +50,7 @@ export class AuthService implements OnDestroy {
   async setUser(user) {
     return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
+      this.adminLevel = u.adminLevel;
       this.isAdmin = u.isAdmin;
       this.isSuperAdmin = u.isSuperAdmin;
       if (u.application === undefined || u.application == null) {
@@ -71,6 +74,7 @@ export class AuthService implements OnDestroy {
       email: user.email,
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
+      adminLevel: 0,
       isAdmin: false,
       isSuperAdmin: false,
       isRegisteredFor2020: false,
@@ -134,6 +138,7 @@ export class AuthService implements OnDestroy {
 
   public signOut() {
     this.verified = false;
+    this.adminLevel = 0;
     this.isAdmin = false;
     this.isSuperAdmin = false;
     this.afAuth.signOut().then( result => {

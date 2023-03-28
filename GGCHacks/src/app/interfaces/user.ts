@@ -5,6 +5,7 @@ export interface User {
   firstName: string;
   lastName: string;
   email: string;
+  adminLevel: number;
   isAdmin: boolean;
   isSuperAdmin: boolean;
   isRegisteredFor2020: boolean;
