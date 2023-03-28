@@ -16,25 +16,38 @@
               <td>
                 <div ngbDropdown class="d-inline-block">
                     <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
-                        {{this.currentFilter}}
+                        {{this.adminFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem (click)="filterUsers('Non-Admin')">Non-Admin</button>
-                        <button ngbDropdownItem (click)="filterUsers('Admin')">Admin</button>
-                        <button ngbDropdownItem (click)="filterUsers('Super Admin')">Super Admin</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('All Members')">All Members</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('Non-Admin')">Non-Admins</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('Admin')">Admin</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('Super Admin')">Super Admin</button>
                     </div>
                 </div>
               </td>
               <td>
-                <div class = "row">
-                    <label class = "form-check-label" for = "chk1">Has an Application:</label>
-                    <input class = "form-check-inline" type="checkbox" id = "chk1" [ngModel]="checkboxHasApplication" (click)="toggleHasApplicationCheckbox()">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-secondary" id="dropdownBasic2" ngbDropdownToggle>
+                        {{this.applicationFilter}}
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                        <button ngbDropdownItem (click)="changeApplicationFilter('All')">All</button>
+                        <button ngbDropdownItem (click)="changeApplicationFilter('Has Application')">Has Application</button>
+                        <button ngbDropdownItem (click)="changeApplicationFilter('Missing Application')">Missing Application</button>
+                    </div>
                 </div>
               </td>
               <td>
-                <div class = "row">
-                    <label class = "form-check-label" for = "chk1">Accepted to Hackathon:</label>
-                    <input class = "form-check-inline" type="checkbox" id = "chk1" [ngModel]="checkboxAcceptedToHackathon" (click)="toggleAcceptedToHackathon()">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-secondary" id="dropdownBasic3" ngbDropdownToggle>
+                        {{this.acceptedFilter}}
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                        <button ngbDropdownItem (click)="changeAcceptedFilter('All')">All</button>
+                        <button ngbDropdownItem (click)="changeAcceptedFilter('Accepted to Hackathon')">Accepted to Hackathon</button>
+                        <button ngbDropdownItem (click)="changeAcceptedFilter('Not Accepted to Hackathon')">Not Accepted to Hackathon</button>
+                    </div>
                 </div>
               </td>
             </tr>
