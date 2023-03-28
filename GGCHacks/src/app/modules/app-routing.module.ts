@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Routes, RouterModule } from '@angular/router';
 import {LandingpageComponent} from '../landingpage/landingpage.component';
 import {AdmindashboardComponent} from '../admindashboard/admindashboard.component';
+import {NewAdminDashboardComponent} from '../new-admin-dashboard/new-admin-dashboard.component';
 import {EmailActionComponent} from '../email-action/email-action.component';
 import {CreateAccountComponent} from '../UserStuff/create-account/create-account.component';
 import {LoginComponent} from '../UserStuff/login/login.component';
@@ -10,8 +11,8 @@ import {UserDashboardComponent} from '../UserStuff/user-dashboard/user-dashboard
 import {ApplicationComponent} from '../application/application.component';
 import {AdminGuard} from '../guards/admin.guard';
 import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-email-user.component';
-import { SuperAdminDashboardComponent } from '../super-admin-dashboard/super-admin-dashboard.component';
-import { SuperAdminGuard } from '../guards/super-admin.guard';
+import {SuperAdminDashboardComponent} from '../super-admin-dashboard/super-admin-dashboard.component';
+import {SuperAdminGuard} from '../guards/super-admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'createAccount', component: CreateAccountComponent},
   { path: 'application', component: ApplicationComponent},
   { path: 'verifyEmail', component: VerifyEmailUserComponent},
+  { path: 'newAdmin', component: NewAdminDashboardComponent, canActivate: [AdminGuard]},
   { path: 'admin', component: AdmindashboardComponent, canActivate: [AdminGuard]},
   { path: 'superAdmin', component: SuperAdminDashboardComponent, canActivate: [SuperAdminGuard]},
   
