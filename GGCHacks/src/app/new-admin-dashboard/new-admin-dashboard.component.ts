@@ -77,6 +77,18 @@ export class NewAdminDashboardComponent {
     }
   }
 
+  showApplication(user: User) {
+
+  }
+
+  acceptApplication(user: User) {
+    
+  }
+
+  revokeApplication(user: User) {
+    
+  }
+
   changeAdminFilter(filter: string) {
     if (filter === 'All Members') {
       this.adminFilter = 'All Members';
