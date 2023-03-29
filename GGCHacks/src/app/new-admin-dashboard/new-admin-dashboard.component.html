@@ -6,14 +6,9 @@
         <div class="row justify-content-center">
             <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
         </div>
-        <table>
-            <tr>
-              <th>Admin Level</th>
-              <th>Application</th>
-              <th>Hackathon</th>
-            </tr>
-            <tr>
-              <td>
+        <div class="row">
+            <div class="col">
+                <h4>Admin Level</h4>
                 <div ngbDropdown class="d-inline-block">
                     <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
                         {{this.adminFilter}}
@@ -25,8 +20,9 @@
                         <button ngbDropdownItem (click)="changeAdminFilter('Super Admin')">Super Admin</button>
                     </div>
                 </div>
-              </td>
-              <td>
+            </div>
+            <div class="col">
+                <h4>Application</h4>
                 <div ngbDropdown class="d-inline-block">
                     <button type="button" class="btn btn-secondary" id="dropdownBasic2" ngbDropdownToggle>
                         {{this.applicationFilter}}
@@ -37,8 +33,9 @@
                         <button ngbDropdownItem (click)="changeApplicationFilter('Missing Application')">Missing Application</button>
                     </div>
                 </div>
-              </td>
-              <td>
+            </div>
+            <div class="col">
+                <h4>Hackathon</h4>
                 <div ngbDropdown class="d-inline-block">
                     <button type="button" class="btn btn-secondary" id="dropdownBasic3" ngbDropdownToggle>
                         {{this.acceptedFilter}}
@@ -49,9 +46,8 @@
                         <button ngbDropdownItem (click)="changeAcceptedFilter('Not Accepted to Hackathon')">Not Accepted to Hackathon</button>
                     </div>
                 </div>
-              </td>
-            </tr>
-          </table>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class = "accounts">
                 <div *ngIf="users">

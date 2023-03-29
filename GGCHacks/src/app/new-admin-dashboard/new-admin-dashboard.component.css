@@ -10,12 +10,15 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
+  
+.btn-secondary{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
 
 .btn-primary {
-    margin-top: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
-    min-height: 50;
+    margin: 5px;
 }
   
 .search{
