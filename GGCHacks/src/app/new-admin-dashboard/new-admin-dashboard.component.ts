@@ -16,8 +16,8 @@ export class NewAdminDashboardComponent {
   sub: Subscription;
   search: string;
   adminFilter: string = 'All Members';
-  applicationFilter: string = 'All';
-  acceptedFilter: string = 'All';
+  applicationFilter: string = 'No Filter';
+  acceptedFilter: string = 'No Filter';
 
   constructor(private afs: AngularFirestore, public auth: AuthService) { 
 
@@ -77,10 +77,6 @@ export class NewAdminDashboardComponent {
     }
   }
 
-  showApplication(user: User) {
-
-  }
-
   acceptApplication(user: User) {
     
   }
@@ -93,21 +89,21 @@ export class NewAdminDashboardComponent {
     if (filter === 'All Members') {
       this.adminFilter = 'All Members';
     }
-    if (filter === 'Non-Admin') {
-      this.adminFilter = 'Non-Admin';
+    if (filter === 'Non-Admins') {
+      this.adminFilter = 'Non-Admins';
     }
-    if (filter === 'Admin') {
-      this.adminFilter = 'Admin';
+    if (filter === 'Admins') {
+      this.adminFilter = 'Admins';
     }
-    if (filter === 'Super Admin') {
-      this.adminFilter = 'Super Admin';
+    if (filter === 'Super Admins') {
+      this.adminFilter = 'Super Admins';
     }
     this.filterUserEntries();
   }
 
   changeApplicationFilter(filter: string) {
-    if (filter === 'All') {
-      this.applicationFilter = 'All';
+    if (filter === 'No Filter') {
+      this.applicationFilter = 'No Filter';
     }
     if (filter === 'Has Application') {
       this.applicationFilter = 'Has Application';
@@ -119,14 +115,14 @@ export class NewAdminDashboardComponent {
   }
 
   changeAcceptedFilter(filter: string) {
-    if (filter === 'All') {
-      this.acceptedFilter = 'All';
+    if (filter === 'No Filter') {
+      this.acceptedFilter = 'No Filter';
     }
-    if (filter === 'Accepted to Hackathon') {
-      this.acceptedFilter = 'Accepted to Hackathon';
+    if (filter === 'Accepted') {
+      this.acceptedFilter = 'Accepted';
     }
-    if (filter === 'Not Accepted to Hackathon') {
-      this.acceptedFilter = 'Not Accepted to Hackathon';
+    if (filter === 'Not Accepted') {
+      this.acceptedFilter = 'Not Accepted';
     }
     this.filterUserEntries();
   }
@@ -138,15 +134,15 @@ export class NewAdminDashboardComponent {
         this.users = this.fullUserArray;
         break;
       }
-      case 'Non-Admin': {
+      case 'Non-Admins': {
         this.users = this.fullUserArray.filter( u => u.adminLevel == 0);
         break;
       }
-      case 'Admin': {
+      case 'Admins': {
         this.users = this.fullUserArray.filter( u => u.adminLevel == 1);
         break;
       }
-      case 'Super Admin': {
+      case 'Super Admins': {
         this.users = this.fullUserArray.filter( u => u.adminLevel == 2);
         break;
       }
@@ -166,11 +162,11 @@ export class NewAdminDashboardComponent {
 
     //Show the selected Accepted Filter.
     switch(this.acceptedFilter) {
-      case 'Accepted to Hackathon': {
+      case 'Accepted': {
         this.users = this.users.filter( u => u.isRegisteredFor2020 == true );
         break;
       }
-      case 'Not Accepted to Hackathon': {
+      case 'Not Accepted': {
         this.users = this.users.filter( u => u.isRegisteredFor2020 == false );
         break;
       }

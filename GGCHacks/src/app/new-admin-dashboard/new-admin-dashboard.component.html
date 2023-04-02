@@ -8,16 +8,16 @@
         </div>
         <div class="row">
             <div class="col">
-                <h4>Admin Level</h4>
+                <h4>Member List</h4>
                 <div ngbDropdown class="d-inline-block">
                     <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
                         {{this.adminFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button ngbDropdownItem (click)="changeAdminFilter('All Members')">All Members</button>
-                        <button ngbDropdownItem (click)="changeAdminFilter('Non-Admin')">Non-Admins</button>
-                        <button ngbDropdownItem (click)="changeAdminFilter('Admin')">Admin</button>
-                        <button ngbDropdownItem (click)="changeAdminFilter('Super Admin')">Super Admin</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('Non-Admins')">Non-Admins</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('Admins')">Admins</button>
+                        <button ngbDropdownItem (click)="changeAdminFilter('Super Admins')">Super Admins</button>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                         {{this.applicationFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                        <button ngbDropdownItem (click)="changeApplicationFilter('All')">All</button>
+                        <button ngbDropdownItem (click)="changeApplicationFilter('No Filter')">No Filter</button>
                         <button ngbDropdownItem (click)="changeApplicationFilter('Has Application')">Has Application</button>
                         <button ngbDropdownItem (click)="changeApplicationFilter('Missing Application')">Missing Application</button>
                     </div>
@@ -41,9 +41,9 @@
                         {{this.acceptedFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
-                        <button ngbDropdownItem (click)="changeAcceptedFilter('All')">All</button>
-                        <button ngbDropdownItem (click)="changeAcceptedFilter('Accepted to Hackathon')">Accepted to Hackathon</button>
-                        <button ngbDropdownItem (click)="changeAcceptedFilter('Not Accepted to Hackathon')">Not Accepted to Hackathon</button>
+                        <button ngbDropdownItem (click)="changeAcceptedFilter('No Filter')">No Filter</button>
+                        <button ngbDropdownItem (click)="changeAcceptedFilter('Accepted to Hackathon')">Accepted</button>
+                        <button ngbDropdownItem (click)="changeAcceptedFilter('Not Accepted to Hackathon')">Not Accepted</button>
                     </div>
                 </div>
             </div>
@@ -56,9 +56,12 @@
                             <h5>{{user.firstName}} {{user.lastName}}</h5>
                             <h6>Email: {{user.email}}</h6>
                             <div *ngIf="user.application == null">
-                                <p>Application Missing</p>
+                                <b><p class="text-red">Application Missing</p></b>
                             </div>
-                            <div *ngIf="user.application != null">
+                            <div *ngIf="user.application != null && !user.application.submited">
+                                <b><p class="text-red">Application Not Submitted</p></b>
+                            </div>
+                            <div *ngIf="user.application != null && user.application.submited">
                                 <p>Phone number: {{user.application.phone}}</p>
                             </div>
                             <div hidden="true" #app>
@@ -97,11 +100,6 @@
                                         <br>Phone: {{user.application.emCPhoneNumber}}
                                         <br>Relation: {{user.application.emergencyContactRelationWithApplicant}}</p>
                                     </div>
-                                    <div class='row'>
-                                        <button class = "btn-secondary" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
-                                        <button class = "btn-primary" *ngIf="user.application != null && user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept</button>
-                                        <button class = "btn-warn" *ngIf="user.application != null && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke</button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,10 +111,10 @@
                                 <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                             </div>
                             <div class='row justify-content-end'>
-                                <button class = "btn-secondary" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
-                                <button class = "btn-secondary" *ngIf="user.application != null && user.application.submited && app.hidden" (click)="app.hidden = false">Show Application</button>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept</button>
-                                <button class = "btn-warn" *ngIf="user.application != null && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke</button>
+                                <button class = "btn-application" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
+                                <button class = "btn-application" *ngIf="user.application != null && user.application.submited && app.hidden" (click)="app.hidden = false">Show Application</button>
+                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submited && user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept Application</button>
+                                <button class = "btn-warn" *ngIf="user.application != null && user.application.submited && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke Application</button>
                             </div>
                         </div>
                     </div>
