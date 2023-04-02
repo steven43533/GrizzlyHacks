@@ -10,7 +10,7 @@
             <div class="col">
                 <h4>Admin Level</h4>
                 <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                    <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
                         {{this.adminFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -24,7 +24,7 @@
             <div class="col">
                 <h4>Application</h4>
                 <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-secondary" id="dropdownBasic2" ngbDropdownToggle>
+                    <button type="button" class="btn btn-dropdown" id="dropdownBasic2" ngbDropdownToggle>
                         {{this.applicationFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
@@ -37,7 +37,7 @@
             <div class="col">
                 <h4>Hackathon</h4>
                 <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-secondary" id="dropdownBasic3" ngbDropdownToggle>
+                    <button type="button" class="btn btn-dropdown" id="dropdownBasic3" ngbDropdownToggle>
                         {{this.acceptedFilter}}
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
@@ -53,47 +53,70 @@
                 <div *ngIf="users">
                     <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search" class="row" id="userRow">
                         <div class="col">
-                            <p>Name: {{user.firstName}} {{user.lastName}}
-                            <br>Email: {{user.email}}</p>
+                            <h5>{{user.firstName}} {{user.lastName}}</h5>
+                            <h6>Email: {{user.email}}</h6>
+                            <div *ngIf="user.application == null">
+                                <p>Application Missing</p>
+                            </div>
+                            <div *ngIf="user.application != null">
+                                <p>Phone number: {{user.application.phone}}</p>
+                            </div>
                             <div hidden="true" #app>
                                 <div *ngIf="user.application != null">
-                                    <p></p>
-                                    <p>Gender: {{user.application.gender}}</p>
-                                    <p>Preferred Pronouns: {{user.application.preferredPronouns}}</p>
-                                    <p>Ethnicity: {{user.application.ethnicity}}</p>
-                                    <p>Phone number: {{user.application.phone}}</p>
-                                    <p>College: {{user.application.college}}</p>
-                                    <p>Major: {{user.application.major}}</p>
-                                    <p>Expected Graduation date: {{user.application.expectedGraduationDate}}</p>
-                                    <p>Why attend: {{user.application.whyAttend}}</p>
-                                    <p>What to learn: {{user.application.whatDoYouWantToLearn}}</p>
-                                    <p>Linkedin: {{user.application.whatDoYouWantToLearn}}</p>
-                                    <p>Github: {{user.application.gitHub}}</p>
-                                    <b>Emergency Contact</b>
-                                    <p>First Name: {{user.application.emergencyContactFirstName}}</p>
-                                    <p>Last Name: {{user.application.emergencyContactLastName}}</p>
-                                    <p>Phone: {{user.application.emCPhoneNumber}}</p>
-                                    <p>Relation: {{user.application.emergencyContactRelationWithApplicant}}</p>
+                                    <hr>
+                                    <div>
+                                        <b>Identity</b>
+                                        <p>Gender: {{user.application.gender}}
+                                        <br>Preferred Pronouns: {{user.application.preferredPronouns}}
+                                        <br>Ethnicity: {{user.application.ethnicity}}</p>
+                                        <hr>
+                                    </div>
+                                    <div>
+                                        <b>School</b>
+                                        <p>College: {{user.application.college}}
+                                        <br>Major: {{user.application.major}}
+                                        <br>Expected Graduation date: {{user.application.expectedGraduationDate}}</p>
+                                        <hr>
+                                    </div>
+                                    <div>
+                                        <b>Other</b>
+                                        <p>Why attend: {{user.application.whyAttend}}
+                                        <br>What to learn: {{user.application.whatDoYouWantToLearn}}</p>
+                                        <hr>
+                                    </div>
+                                    <div>
+                                        <b>Emergency Contact</b>
+                                        <p>Linkedin: {{user.application.whatDoYouWantToLearn}}
+                                        <br>Github: {{user.application.gitHub}}</p>
+                                        <hr>
+                                    </div>
+                                    <div>
+                                        <b>Emergency Contact</b>
+                                        <p>First Name: {{user.application.emergencyContactFirstName}}
+                                        <br>Last Name: {{user.application.emergencyContactLastName}}
+                                        <br>Phone: {{user.application.emCPhoneNumber}}
+                                        <br>Relation: {{user.application.emergencyContactRelationWithApplicant}}</p>
+                                    </div>
                                     <div class='row'>
-                                        <button class = "btn-primary" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
+                                        <button class = "btn-secondary" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
                                         <button class = "btn-primary" *ngIf="user.application != null && user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept</button>
-                                        <button class = "btn-primary" *ngIf="user.application != null && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke</button>
+                                        <button class = "btn-warn" *ngIf="user.application != null && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col justify-content-center">
                             <div class='row justify-content-end'>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submited && app.hidden" (click)="app.hidden = false">Show Application</button>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept</button>
-                                <button class = "btn-primary" *ngIf="user.application != null && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke</button>
+                                <button class = "btn-primary" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
+                                <button class = "btn-warn" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
+                                <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
+                                <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                             </div>
                             <div class='row justify-content-end'>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
+                                <button class = "btn-secondary" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
+                                <button class = "btn-secondary" *ngIf="user.application != null && user.application.submited && app.hidden" (click)="app.hidden = false">Show Application</button>
+                                <button class = "btn-primary" *ngIf="user.application != null && user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept</button>
+                                <button class = "btn-warn" *ngIf="user.application != null && !user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke</button>
                             </div>
                         </div>
                     </div>

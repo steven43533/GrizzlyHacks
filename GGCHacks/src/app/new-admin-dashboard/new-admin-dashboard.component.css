@@ -11,7 +11,7 @@
     overflow-y: hidden;
 }
   
-.btn-secondary{
+.btn-dropdown{
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 10px;
@@ -19,6 +19,16 @@
 
 .btn-primary {
     margin: 5px;
+}
+
+.btn-secondary {
+    margin: 5px;
+    background-color: #0d8abf;
+}
+
+.btn-warn {
+    margin: 5px;
+    background-color: #d41515;
 }
   
 .search{
