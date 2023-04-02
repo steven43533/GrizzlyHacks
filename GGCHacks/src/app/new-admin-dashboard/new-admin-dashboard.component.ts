@@ -78,11 +78,15 @@ export class NewAdminDashboardComponent {
   }
 
   acceptApplication(user: User) {
-    
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    user.isRegisteredFor2020 = true;
+    userRef.update(user);
   }
 
   revokeApplication(user: User) {
-    
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    user.isRegisteredFor2020 = false;
+    userRef.update(user);
   }
 
   changeAdminFilter(filter: string) {
