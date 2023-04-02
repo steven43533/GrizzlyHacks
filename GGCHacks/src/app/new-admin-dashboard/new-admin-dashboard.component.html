@@ -35,8 +35,9 @@
                         </button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
                             <button ngbDropdownItem (click)="changeApplicationFilter('No Filter')">No Filter</button>
-                            <button ngbDropdownItem (click)="changeApplicationFilter('Has Application')">Has Application</button>
-                            <button ngbDropdownItem (click)="changeApplicationFilter('Missing Application')">Missing Application</button>
+                            <button ngbDropdownItem (click)="changeApplicationFilter('Submitted Application')">Submitted Application</button>
+                            <button ngbDropdownItem (click)="changeApplicationFilter('Application Created')">Application Created</button>
+                            <button ngbDropdownItem (click)="changeApplicationFilter('No Application Created')">No Application Created</button>
                         </div>
                     </div>
                 </div>
@@ -63,10 +64,10 @@
                             <h5>{{user.firstName}} {{user.lastName}}</h5>
                             <h6>Email: {{user.email}}</h6>
                             <div *ngIf="user.application == null">
-                                <b><p class="text-red">Application Missing</p></b>
+                                <b><p class="text-red">No Application</p></b>
                             </div>
                             <div *ngIf="user.application != null && !user.application.submitted">
-                                <b><p class="text-red">Application Not Submitted</p></b>
+                                <p class="text-red">Application Not Submitted</p>
                             </div>
                             <div *ngIf="user.application != null && user.application.submitted">
                                 <p>Phone number: {{user.application.phone}}</p>
