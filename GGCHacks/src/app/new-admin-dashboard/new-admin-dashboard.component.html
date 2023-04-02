@@ -1,55 +1,62 @@
 <div class="everything">
   <div class="row justify-content-center">
     <div class="card w-50 h-80">
-        <h1>Admin Dashboard</h1>
-        <h3>Filters</h3>
-        <div class="row justify-content-center">
-            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+        <div *ngIf="auth.adminLevel == 1">
+            <h1>Admin Dashboard</h1>
         </div>
-        <div class="row">
-            <div class="col">
-                <h4>Member List</h4>
-                <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
-                        {{this.adminFilter}}
-                    </button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem (click)="changeAdminFilter('All Members')">All Members</button>
-                        <button ngbDropdownItem (click)="changeAdminFilter('Non-Admins')">Non-Admins</button>
-                        <button ngbDropdownItem (click)="changeAdminFilter('Admins')">Admins</button>
-                        <button ngbDropdownItem (click)="changeAdminFilter('Super Admins')">Super Admins</button>
+        <div *ngIf="auth.adminLevel == 2">
+            <h1>Super Admin Dashboard</h1>
+        </div>
+        <div class="filter-box">
+            <h3>Filters</h3>
+            <div class="row justify-content-center">
+                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Member List</h4>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
+                            {{this.adminFilter}}
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem (click)="changeAdminFilter('All Members')">All Members</button>
+                            <button ngbDropdownItem (click)="changeAdminFilter('Non-Admins')">Non-Admins</button>
+                            <button ngbDropdownItem (click)="changeAdminFilter('Admins')">Admins</button>
+                            <button ngbDropdownItem (click)="changeAdminFilter('Super Admins')">Super Admins</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <h4>Application</h4>
-                <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-dropdown" id="dropdownBasic2" ngbDropdownToggle>
-                        {{this.applicationFilter}}
-                    </button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                        <button ngbDropdownItem (click)="changeApplicationFilter('No Filter')">No Filter</button>
-                        <button ngbDropdownItem (click)="changeApplicationFilter('Has Application')">Has Application</button>
-                        <button ngbDropdownItem (click)="changeApplicationFilter('Missing Application')">Missing Application</button>
+                <div class="col">
+                    <h4>Application</h4>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-dropdown" id="dropdownBasic2" ngbDropdownToggle>
+                            {{this.applicationFilter}}
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                            <button ngbDropdownItem (click)="changeApplicationFilter('No Filter')">No Filter</button>
+                            <button ngbDropdownItem (click)="changeApplicationFilter('Has Application')">Has Application</button>
+                            <button ngbDropdownItem (click)="changeApplicationFilter('Missing Application')">Missing Application</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <h4>Hackathon</h4>
-                <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-dropdown" id="dropdownBasic3" ngbDropdownToggle>
-                        {{this.acceptedFilter}}
-                    </button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
-                        <button ngbDropdownItem (click)="changeAcceptedFilter('No Filter')">No Filter</button>
-                        <button ngbDropdownItem (click)="changeAcceptedFilter('Accepted to Hackathon')">Accepted</button>
-                        <button ngbDropdownItem (click)="changeAcceptedFilter('Not Accepted to Hackathon')">Not Accepted</button>
+                <div class="col">
+                    <h4>Hackathon</h4>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-dropdown" id="dropdownBasic3" ngbDropdownToggle>
+                            {{this.acceptedFilter}}
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                            <button ngbDropdownItem (click)="changeAcceptedFilter('No Filter')">No Filter</button>
+                            <button ngbDropdownItem (click)="changeAcceptedFilter('Accepted')">Accepted</button>
+                            <button ngbDropdownItem (click)="changeAcceptedFilter('Not Accepted')">Not Accepted</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class = "accounts">
+            <div class ="accounts">
                 <div *ngIf="users">
                     <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search" class="row" id="userRow">
                         <div class="col">
@@ -105,8 +112,8 @@
                         </div>
                         <div class="col justify-content-center">
                             <div class='row justify-content-end'>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
-                                <button class = "btn-warn" *ngIf="auth.adminLevel >= 1 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
+                                <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
+                                <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
                                 <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
                                 <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                             </div>

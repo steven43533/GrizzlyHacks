@@ -10,6 +10,12 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
+.filter-box{
+    margin: 0%;
+    padding: 3%;
+    background-color: #f2f2f2;
+}
   
 .btn-dropdown{
     margin-top: 0;
