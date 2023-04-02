@@ -65,10 +65,10 @@
                             <div *ngIf="user.application == null">
                                 <b><p class="text-red">Application Missing</p></b>
                             </div>
-                            <div *ngIf="user.application != null && !user.application.submited">
+                            <div *ngIf="user.application != null && !user.application.submitted">
                                 <b><p class="text-red">Application Not Submitted</p></b>
                             </div>
-                            <div *ngIf="user.application != null && user.application.submited">
+                            <div *ngIf="user.application != null && user.application.submitted">
                                 <p>Phone number: {{user.application.phone}}</p>
                             </div>
                             <div hidden="true" #app>
@@ -118,10 +118,10 @@
                                 <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                             </div>
                             <div class='row justify-content-end'>
-                                <button class = "btn-application" *ngIf="user.application != null && user.application.submited && !app.hidden" (click)="app.hidden = true">Hide Application</button>
-                                <button class = "btn-application" *ngIf="user.application != null && user.application.submited && app.hidden" (click)="app.hidden = false">Show Application</button>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submited && !user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept Application</button>
-                                <button class = "btn-warn" *ngIf="user.application != null && user.application.submited && user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke Application</button>
+                                <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && !app.hidden" (click)="app.hidden = true">Hide Application</button>
+                                <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && app.hidden" (click)="app.hidden = false">Show Application</button>
+                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submitted && !user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept Application</button>
+                                <button class = "btn-warn" *ngIf="user.application != null && user.application.submitted && user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke Application</button>
                             </div>
                         </div>
                     </div>
