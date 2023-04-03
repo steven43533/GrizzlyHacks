@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col" *ngIf="auth.adminLevel == 2">
                     <h4>Member List</h4>
                     <div ngbDropdown class="d-inline-block">
                         <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
@@ -64,13 +64,13 @@
                         <div class="col">
                             <h5>{{user.firstName}} {{user.lastName}}</h5>
                             <h6>{{user.email}}</h6>
-                            <div *ngIf="user.adminLevel == 0">
+                            <div *ngIf="user.adminLevel == 0 && auth.adminLevel == 2">
                                 <h6>Member</h6>
                             </div>
-                            <div *ngIf="user.adminLevel == 1">
+                            <div *ngIf="user.adminLevel == 1 && auth.adminLevel == 2">
                                 <h6>Admin</h6>
                             </div>
-                            <div *ngIf="user.adminLevel == 2">
+                            <div *ngIf="user.adminLevel == 2 && auth.adminLevel == 2">
                                 <h6>Super Admin</h6>
                             </div>
                             <div hidden="true" #app>
