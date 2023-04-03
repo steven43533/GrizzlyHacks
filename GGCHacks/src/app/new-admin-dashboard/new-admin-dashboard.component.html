@@ -62,7 +62,15 @@
                 <div *ngIf="users">
                     <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search" class="row" id="userRow">
                         <div class="col">
-                            <h5>{{user.firstName}} {{user.lastName}}</h5>
+                            <div *ngIf="user.adminLevel == 0">
+                                <h5>{{user.firstName}} {{user.lastName}}</h5>
+                            </div>
+                            <div *ngIf="user.adminLevel == 1">
+                                <h5>{{user.firstName}} {{user.lastName}} [ADMIN]</h5>
+                            </div>
+                            <div *ngIf="user.adminLevel == 2">
+                                <h5>{{user.firstName}} {{user.lastName}} [SUPER ADMIN]</h5>
+                            </div>
                             <h6>Email: {{user.email}}</h6>
                             <div *ngIf="user.application == null">
                                 <b><p class="text-red">No Application</p></b>
