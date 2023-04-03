@@ -109,17 +109,11 @@ export class NewAdminDashboardComponent {
     if (filter === 'No Filter') {
       this.applicationFilter = 'No Filter';
     }
-    if (filter === 'Submitted Application') {
-      this.applicationFilter = 'Submitted Application';
+    if (filter === 'Submitted') {
+      this.applicationFilter = 'Submitted';
     }
-    if (filter === 'Application Not Submitted') {
-      this.applicationFilter = 'Application Not Submitted';
-    }
-    if (filter === 'Application Created') {
-      this.applicationFilter = 'Application Created';
-    }
-    if (filter === 'No Application Created') {
-      this.applicationFilter = 'No Application Created';
+    if (filter === 'Not Submitted') {
+      this.applicationFilter = 'Not Submitted';
     }
     this.filterUserEntries();
   }
@@ -160,20 +154,12 @@ export class NewAdminDashboardComponent {
     
     //Show the selected Application Filter.
     switch(this.applicationFilter) {
-      case 'Submitted Application': {
+      case 'Submitted': {
         this.users = this.users.filter( u => u.application != null && u.application.submitted );
         break;
       }
-      case 'Application Not Submitted': {
+      case 'Not Submitted': {
         this.users = this.users.filter( u => u.application == null || !u.application.submitted );
-        break;
-      }
-      case 'Application Created': {
-        this.users = this.users.filter( u => u.application != null );
-        break;
-      }
-      case 'No Application Created': {
-        this.users = this.users.filter( u => u.application == null );
         break;
       }
     }
