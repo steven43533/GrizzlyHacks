@@ -121,7 +121,7 @@
                                 <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
                                 <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
                                 <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
-                                <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
+                                <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)" [disabled]="user.email == auth.user.email">Take Super Admin</button>
                             </div>
                             <div class='row justify-content-end'>
                                 <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && !app.hidden" (click)="app.hidden = true">Hide Application</button>
