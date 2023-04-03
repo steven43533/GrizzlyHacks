@@ -95,8 +95,12 @@ export class NewAdminDashboardComponent {
         this.adminFilter = 'All Members';
         break;
       }
-      case 'Non-Admins': {
+      case 'Non Admins': {
         this.adminFilter = 'Non Admins';
+        break;
+      }
+      case 'All Admins': {
+        this.adminFilter = 'All Admins';
         break;
       }
       case 'Admins': {
@@ -154,8 +158,12 @@ export class NewAdminDashboardComponent {
         this.users = this.fullUserArray;
         break;
       }
-      case 'Non-Admins': {
+      case 'Non Admins': {
         this.users = this.fullUserArray.filter( u => u.adminLevel == 0);
+        break;
+      }
+      case 'All Admins': {
+        this.users = this.fullUserArray.filter( u => u.adminLevel >= 1);
         break;
       }
       case 'Admins': {
