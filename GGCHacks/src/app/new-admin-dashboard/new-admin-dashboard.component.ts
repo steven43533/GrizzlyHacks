@@ -90,43 +90,59 @@ export class NewAdminDashboardComponent {
   }
 
   changeAdminFilter(filter: string) {
-    if (filter === 'All Members') {
-      this.adminFilter = 'All Members';
-    }
-    if (filter === 'Non-Admins') {
-      this.adminFilter = 'Non-Admins';
-    }
-    if (filter === 'Admins') {
-      this.adminFilter = 'Admins';
-    }
-    if (filter === 'Super Admins') {
-      this.adminFilter = 'Super Admins';
+    switch(filter) {
+      case 'All Members': {
+        this.adminFilter = 'All Members';
+        break;
+      }
+      case 'Non-Admins': {
+        this.adminFilter = 'Non Admins';
+        break;
+      }
+      case 'Admins': {
+        this.adminFilter = 'Admins';
+        break;
+      }
+      case 'Super Admins': {
+        this.adminFilter = 'Super Admins';
+        break;
+      }
     }
     this.filterUserEntries();
   }
 
   changeApplicationFilter(filter: string) {
-    if (filter === 'No Filter') {
-      this.applicationFilter = 'No Filter';
-    }
-    if (filter === 'Submitted') {
-      this.applicationFilter = 'Submitted';
-    }
-    if (filter === 'Not Submitted') {
-      this.applicationFilter = 'Not Submitted';
+    switch(filter) {
+      case 'No Filter': {
+        this.applicationFilter = 'No Filter';
+        break;
+      }
+      case 'Submitted': {
+        this.applicationFilter = 'Submitted';
+        break;
+      }
+      case 'Not Submitted': {
+        this.applicationFilter = 'Not Submitted';
+        break;
+      }
     }
     this.filterUserEntries();
   }
 
   changeAcceptedFilter(filter: string) {
-    if (filter === 'No Filter') {
-      this.acceptedFilter = 'No Filter';
-    }
-    if (filter === 'Accepted') {
-      this.acceptedFilter = 'Accepted';
-    }
-    if (filter === 'Not Accepted') {
-      this.acceptedFilter = 'Not Accepted';
+    switch(this.acceptedFilter) {
+      case 'No Filter': {
+        this.acceptedFilter = 'No Filter';
+        break;
+      }
+      case 'Accepted': {
+        this.acceptedFilter = 'Accepted';
+        break;
+      }
+      case 'Not Accepted': {
+        this.acceptedFilter = 'Not Accepted';
+        break;
+      }
     }
     this.filterUserEntries();
   }
