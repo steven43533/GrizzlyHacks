@@ -62,28 +62,25 @@
                 <div *ngIf="users">
                     <div *ngFor="let user of users | userQuery:'firstName,lastName,email':search" class="row" id="userRow">
                         <div class="col">
+                            <h5>{{user.firstName}} {{user.lastName}}</h5>
+                            <h6>{{user.email}}</h6>
                             <div *ngIf="user.adminLevel == 0">
-                                <h5>{{user.firstName}} {{user.lastName}}</h5>
+                                <h6>Member</h6>
                             </div>
                             <div *ngIf="user.adminLevel == 1">
-                                <h5>{{user.firstName}} {{user.lastName}} [ADMIN]</h5>
+                                <h6>Admin</h6>
                             </div>
                             <div *ngIf="user.adminLevel == 2">
-                                <h5>{{user.firstName}} {{user.lastName}} [SUPER ADMIN]</h5>
-                            </div>
-                            <h6>Email: {{user.email}}</h6>
-                            <div *ngIf="user.application == null">
-                                <b><p class="text-red">No Application</p></b>
-                            </div>
-                            <div *ngIf="user.application != null && !user.application.submitted">
-                                <p class="text-red">Application Not Submitted</p>
-                            </div>
-                            <div *ngIf="user.application != null && user.application.submitted">
-                                <p>Phone number: {{user.application.phone}}</p>
+                                <h6>Super Admin</h6>
                             </div>
                             <div hidden="true" #app>
                                 <div *ngIf="user.application != null">
                                     <hr>
+                                    <div>
+                                        <b>Contact</b>
+                                        <p>Phone number: {{user.application.phone}}</p>
+                                        <hr>
+                                    </div>
                                     <div>
                                         <b>Identity</b>
                                         <p>Gender: {{user.application.gender}}
@@ -130,6 +127,9 @@
                             <div class='row justify-content-end'>
                                 <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && !app.hidden" (click)="app.hidden = true">Hide Application</button>
                                 <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && app.hidden" (click)="app.hidden = false">Show Application</button>
+                                <div *ngIf="user.application == null || !user.application.submitted">
+                                    <b><p class="text-red">No Application</p></b>
+                                </div>
                                 <button class = "btn-primary" *ngIf="user.application != null && user.application.submitted && !user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept Application</button>
                                 <button class = "btn-warn" *ngIf="user.application != null && user.application.submitted && user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke Application</button>
                             </div>
