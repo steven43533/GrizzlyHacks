@@ -32,6 +32,7 @@ import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-e
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
+import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dashboard.component';
 
 
 
@@ -52,7 +53,8 @@ import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admi
     CheckFilerPipe,
     EventCalendarComponent,
     VerifyEmailUserComponent,
-    SuperAdminDashboardComponent
+    SuperAdminDashboardComponent,
+    NewAdminDashboardComponent
   ],
   imports: [
     BrowserModule,
