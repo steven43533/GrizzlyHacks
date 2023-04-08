@@ -34,7 +34,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogPostingPageComponent } from './blog-posting-page/blog-posting-page.component';
-
+import { EditBlogModalComponent } from './blog-home/edit-blog-modal/edit-blog-modal.component';
 
 
 @NgModule({
@@ -56,7 +56,8 @@ import { BlogPostingPageComponent } from './blog-posting-page/blog-posting-page.
     VerifyEmailUserComponent,
     SuperAdminDashboardComponent,
     BlogHomeComponent,
-    BlogPostingPageComponent
+    BlogPostingPageComponent,
+    EditBlogModalComponent
   ],
   imports: [
     BrowserModule,

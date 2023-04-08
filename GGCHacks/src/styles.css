@@ -60,7 +60,8 @@ html
   background: url("/assets/background.png") no-repeat bottom center fixed,
   linear-gradient(rgb(0,82,150), rgb(20,25,58)) !important;
   background-size: cover !important;
-  height: 100%;
+  margin: 0 !important;
+  padding-bottom: 100px;
 }
 
 header{
