@@ -1,17 +1,32 @@
-import { Component } from '@angular/core';
-import { Blog, BlogService } from 'src/app/services/blog.service';
+  import { Component, Input, OnInit } from '@angular/core';
+  import { FormGroup, FormControl } from '@angular/forms';
+  import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+  import { Blog, BlogService } from 'src/app/services/blog.service';
 
-@Component({
-  selector: 'app-edit-blog-modal',
-  templateUrl: './edit-blog-modal.component.html',
-  styleUrls: ['./edit-blog-modal.component.css']
-})
-export class EditBlogModalComponent {
+  @Component({
+    selector: 'app-edit-blog-modal',
+    templateUrl: './edit-blog-modal.component.html',
+    styleUrls: ['./edit-blog-modal.component.css']
+  })
+  export class EditBlogModalComponent implements OnInit {
+    @Input() blogToEdit: Blog;
+    editBlogForm: FormGroup;
 
-  constructor(blogService: BlogService, blogToEdit: Blog) { }
+    constructor(public activeModal: NgbActiveModal, private blogService: BlogService) { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+      this.editBlogForm = new FormGroup({
+        title: new FormControl(this.blogToEdit.title),
+        content: new FormControl(this.blogToEdit.content)
+      });
+    }
     
-  }  
 
-}
+    save(): void {
+      this.blogToEdit.title = this.editBlogForm.value.title;
+      this.blogToEdit.content = this.editBlogForm.value.content;
+      this.blogService.editBlog(this.blogToEdit);
+      this.activeModal.close();
+    }
+    
+  }

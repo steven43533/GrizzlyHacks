@@ -15,8 +15,10 @@
                             <h6 class="content">Author: {{blog.author}}, {{blog.datePosted.toDate().toDateString()}}</h6>
                         </div>
                         <div class="col d-flex align-items-right">
-                            <button *ngIf="auth?.user?.isSuperAdmin" class="btn btn-primary" (click)="editBlog(blog)">Edit</button>
-                            <button *ngIf="auth?.user?.isSuperAdmin" class="btn btn-primary" (click)="deleteBlog(blog)">Delete</button>
+                            <ng-container *ngIf="auth?.user?.isSuperAdmin">
+                                <button class="btn btn-primary" (click)="editBlog(blog)">Edit</button>
+                                <button class="btn btn-primary" (click)="deleteBlog(blog)">Delete</button>
+                            </ng-container>
                         </div>
                     </div>
                     <hr/>

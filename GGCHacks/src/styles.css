@@ -5,6 +5,24 @@ body {
 
 }
 
+.modal {
+  z-index: 1051 !important;
+}
+
+.modal-backdrop {
+  z-index: 1050 !important;
+}
+
+
+.modal-backdrop.show {
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+.modal-open {
+  overflow: visible;
+}
+
 .btn-link,
 #link{
   color: #00704a;
