@@ -1,8 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
+.modal {
+  z-index: 1051 !important;
+}
 
+.modal-backdrop {
+  z-index: 1050 !important;
+}
+
+
+.modal-backdrop.show {
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+.modal-open {
+  overflow: visible;
 }
 
 .btn-link,
@@ -60,7 +73,9 @@ html
   background: url("/assets/background.png") no-repeat bottom center fixed,
   linear-gradient(rgb(0,82,150), rgb(20,25,58)) !important;
   background-size: cover !important;
-  height: 100%;
+  margin: 0 !important;
+  min-height: 100vh !important;
+  padding-bottom: 50px !important;
 }
 
 header{

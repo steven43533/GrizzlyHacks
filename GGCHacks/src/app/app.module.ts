@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule} from '@angular/fire/compat/storage';
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 //Components
 import { AppComponent } from './app.component';
@@ -32,9 +32,10 @@ import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-e
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
+import { BlogHomeComponent } from './blog/blog-home/blog-home.component';
+import { BlogPostingPageComponent } from './blog/blog-posting-page/blog-posting-page.component';
+import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-blog-modal.component';
 import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dashboard.component';
-
-
 
 @NgModule({
   declarations: [
@@ -54,6 +55,9 @@ import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dash
     EventCalendarComponent,
     VerifyEmailUserComponent,
     SuperAdminDashboardComponent,
+    BlogHomeComponent,
+    BlogPostingPageComponent,
+    EditBlogModalComponent,
     NewAdminDashboardComponent
   ],
   imports: [
@@ -67,7 +71,7 @@ import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dash
     AngularFireStorageModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
   ],
 
   providers: [],
