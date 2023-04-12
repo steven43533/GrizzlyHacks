@@ -17,6 +17,7 @@
     ngOnInit(): void {
       this.editBlogForm = new FormGroup({
         title: new FormControl(this.blogToEdit.title),
+        author: new FormControl(this.blogToEdit.author),
         content: new FormControl(this.blogToEdit.content)
       });
     }
@@ -24,6 +25,7 @@
 
     save(): void {
       this.blogToEdit.title = this.editBlogForm.value.title;
+      this.blogToEdit.author = this.editBlogForm.value.author;
       this.blogToEdit.content = this.editBlogForm.value.content;
       this.blogService.editBlog(this.blogToEdit);
       this.activeModal.close();

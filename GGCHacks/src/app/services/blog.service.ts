@@ -24,9 +24,22 @@ export class BlogService {
   blogs$: Observable<Blog[]> = this.blogsSubject.asObservable().pipe(startWith([]));
 
   constructor() {
-    //logs a testing message to the console
-    console.log("blog service constructor");
-    // Create a snapshot of the blogs collection and map the documents to Blog objects
+    // Manually fetch and emit the initial data
+    firebase.firestore().collection('blogs').orderBy('datePosted', 'desc').get().then(snapshot => {
+      const initialBlogs = snapshot.docs.map(doc => {
+        return {
+          documentID: doc.id,
+          title: doc.data().title,
+          content: doc.data().content,
+          author: doc.data().author,
+          datePosted: doc.data().datePosted,
+          edited: doc.data().edited
+        } as Blog;
+      });
+      this.blogsSubject.next(initialBlogs);
+    });
+  
+    // Set up the onSnapshot listener
     firebase.firestore().collection('blogs').orderBy('datePosted', 'desc').onSnapshot(snapshot => {
       const blogs = snapshot.docs.map(doc => {
         return {
@@ -38,11 +51,10 @@ export class BlogService {
           edited: doc.data().edited
         } as Blog;
       });
-      console.log("service read blogs test:" + blogs);
-      // Emit the updated blog list
       this.blogsSubject.next(blogs);
     });
   }
+  
 
   //Adds a blog to the database
   addBlog(blogTitle: string, blogAuthor: string, blogContent: string): void {
@@ -75,8 +87,6 @@ export class BlogService {
   editBlog(blog: Blog): void {
     // Create a copy of the blog to avoid modifying the original
     const editedBlog = { ...blog };
-    editedBlog.title = editedBlog.title = prompt("Edit blog title", editedBlog.title);
-    editedBlog.content = prompt("Edit blog content", editedBlog.content);
     editedBlog.edited = Timestamp.now();
 
     // Update the blog document

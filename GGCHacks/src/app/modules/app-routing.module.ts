@@ -12,8 +12,8 @@ import {AdminGuard} from '../guards/admin.guard';
 import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-email-user.component';
 import { SuperAdminDashboardComponent } from '../super-admin-dashboard/super-admin-dashboard.component';
 import { SuperAdminGuard } from '../guards/super-admin.guard';
-import { BlogHomeComponent } from '../blog-home/blog-home.component';
-import { BlogPostingPageComponent } from '../blog-posting-page/blog-posting-page.component';
+import { BlogHomeComponent } from '../blog/blog-home/blog-home.component';
+import { BlogPostingPageComponent } from '../blog/blog-posting-page/blog-posting-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

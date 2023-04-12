@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AuthService } from '../services/auth.service';
-import { Blog, BlogService } from '../services/blog.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Blog, BlogService } from 'src/app/services/blog.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditBlogModalComponent } from './edit-blog-modal/edit-blog-modal.component';
 
@@ -12,22 +12,14 @@ import { EditBlogModalComponent } from './edit-blog-modal/edit-blog-modal.compon
   styleUrls: ['./blog-home.component.css'],
   providers: [BlogService]
 })
-export class BlogHomeComponent implements OnInit, OnDestroy {
-  blogs: Blog[] = null;
-  sub: Subscription;
+export class BlogHomeComponent implements OnInit {
+  blogs$: Observable<Blog[]>;
 
   constructor(public auth: AuthService, private blogService: BlogService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
-    this.sub = this.blogService.blogs$.subscribe(blogs => {
-      this.blogs = blogs;
-      console.log('bloghomecomponent blogs recieved:' + blogs);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    this.blogs$ = this.blogService.blogs$;
   }
 
   editBlog(blog: Blog): void {
@@ -45,5 +37,4 @@ export class BlogHomeComponent implements OnInit, OnDestroy {
       this.blogService.deleteBlog(blog);
     }
   }
-
 }

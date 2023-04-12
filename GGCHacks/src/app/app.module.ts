@@ -32,9 +32,9 @@ import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-e
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
-import { BlogHomeComponent } from './blog-home/blog-home.component';
-import { BlogPostingPageComponent } from './blog-posting-page/blog-posting-page.component';
-import { EditBlogModalComponent } from './blog-home/edit-blog-modal/edit-blog-modal.component';
+import { BlogHomeComponent } from './blog/blog-home/blog-home.component';
+import { BlogPostingPageComponent } from './blog/blog-posting-page/blog-posting-page.component';
+import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-blog-modal.component';
 
 
 @NgModule({
