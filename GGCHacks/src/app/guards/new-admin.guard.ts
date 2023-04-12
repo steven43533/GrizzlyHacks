@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 /**
- * Guard that checks if the user is a super admin.
+ * Guard that checks if the user has a level of admin power.
  * @remarks
- * This guard is responsible for checking if the user is a super admin.
+ * This guard is responsible for checking if the user has a level of admin power.
  */
 @Injectable({
   providedIn: 'root'
 })
-export class SuperAdminGuard {
+export class NewAdminGuard {
   
   constructor(private auth: AuthService, private router: Router) {
   }
@@ -19,7 +19,7 @@ export class SuperAdminGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    if (this.auth.isSuperAdmin){
+    if (this.auth.adminLevel > 0){
       return true;
     }
     this.router.navigate(['/home']);

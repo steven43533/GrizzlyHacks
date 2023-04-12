@@ -35,7 +35,7 @@ import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admi
 import { BlogHomeComponent } from './blog/blog-home/blog-home.component';
 import { BlogPostingPageComponent } from './blog/blog-posting-page/blog-posting-page.component';
 import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-blog-modal.component';
-
+import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +58,7 @@ import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-bl
     BlogHomeComponent,
     BlogPostingPageComponent,
     EditBlogModalComponent
+    NewAdminDashboardComponent
   ],
   imports: [
     BrowserModule,
