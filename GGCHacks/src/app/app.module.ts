@@ -57,7 +57,7 @@ import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dash
     SuperAdminDashboardComponent,
     BlogHomeComponent,
     BlogPostingPageComponent,
-    EditBlogModalComponent
+    EditBlogModalComponent,
     NewAdminDashboardComponent
   ],
   imports: [
