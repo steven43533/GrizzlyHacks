@@ -20,7 +20,7 @@ export class CheckFilerPipe implements PipeTransform {
     return value.filter( u => {
       console.log('testawtasetastaer');
       //    is admin box                   is not admin
-        if ((k.isAdminBox && !u.isAdmin) || (k.noAdmin && u.isAdmin) ||
+        if ((k.isAdminBox && u.adminLevel == 0) || (k.noAdmin && u.adminLevel >= 1) ||
         // has application checked but user doest have app
         (k.hasApplication && (u.application === null || !u.application.submitted)) ||
         // has no app checked and

@@ -43,7 +43,7 @@ export class SuperAdminDashboardComponent {
   makeSuperAdmin(user: User) {
     if (confirm(`Are you sure you want to make ${user.firstName} ${user.lastName} a super admin?`)) {
       const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-      user.isSuperAdmin = true;
+      user.adminLevel = 2;
       userRef.update(user);
       }
   }
@@ -54,7 +54,7 @@ export class SuperAdminDashboardComponent {
     }
     if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s super admin status?`)) {
       const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-      user.isSuperAdmin = false;
+      user.adminLevel = 1;
       userRef.update(user);
     }
   }

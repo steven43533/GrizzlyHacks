@@ -19,7 +19,7 @@ export class SuperAdminGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    if (this.auth.isSuperAdmin){
+    if (this.auth.adminLevel == 2){
       return true;
     }
     this.router.navigate(['/home']);
