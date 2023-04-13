@@ -16,13 +16,9 @@
 
     <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null || !auth.verified">Create Account</button>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/newAdmin" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">New Admin Dashboard</button>
-
     <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified">User Dashboard</button>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin" *ngIf="auth.user !== null && auth.verified && (auth.adminLevel >= 1)">Admin Dashboard</button>
-
-    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/superAdmin" *ngIf="auth.user !== null && auth.verified && auth.adminLevel == 2">Super Admin Dashboard</button>
+    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/newAdmin" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">New Admin Dashboard</button>
 
     <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['']); auth.signOut()" *ngIf="auth.user !== null && !(!auth.verified && auth.user !== null)">Sign Out</button>
 
