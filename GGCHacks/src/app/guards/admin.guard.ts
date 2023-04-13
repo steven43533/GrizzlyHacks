@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class NewAdminGuard {
+export class AdminGuard {
   
   constructor(private auth: AuthService, private router: Router) {
   }

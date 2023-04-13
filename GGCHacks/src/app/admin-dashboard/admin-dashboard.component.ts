@@ -5,11 +5,11 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-new-admin-dashboard',
-  templateUrl: './new-admin-dashboard.component.html',
-  styleUrls: ['./new-admin-dashboard.component.css']
+  selector: 'app-admin-dashboard',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.css']
 })
-export class NewAdminDashboardComponent {
+export class AdminDashboardComponent {
   
   users: User[];
   fullUserArray: User[];

@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule } from '@angular/router';
 import {LandingpageComponent} from '../landingpage/landingpage.component';
-import {NewAdminDashboardComponent} from '../new-admin-dashboard/new-admin-dashboard.component';
+import {AdminDashboardComponent} from '../admin-dashboard/admin-dashboard.component';
 import {EmailActionComponent} from '../email-action/email-action.component';
 import {CreateAccountComponent} from '../UserStuff/create-account/create-account.component';
 import {LoginComponent} from '../UserStuff/login/login.component';
 import {UserGuardGuard} from '../guards/user-guard.guard';
 import {UserDashboardComponent} from '../UserStuff/user-dashboard/user-dashboard.component';
 import {ApplicationComponent} from '../application/application.component';
-import {NewAdminGuard} from '../guards/new-admin.guard';
+import {AdminGuard} from '../guards/admin.guard';
 import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-email-user.component';
 import {BlogHomeComponent} from '../blog/blog-home/blog-home.component';
 import {BlogPostingPageComponent} from '../blog/blog-posting-page/blog-posting-page.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'verifyEmail', component: VerifyEmailUserComponent},
   { path: 'blogHome', component: BlogHomeComponent},
   { path: 'blogPostingPage', component: BlogPostingPageComponent},
-  { path: 'newAdmin', component: NewAdminDashboardComponent, canActivate: [NewAdminGuard]},
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
   
   { path: '**', redirectTo: '/home'}
 ];

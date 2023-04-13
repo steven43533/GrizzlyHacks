@@ -25,14 +25,14 @@ import { EmailActionComponent } from './email-action/email-action.component';
 import { ResetPasswordComponent } from './email-action/reset-password/reset-password.component';
 import { UserDashboardComponent } from './UserStuff/user-dashboard/user-dashboard.component';
 import { ApplicationComponent } from './application/application.component';
-import { UserQueryPipe } from './new-admin-dashboard/user-query.pipe';
+import { UserQueryPipe } from './admin-dashboard/user-query.pipe';
 import { EventCalendarComponent } from './EventCalendarStuff/event-calendar/event-calendar.component';
 import { VerifyEmailUserComponent } from './UserStuff/verify-email-user/verify-email-user.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { BlogHomeComponent } from './blog/blog-home/blog-home.component';
 import { BlogPostingPageComponent } from './blog/blog-posting-page/blog-posting-page.component';
 import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-blog-modal.component';
-import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { NewAdminDashboardComponent } from './new-admin-dashboard/new-admin-dash
     BlogHomeComponent,
     BlogPostingPageComponent,
     EditBlogModalComponent,
-    NewAdminDashboardComponent
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
