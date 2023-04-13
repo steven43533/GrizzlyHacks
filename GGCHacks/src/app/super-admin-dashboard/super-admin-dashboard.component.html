@@ -32,10 +32,10 @@
                         <div class="col">
                             <div class='row justify-content-end'>
                                 <div class="btn-group">
-                                    <button class = "btn btn-primary" *ngIf="!user.isAdmin" (click)="makeAdmin(user)">Make Admin</button>
-                                    <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="takeAdmin(user)">Take Admin</button>
-                                    <button class = "btn btn-primary" *ngIf="user.isAdmin && !user.isSuperAdmin" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
-                                    <button class = "btn btn-primary" *ngIf="user.isSuperAdmin" (click)="takeSuperAdmin(user)">Take Super Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
+                                    <button class = "btn btn-primary" *ngIf="user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make SuperAdmin</button>
+                                    <button class = "btn btn-primary" *ngIf="user.adminLevel == 2" (click)="takeSuperAdmin(user)">Take Super Admin</button>
                                 </div>
                             </div>
                         </div>

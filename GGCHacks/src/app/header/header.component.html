@@ -20,7 +20,7 @@
 
     <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified">User Dashboard</button>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin" *ngIf="auth.user !== null && auth.verified && (auth.isAdmin || auth.isSuperAdmin)">Admin Dashboard</button>
+    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin" *ngIf="auth.user !== null && auth.verified && (auth.adminLevel >= 1)">Admin Dashboard</button>
 
     <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/superAdmin" *ngIf="auth.user !== null && auth.verified && auth.isSuperAdmin">Super Admin Dashboard</button>
 

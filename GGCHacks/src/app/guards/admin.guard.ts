@@ -19,7 +19,7 @@ export class AdminGuard {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.auth.isAdmin) {
+    if (this.auth.adminLevel >= 1) {
       return true;
     }
     this.router.navigate(['/home']);

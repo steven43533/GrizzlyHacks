@@ -27,11 +27,16 @@ service cloud.firestore {
      return request.auth.uid == userId;
     }
     
-    // checks if the requester is a admin
+    // checks if the requester is an admin
     function isAdmin(){
-      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true); 
+      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel >= 1); 
     }
     
+    // checks if the requester is a super admin
+    function isSuperAdmin(){
+      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel == 2); 
+    }
+
     //checks to make sure incoming document doesnt change the admin feild
     function adminFieldSafe(){
       return !request.resource.data.isAdmin;

@@ -17,7 +17,7 @@ describe('AdminGuard', () => {
         {
           provide: AuthService,
           useValue: {
-            isAdmin: false
+            adminLevel: 0
           }
         }
       ]
