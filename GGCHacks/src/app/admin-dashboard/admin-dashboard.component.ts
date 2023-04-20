@@ -79,14 +79,19 @@ export class AdminDashboardComponent {
 
   acceptApplication(user: User) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    user.isRegisteredFor2020 = true;
+    user.registeredFor.push(new Date().getFullYear());
     userRef.update(user);
   }
 
   revokeApplication(user: User) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    user.isRegisteredFor2020 = false;
+    const i = user.registeredFor.indexOf(new Date().getFullYear());
+    if (i !== -1) user.registeredFor.splice(i, 1);
     userRef.update(user);
+  }
+
+  isRegisteredForCurrentYear(user: User): boolean {
+    return (user.registeredFor.includes(new Date().getFullYear()));
   }
 
   changeAdminFilter(filter: string) {
@@ -134,7 +139,7 @@ export class AdminDashboardComponent {
   }
 
   changeAcceptedFilter(filter: string) {
-    switch(this.acceptedFilter) {
+    switch(filter) {
       case 'No Filter': {
         this.acceptedFilter = 'No Filter';
         break;
@@ -191,11 +196,11 @@ export class AdminDashboardComponent {
     //Show the selected Accepted Filter.
     switch(this.acceptedFilter) {
       case 'Accepted': {
-        this.users = this.users.filter( u => u.isRegisteredFor2020 == true );
+        this.users = this.users.filter( u => this.isRegisteredForCurrentYear(u) );
         break;
       }
       case 'Not Accepted': {
-        this.users = this.users.filter( u => u.isRegisteredFor2020 == false );
+        this.users = this.users.filter( u => !this.isRegisteredForCurrentYear(u) );
         break;
       }
     }

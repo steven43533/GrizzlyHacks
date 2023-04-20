@@ -6,7 +6,7 @@ export interface User {
   lastName: string;
   email: string;
   adminLevel: number;
-  isRegisteredFor2020: boolean;
+  registeredFor: number[];
   pastHacks: string[];
   application: Application;
 }
