@@ -129,8 +129,8 @@
                                 <div *ngIf="user.application == null || !user.application.submitted">
                                     <b><p class="text-red">No Application</p></b>
                                 </div>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submitted && !user.isRegisteredFor2020" (click)="acceptApplication(user)">Accept Application</button>
-                                <button class = "btn-warn" *ngIf="user.application != null && user.application.submitted && user.isRegisteredFor2020" (click)="revokeApplication(user)">Revoke Application</button>
+                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submitted && !isRegisteredForCurrentYear(user)" (click)="acceptApplication(user)">Accept Application</button>
+                                <button class = "btn-warn" *ngIf="user.application != null && user.application.submitted && isRegisteredForCurrentYear(user)" (click)="revokeApplication(user)">Revoke Application</button>
                             </div>
                         </div>
                     </div>

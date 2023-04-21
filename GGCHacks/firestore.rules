@@ -37,16 +37,21 @@ service cloud.firestore {
       return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel == 2); 
     }
 
+    // checks if the requester is registered for current getFullYear
+    function isRegisteredForCurrentYear(){
+      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.registeredFor.includes(new Date().getFullYear())); 
+    }
+
     //checks to make sure incoming document doesnt change the admin feild
     function adminFieldSafe(){
       return !request.resource.data.isAdmin;
     }
     
     function hackAcceptanceSafe(){
-    		return (request.resource.data.isRegisteredFor2020 == false ||
-        request.resource.data.isRegisteredFor2020 == get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isRegisteredFor2020);
-    
-     //  return (request.resource.data.isRegisteredFor2020!= get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isRegisteredFor2020)
+    		return (
+          request.resource.data.isRegisteredForCurrentYear == false ||
+          request.resource.data.registerFor == get(/databases/$(database)/documents/users/$(request.auth.uid)).data.registeredFor
+        );
     }
     
   

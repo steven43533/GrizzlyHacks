@@ -69,7 +69,7 @@ export class AuthService implements OnDestroy {
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
       adminLevel: 0,
-      isRegisteredFor2020: false,
+      registeredFor: [],
       pastHacks: [],
       application: null
     };

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import { User } from '../../interfaces/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -22,4 +23,9 @@ export class UserDashboardComponent implements OnInit {
   async submit() {
     this.auth.updateUser();
   }
+
+  isRegisteredForCurrentYear(user: User): boolean {
+    return (user.registeredFor.includes(new Date().getFullYear()));
+  }
+  
 }
