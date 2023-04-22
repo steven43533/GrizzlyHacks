@@ -101,7 +101,7 @@ export class AuthService implements OnDestroy {
         result.user.sendEmailVerification();
         this.router.navigate(['/verifyEmail']);
       } else {
-        alert('Login succesfull');
+        alert('Login successful');
         this.router.navigate(['home']);
       }
     }, otherError => { // if there is a problem loging in
@@ -153,7 +153,7 @@ export class AuthService implements OnDestroy {
 
   sendVerifivationEmail() {
     this.afAuth.currentUser.then(user => user.sendEmailVerification().then(result => alert('Email Sent'  ),
-        otherError => alert('Something went wong. Try again later.')));
+        otherError => alert('Something went wrong. Try again later.')));
   }
 
   ngOnDestroy(): void {

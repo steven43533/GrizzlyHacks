@@ -76,7 +76,7 @@ export class ResetPasswordComponent implements OnInit {
    */
   onSubmit() {
     this.afAuth.confirmPasswordReset(this.code, this.form.get('password').value).then( result => {
-      alert('You have succesfully updates Password');
+      alert('You have successfully updates Password');
       this.router.navigate(['login']);
     }, error => {
 
