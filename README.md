@@ -5,9 +5,9 @@
   * Data modeler
   * Client Liaison
 
-* **Destiny Lowe** :paintbrush:
-  * UI/UX
-  * Documentation Lead
+* **_Destiny Lowe_** :paintbrush:
+  * _UI/UX Specialist_
+  * _Documentation Lead_
 
 
 
