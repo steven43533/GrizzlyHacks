@@ -93,7 +93,7 @@ Fall 2024
  
 <br></br>
 ## Original Contributors
-# Team Name
+## Team Name
 Grizzly Hacks
 * **Josh Beers** :crown:
   * Lead Programmer
