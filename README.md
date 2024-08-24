@@ -80,7 +80,6 @@ ng serve
 ## Team Name - Fall 2024
 Website Wizards
 
-<br></br>
 * **Kenny Amador** :construction_worker:
   * Data modeler
   * Client Liaison
