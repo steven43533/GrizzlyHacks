@@ -1,5 +1,11 @@
 # GrizzlyHacks
 
+### Fall 2024 Team
+* **Kenny Amador** :construction_worker:
+  * Data modeler
+  * Client Liaison
+
+  
 ### Team
 * **Josh Beers** :crown:
   * Lead Programmer
