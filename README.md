@@ -79,8 +79,7 @@ ng serve
  ![](Documentation/WebPage.png)<br /><br />
  
 <br></br>
-## Team Name - Fall 2024
-Website Wizards
+## Website Wizards - Fall 2024
 
 * **Kenny Amador** :construction_worker:
   * Data modeler
