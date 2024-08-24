@@ -1,42 +1,35 @@
-# GrizzlyHacks
-
-### Fall 2024 Team
-* **Kenny Amador** :construction_worker:
-  * Data modeler
-  * Client Liaison
-
-* **_Destiny Lowe_** :paintbrush:
-  * _UI/UX Specialist_
-  * _Documentation Lead_
-
-
-
-
-
-
-
-
-
-
-
-### Team
-* **Josh Beers** :crown:
-  * Lead Programmer
-  * Project Manager
-* **Danielle Battle** :art:
-  * UX/UI 
-  * Document Lead
-* **Anne Joseph** :bar_chart:
-  * Data Modeler
-  * Testing Lead
-
-[Repo Link](https://github.com/GGC-SD/GrizzlyHacks)
-
-## Introduction
+## Description
 Grizzly Hacks is a newly created student organization at Georgia Gwinnett College that is responsible for organizing and hosting hackathons on campus. The organization is currently run by hackathon enthusiast who want to bring the fun and excitement of hackathons to their home campus. <br /><br />
 The Grizzly Hacks web application allows users to access information about hackathons that the RSO will be hosting on campus. The application also allows users to register and apply for an upcoming hackathon. The web application gives administration an easy way to update the event calendar on the landing page and audit accounts and applications without database knowledge. The technology used to create this web application are node, angular, bootstrap, html/css, and firebase
+"---------------------------------------------------------------------------------------------"
+<br></br>
 
-## Installation
+## Links
+- [Deployed Project]
+- [Project Documentation]
+"---------------------------------------------------------------------------------------------"
+<br></br>
+
+## Technologies
+- Node.js
+- Angular
+- Bootstrap
+- HTML/CSS
+- Firebase
+"---------------------------------------------------------------------------------------------"
+<br></br>
+## Working Features
+ - Real-time Application
+ - About Section
+ - Registration System
+ - Dynamic Calendar
+ - Sponsors Section
+ - FAQs
+ - Contact Form
+ - Admin Backend
+"---------------------------------------------------------------------------------------------"
+<br></br>
+## Installation Steps
 Use the following commands to install Angular, creating a new project, and serving it. <br /><br />
 
 1. clone the repo
@@ -85,17 +78,41 @@ ng serve
  
  ![](Documentation/WebPage.png)<br /><br />
  
- ## Feature List
- 
- * Real-time Application
- * About
- * Registration
- * Dynamic Calendar
- * Sponsors
- * FAQs
- * Contact
- * Admin backend
- 
- All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).
- You can also view our website by clicking on this [link](https://grizzly-hacks.web.app).
- 
+"---------------------------------------------------------------------------------------------"
+<br></br>
+## Team Name
+# Website Wizards
+## Semester
+Fall 2024
+<br></br>
+### Fall 2024 Team
+* **Kenny Amador** :construction_worker:
+  * Data modeler
+  * Client Liaison
+
+* **_Destiny Lowe_** :paintbrush:
+  * _UI/UX Specialist_
+  * _Documentation Lead_
+"---------------------------------------------------------------------------------------------"
+
+## Original Contributors
+## Team Name
+# Grizzly Hacks
+* **Josh Beers** :crown:
+  * Lead Programmer
+  * Project Manager
+* **Danielle Battle** :art:
+  * UX/UI 
+  * Document Lead
+* **Anne Joseph** :bar_chart:
+  * Data Modeler
+  * Testing Lead
+"---------------------------------------------------------------------------------------------"
+<br></br>
+## Project Flyer and Video
+All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).
+You can also view our website by clicking on this [link](https://grizzly-hacks.web.app).
+"---------------------------------------------------------------------------------------------"
+<br></br>
+## Repo Link
+ [Repo Link](https://github.com/GGC-SD/GrizzlyHacks)
