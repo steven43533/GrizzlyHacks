@@ -79,10 +79,8 @@ ng serve
 <br></br>
 ## Team Name
 Website Wizards
-## Semester
 Fall 2024
 <br></br>
-### Fall 2024 Team
 * **Kenny Amador** :construction_worker:
   * Data modeler
   * Client Liaison
