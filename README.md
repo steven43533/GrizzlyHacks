@@ -78,7 +78,7 @@ ng serve
  
 <br></br>
 ## Team Name
-# Website Wizards
+Website Wizards
 ## Semester
 Fall 2024
 <br></br>
@@ -93,8 +93,8 @@ Fall 2024
  
 <br></br>
 ## Original Contributors
-## Team Name
-# Grizzly Hacks
+# Team Name
+Grizzly Hacks
 * **Josh Beers** :crown:
   * Lead Programmer
   * Project Manager
