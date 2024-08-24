@@ -5,7 +5,20 @@
   * Data modeler
   * Client Liaison
 
-  
+  * **Destiny Lowe** :paintbrush:
+  * UI/UX
+  * Documentation Lead
+
+
+
+
+
+
+
+
+
+
+
 ### Team
 * **Josh Beers** :crown:
   * Lead Programmer
