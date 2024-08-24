@@ -88,7 +88,10 @@ ng serve
 * **_Destiny Lowe_** :paintbrush:
   * _UI/UX Specialist_
   * _Documentation Lead_
- 
+
+* **Jimmy Phan** :computer:
+  * _Lead Programmer/Code Architecture_
+  * _Testing Lead_
 ## Original Contributors
 * **Josh Beers** :crown:
   * Lead Programmer
