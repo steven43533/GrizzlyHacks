@@ -92,6 +92,10 @@ ng serve
 * **Jimmy Phan** :computer:
   * _Lead Programmer/Code Architecture_
   * _Testing Lead_
+
+* **Daniel Santoyo** :computer:
+  * _Programmer/Code Architecture_
+  * _Project Manager_
 ## Original Contributors
 * **Josh Beers** :crown:
   * Lead Programmer
