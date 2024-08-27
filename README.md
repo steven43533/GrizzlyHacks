@@ -94,8 +94,8 @@ ng serve
   * _Testing Lead_
 
 * **Daniel Santoyo** :computer:
-  * _Programmer/Code Architecture_
   * _Project Manager_
+  * _Programmer/Code Architecture_
 ## Original Contributors
 * **Josh Beers** :crown:
   * Lead Programmer
