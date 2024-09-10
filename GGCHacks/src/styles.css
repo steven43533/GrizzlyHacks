@@ -20,7 +20,7 @@
 
 .btn-link,
 #link{
-  color: #00704a;
+  color: #000f70;
   cursor: pointer;
 }
 
@@ -71,7 +71,7 @@ html
 
 .everything{
   background: url("/assets/background.png") no-repeat bottom center fixed,
-  linear-gradient(rgb(0,82,150), rgb(20,25,58)) !important;
+  linear-gradient(rgb(138, 119, 78), rgb(171, 189, 107)) !important;
   background-size: cover !important;
   margin: 0 !important;
   min-height: 100vh !important;
