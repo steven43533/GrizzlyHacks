@@ -1,18 +1,19 @@
 .navbar-brand {
-  position: fixed !important;
-  margin-top: -30px !important;
+  width: 75px !important;
+  height: 75px !important;
+
 }
 
 .navbar {
-  height: 60px !important;
   width: 100% !important;
-  position: fixed !important;
+  position: relative !important;
   z-index: 1000 !important;
+  background: var(--secondary-color)  !important;
+
 }
 
 button {
-  margin-right: 5px !important;
-  margin-top: -5px !important;
+  margin:var(--spacing-sm) !important;
 }
 
 .btn-outline-secondary{
@@ -21,10 +22,11 @@ button {
   background-color: transparent !important;
   border: none !important;
   border-radius: 0px;
+
 }
 
 .btn-outline-secondary:hover{
-  background-color: #00704a !important;
+  background-color: var(--primary-color) !important;
   border-radius: 0px;
 }
 
@@ -34,3 +36,14 @@ button {
   outline: none !important;
   box-shadow: none !important;
 }
+
+@media (max-width: 344px) and (max-height: 882px){
+  .navbar-brand {
+    width: 55px !important;
+    height: 55px !important;
+    padding-top: 10px !important;
+    padding-right: 15px !important;
+  }
+}
+
+

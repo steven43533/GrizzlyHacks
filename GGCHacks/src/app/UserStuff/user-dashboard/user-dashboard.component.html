@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="card w-50">
 
-      <div *ngIf="!isEditing && auth.user != undefined">
+      <div *ngIf="!isEditing && auth.user !== undefined">
 
         <div class="card-title">
           <h5>Welcome {{auth.user.firstName}} {{auth.user.lastName}}!</h5>

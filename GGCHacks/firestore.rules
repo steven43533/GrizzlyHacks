@@ -3,40 +3,40 @@ rules_version = '2';
 service cloud.firestore {
 
   match /databases/{database}/documents {
-    
+
     match /{documents=**} {
       allow read: if true;
 			allow write: if isAdmin();
     }
-      
+
     //for user documents
     match /users/{UserID} {
       //allow write if they are an admin or a user that ownes the doc and are not tring to change isAdmin or acceptedToHack
-      allow write: if( 
+      allow write: if(
         //if is owner and not changing their admin status and not trying to accept to hack
         ( isOwner( UserID ) && adminFieldSafe()  && hackAcceptanceSafe()));
         allow read: if (isOwner(UserID));
     }
-      
+
     match /events/{document=**} {
       allow read: if true;
       allow write: if( isAdmin());
     }
-      
-      
+
+
     // checks if the requester is the owner of the document  wprks
     function isOwner(userId) {
       return request.auth.uid == userId;
     }
-      
+
     // checks if the requester is an admin
     function isAdmin(){
-      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel >= 1); 
+      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel >= 1);
     }
-      
+
     // checks if the requester is a super admin
     function isSuperAdmin(){
-      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel == 2); 
+      return (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.adminLevel == 2);
     }
 
     // checks if the requester is registered for the current year
@@ -55,14 +55,13 @@ service cloud.firestore {
     function adminFieldSafe(){
       return !request.resource.data.isAdmin;
     }
-      
+
     function hackAcceptanceSafe(){
       return (
         request.resource.data.isRegisteredForCurrentYear == false ||
         request.resource.data.registeredFor == get(/databases/$(database)/documents/users/$(request.auth.uid)).data.registeredFor
       );
-    } 
+    }
   }
 }
-  
-  
+

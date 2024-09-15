@@ -1,37 +1,46 @@
-:root 
+:root
 {
     /* Global Colors */
     --primary-color: #8be9fd;   /* Bright Cyan */
-    --secondary-color: #50fa7b; /* Neon Green */
-    --text-color: #f8f8f2;      /* Off-White */
+    --secondary-color: #006064; /* Neon Green */
+    --text-color: #f8f8f2; /* Off-White */
+    --alternative-text-color: #0D0D0D ;
     --background-color: #282a36 ;/* Dark Gray */
     --secondary-background-color: #241f23 ;/* Light Gray */
     --accent-color: #FF79C6;    /* Bright Pink */
     --font-family: 'Montserrat', sans-serif;
-    
+     /*Dropdown background*/
+
+    /*Global spacing */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+
     /* Global Font Sizes */
     --font-size-base: 16px;
     --font-size-mobile: 14px;
   }
-  
+
   /*Hero Section Styling */
   .hero-section {
     background-color: var(--background-color);
     padding: 150px 0; /* Adjusted padding to push content below navbar */
   }
-  
+
   .hero-section h1 {
     color: var(--text-color);
     font-family: var(--font-family);
     margin-bottom: 20px;
   }
-  
+
   .hero-section p {
     color: var(--text-color);
     font-size: 18px;
     margin-bottom: 30px;
   }
-  
+
   .hero-section .btn-primary {
     background-color: var(--accent-color);
     border: none;
@@ -40,25 +49,25 @@
     font-size: 18px;
     border-radius: 5px;
   }
-  
-  .hero-section .btn-primary:hover 
+
+  .hero-section .btn-primary:hover
   {
     background-color: var(--accent-color);
     color: white;
   }
-  
+
   /* Features Section Styling */
   .features-section {
     padding: 50px 0;
     background: linear-gradient(to bottom, #202330 0%, #FF79C6 100%);
   }
-  
+
   .feature-box {
     margin-bottom: 30px;
   }
-  
+
   .feature-card {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--text-color);
     padding: 30px;
     border-radius: 10px;
@@ -77,17 +86,17 @@
     transform: translateY(-10px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
-  
+
   .feature-image-wrapper {
     position: relative;
   }
-  
+
   .feature-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
   }
-  
+
   .feature-title {
     position: absolute;
     bottom: 10px;
@@ -98,14 +107,14 @@
     padding: 5px 10px;
     border-radius: 5px;
   }
-  
+
   .feature-caption {
     margin-top: 15px;
     font-family: var(--font-family);
     color: var(--text-color);
     text-align: center;
   }
-  
+
   /* Mobile-friendly styles */
   @media (max-width: 768px) {
     .feature-title {
@@ -113,35 +122,35 @@
       bottom: 5px;
       left: 10px;
     }
-  
+
     .feature-card {
       padding: 15px;
     }
-  
+
     .feature-caption {
       font-size: 14px;
     }
   }
-  
+
 /* Home Page Divider code*/
 
-.full-width-divider 
+.full-width-divider
 {
     width: 100%; /* Ensure it spans the full width */
-    height: 150px; 
+    height: 150px;
     object-fit: cover; /* Makes sure the image covers the area */
     display: block;
     margin: 0 auto;
     max-height: 150px; /* Set a reasonable maximum height */
   }
-  
-  
-.hero-section 
+
+
+.hero-section
 {
     padding-bottom: 50px; /* Adjust as needed */
   }
-  
-  .features-section 
+
+  .features-section
   {
     padding-top: 50px; /* Adjust as needed */
   }
@@ -149,35 +158,35 @@
 
 
   /* Apply global styles */
-  body 
+  body
   {
     font-family: var(--font-family) !important;
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
   }
 
-  h1, h2, h3, h4, h5, h6 
+  h1, h2, h3, h4, h5, h6
   {
     font-family: var(--font-family) !important;
     font-weight: 700; /* Bold for headings */
     color: var(--text-color); /* Ensure text color is consistent */
   }
-  
-  header, footer 
+
+  header, footer
   {
     background-color: var(--primary-color);
   }
-  
-  .card 
+
+  .card
   {
     background-color: var(--secondary-color);
     color: var(--text-color);
     border-radius: 8px;
   }
-  
+
   /* Button Styling */
   .btn-primary,
-  .btn-outline-secondary 
+  .btn-outline-secondary
   {
     background-color: var(--primary-color) !important;
     color: var(--text-color) !important;
@@ -193,13 +202,14 @@
     border-radius: 50px;
     transition: background 0.3s ease;
 }
-  
+
   /* Responsive Typography for Mobile */
-  @media (max-width: 768px) 
+  @media (max-width: 768px)
   {
-    body 
+    body
     {
       font-size: var(--font-size-mobile);
     }
   }
-  
+
+

@@ -3,9 +3,8 @@
 }
 
 .everything{
-  background: linear-gradient(rgb(0,82,150), rgb(20,25,58));
-  background-size: cover;
-  height: 150vh !important;
+  font-family: var(--font-family) !important;
+  background-color: var(--background-color) !important;
 }
 
 header{
@@ -32,4 +31,5 @@ footer{
 
 .btn{
   margin-top: 25px;
+  color:var(--alternative-text-color) !important;
 }

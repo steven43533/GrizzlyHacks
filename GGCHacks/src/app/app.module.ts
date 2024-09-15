@@ -33,7 +33,7 @@ import { BlogHomeComponent } from './blog/blog-home/blog-home.component';
 import { BlogPostingPageComponent } from './blog/blog-posting-page/blog-posting-page.component';
 import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-blog-modal.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-
+import { TestNavbarComponent } from './test-navbar/test-navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +52,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     BlogHomeComponent,
     BlogPostingPageComponent,
     EditBlogModalComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    TestNavbarComponent,
+
   ],
   imports: [
     BrowserModule,

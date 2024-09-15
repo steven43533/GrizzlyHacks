@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
-  
+
   users: User[];
   fullUserArray: User[];
   sub: Subscription;
@@ -19,7 +19,7 @@ export class AdminDashboardComponent {
   applicationFilter: string = 'No Filter';
   acceptedFilter: string = 'No Filter';
 
-  constructor(private afs: AngularFirestore, public auth: AuthService) { 
+  constructor(private afs: AngularFirestore, public auth: AuthService) {
 
   }
 
@@ -35,7 +35,7 @@ export class AdminDashboardComponent {
   }
 
   /**
-   * Destroys the component and unsubscribes from the database. 
+   * Destroys the component and unsubscribes from the database.
    */
   ngOnDestroy(): void {
     this.sub.unsubscribe();
@@ -50,7 +50,7 @@ export class AdminDashboardComponent {
   }
 
   takeAdmin(user: User) {
-    if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s admin status?`)) {  
+    if (confirm(`Are you sure you want to take ${user.firstName} ${user.lastName}'s admin status?`)) {
       const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
       user.adminLevel = 0;
       userRef.update(user);
@@ -180,7 +180,7 @@ export class AdminDashboardComponent {
         break;
       }
     }
-    
+
     //Show the selected Application Filter.
     switch(this.applicationFilter) {
       case 'Submitted': {

@@ -1,7 +1,7 @@
 <div class="everything">
   <div class="row justify-content-center">
     <div class="card w-50 h-80">
-        <div *ngIf="auth.adminLevel == 1">
+        <div *ngIf="auth.adminLevel === 1">
             <h1>Admin Dashboard</h1>
         </div>
         <div *ngIf="auth.adminLevel == 2">
@@ -139,4 +139,3 @@
         </div>
     </div>
 </div>
-        

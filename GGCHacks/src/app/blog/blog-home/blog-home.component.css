@@ -2,13 +2,16 @@
     background-color: #f2f2f2;
     padding: 0px;
     margin: 0px;
+    color: black;
 }
 h1 {
     font-size: 30px;
     font-weight: bold;
+    color: var(--alternative-text-color);
 }
 h6 {
     margin: 10px 0 0 0;
+    color:var(--alternative-text-color);
 }
 
 .btn {
@@ -21,4 +24,10 @@ h6 {
 .blog-content {
     padding-left: 20px;
     padding-right: 20px;
+    color: black;
+}
+body{
+  font-family: var(--font-family) !important;
+  background-color: var(--background-color) !important;
+  color: var(--alternative-text-color) !important;
 }

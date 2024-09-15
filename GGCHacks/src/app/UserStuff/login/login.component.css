@@ -32,4 +32,5 @@ footer{
 .btn{
   margin-top: 25px;
   margin-right: 10px;
+  color:var(--alternative-text-color);
 }

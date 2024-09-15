@@ -159,7 +159,7 @@ export class AuthService implements OnDestroy {
   ngOnDestroy(): void {
     if (this.sub != null) {
       this.sub.unsubscribe();
-    } 
+    }
     if (this.sub2 != null) {
       this.sub2.unsubscribe();
     }

@@ -1,26 +1,51 @@
-<nav class="navbar navbar-dark bg-dark">
-  <div>
-  <a class="navbar-brand" href="#">
-    <picture>
-      <img src="/assets/logo.png" width="150" height="150" alt="">
-    </picture>
-  </a>
-  </div>
-  <div class="justify-content-end">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+  <div class = "container-fluid">
+    <a class="navbar-brand" href="#">
+      <picture>
+        <img src="/assets/logo.png" class="img-fluid" width="100" height="100" alt="">
+      </picture>
+    </a>
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button"  routerLink="/home">Home</button>
+  <div class="collapse navbar-collapse" id="navmenu">
+    <ul class="navbar-nav ms-auto text-end w-100">
+      <!-- Home Button -->
+      <li class="nav-item" routerLink="/home">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/home">Home</button>
+      </li>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button"  routerLink="/blogHome">Blog</button>
+      <!-- Blog Button -->
+      <li class="nav-item">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/blogHome">Blog</button>
+      </li>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);"  *ngIf="auth.user === null || !auth.verified">Log In</button>
+      <!-- Login -->
+      <li class="nav-item" *ngIf="auth.user === null || !auth.verified">
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['login']);">Log In</button>
+      </li>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);" *ngIf="auth.user === null || !auth.verified">Create Account</button>
+      <!-- Create Account -->
+      <li class="nav-item" *ngIf="auth.user === null || !auth.verified">
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);">Create Account</button>
+      </li>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user" *ngIf="auth.user !== null && auth.verified">User Dashboard</button>
+      <!-- User Dashboard -->
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user">User Dashboard</button>
+      </li>
+      <!--Admin Dashboard-->
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin">Admin Dashboard</button>
+      </li>
 
-    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">Admin Dashboard</button>
-
-    <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['']); auth.signOut()" *ngIf="auth.user !== null && !(!auth.verified && auth.user !== null)">Sign Out</button>
-
+      <!-- Sign Out -->
+      <li class="nav-item" *ngIf="auth.user !== null">
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="auth.signOut()">Sign Out</button>
+      </li>
+    </ul>
+    </div>
   </div>
 </nav>

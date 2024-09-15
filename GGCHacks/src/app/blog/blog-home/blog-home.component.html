@@ -1,5 +1,5 @@
 <div class="everything">
-    <div *ngIf="blogs$ | async as blogs">    
+    <div *ngIf="blogs$ | async as blogs">
         <div id="adminTools" class="row justify-content-center" *ngIf="auth?.user?.adminLevel == 2">
             <div class="card w-50 h-80">
                 <button class="btn btn-primary" routerLink="/blogPostingPage">Create Blog</button>
