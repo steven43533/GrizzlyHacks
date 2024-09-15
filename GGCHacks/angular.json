@@ -28,12 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css",
-              {
-                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
-              }
-            ],
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css",
+  "src/assets/css/interfaceSettings.css"
+],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,

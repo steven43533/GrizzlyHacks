@@ -6,6 +6,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+// Make sure the file 'environment.ts' exists in the 'environments' folder.
+
 if (environment.production) {
   enableProdMode();
 }
