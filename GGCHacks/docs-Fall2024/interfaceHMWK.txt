@@ -1,0 +1,41 @@
+Global CSS File:
+Name: interfaceSettings.css
+Location: src/assets/css/interfaceSettings.css
+
+Team Members and Their Variables:
+
+
+
+Destiny - UI/UX
+
+Variable 1: --primary-color (Bright Cyan)
+Usage: Background color for buttons and headers on the homepage.
+Variable 2: --font-family (Montserrat, sans-serif)
+Usage: Applied to the entire site's font style, including the hero section and features section.
+
+
+
+Kenny Amador - Data Modeler
+
+Variable 1:
+Usage: 
+Variable 2: 
+Usage: 
+
+
+
+Jimmy Phan - Lead Programmer/Code Architecture
+
+Variable 1:
+Usage: 
+Variable 2: 
+Usage: 
+
+
+
+Daniel Santoyo - Project Manager
+
+Variable 1:
+Usage: 
+Variable 2: 
+Usage: 
