@@ -44,7 +44,21 @@ Usage: Applied to all button variables to change the font color.
 
 Daniel Santoyo - Project Manager
 
-Variable 1:
-Usage:
-Variable 2:
-Usage:
+Variable 1: -title {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+Usage: Changes the main title position, size, font, color, and background color
+Variable 2: -caption {
+    margin-top: 15px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: center;
+  }
+Usage: Adds a caption under the main title
