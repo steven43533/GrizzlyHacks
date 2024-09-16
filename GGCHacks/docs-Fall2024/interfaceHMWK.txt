@@ -17,10 +17,11 @@ Usage: Applied to the entire site's font style, including the hero section and f
 
 Kenny Amador - Data Modeler
 
-Variable 1:
-Usage:
-Variable 2:
-Usage:
+Variable 1: --alternative-text-color: #0D0D0D
+Usage: Alternative text color for when white seems to blend in not quite fit, used for the create account text.
+Variable 2: --spacing-sm: 8px
+Usage: Spacing used for the dropdown menu
+
 
 
 
