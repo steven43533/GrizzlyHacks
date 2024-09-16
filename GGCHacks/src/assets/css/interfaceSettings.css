@@ -1,10 +1,10 @@
 :root
 {
     /* Global Colors */
-    --primary-color: #8be9fd;   /* Bright Cyan */
+    --primary-color: #a1f8d7;   /* Bright Cyan */
     --secondary-color: #006064; /* Neon Green */
     --text-color: #f8f8f2; /* Off-White */
-    --alternative-text-color: #0D0D0D ;
+    --alternative-text-color: #050505;
     --background-color: #282a36 ;/* Dark Gray */
     --secondary-background-color: #241f23 ;/* Light Gray */
     --accent-color: #FF79C6;    /* Bright Pink */
@@ -80,7 +80,7 @@
 .feature-card i {
     font-size: 50px;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 .feature-card:hover {
@@ -159,6 +159,12 @@
 
 
   /* Apply global styles */
+
+#link{
+  color: #c9f8b8;
+  cursor: pointer;
+}
+
   body
   {
     font-family: var(--font-family) !important;
@@ -190,7 +196,7 @@
   .btn-outline-secondary
   {
     background-color: var(--primary-color) !important;
-    color: var(--text-color) !important;
+    color: black !important;
     border-radius: 0px !important;
   }
   .btn-primary {

@@ -5,7 +5,7 @@ make look better
 
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -15,6 +15,7 @@ import {
   Validators
 } from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
+import {provideRouter, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-account',
@@ -22,6 +23,7 @@ import {AuthService} from '../../services/auth.service';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
+
 
   createAccountForm: FormGroup;
 
@@ -79,6 +81,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
 
+  protected readonly provideRouter = provideRouter;
 }
 
 class CustomValidators {

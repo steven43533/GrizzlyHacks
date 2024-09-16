@@ -71,6 +71,13 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <p routerLink="/login" id="link">Have an account? Login here!</p>
+              </div>
+            </div>
+          </div>
           <div class="row justify-content-center">
             <button class="btn btn-primary" (click)="auth.createUser(createAccountForm)"
                     [disabled]="createAccountForm.invalid">Create Account
@@ -82,3 +89,4 @@
 </div>
 
 </div>
+

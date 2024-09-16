@@ -18,24 +18,32 @@ Usage: Applied to the entire site's font style, including the hero section and f
 Kenny Amador - Data Modeler
 
 Variable 1:
-Usage: 
-Variable 2: 
-Usage: 
+Usage:
+Variable 2:
+Usage:
 
 
 
 Jimmy Phan - Lead Programmer/Code Architecture
 
-Variable 1:
-Usage: 
-Variable 2: 
-Usage: 
+Variable 1:#link{
+             color: #c9f8b8;
+             cursor: pointer;
+           }
+Usage: How links appears throughout the website, this includes link color and how the mouse changes over it.
+Variable 2:.btn-outline-secondary
+             {
+               background-color: var(--primary-color) !important;
+               color: black !important;
+               border-radius: 0px !important;
+             }
+Usage: Applied to all button variables to change the font color.
 
 
 
 Daniel Santoyo - Project Manager
 
 Variable 1:
-Usage: 
-Variable 2: 
-Usage: 
+Usage:
+Variable 2:
+Usage:

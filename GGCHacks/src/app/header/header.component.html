@@ -32,6 +32,11 @@
         <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);">Create Account</button>
       </li>
 
+      <!-- Projects -->
+      <li class="nav-item" *ngIf="auth.user === null || !auth.verified">
+        <button class="btn btn-sm btn-outline-secondary" type="button" (click)="router.navigate(['createAccount']);">Projects</button>
+      </li>
+
       <!-- User Dashboard -->
       <li class="nav-item" *ngIf="auth.user !== null && auth.verified">
         <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/user">User Dashboard</button>
