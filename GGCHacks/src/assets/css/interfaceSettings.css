@@ -46,8 +46,8 @@
     background-color: var(--accent-color);
     border: none;
     color: var(--text-color);
-    padding: 10px 20px;
-    font-size: 18px;
+    padding:16px 30px;
+    font-size: 24px;
     border-radius: 5px;
   }
 
@@ -163,6 +163,7 @@
 #link{
   color: #c9f8b8;
   cursor: pointer;
+  text-decoration: underline;
 }
 
   body
@@ -201,11 +202,10 @@
   }
   .btn-primary {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+
 }
 .btn-primary:hover {
     background: linear-gradient(90deg, #ff79c6, #50fa7b);
-    padding: 15px 30px;
-    font-size: 18px;
     border-radius: 50px;
     transition: background 0.3s ease;
 }
