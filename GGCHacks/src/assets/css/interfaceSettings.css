@@ -220,3 +220,28 @@
   }
 
 
+
+/* Sponsor Strip Styling */
+.sponsor-strip {
+  background-color: var(--background-color);
+  padding: 20px 0;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.sponsor-logo {
+  height: 50px;
+  margin-right: 20px;
+  flex-shrink: 0; /* Prevents images from shrinking */
+}
+
+
