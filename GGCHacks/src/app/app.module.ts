@@ -34,6 +34,7 @@ import { BlogPostingPageComponent } from './blog/blog-posting-page/blog-posting-
 import { EditBlogModalComponent } from './blog/blog-home/edit-blog-modal/edit-blog-modal.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { TestNavbarComponent } from './test-navbar/test-navbar.component';
+import {FooterComponent} from "./footer/footer.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { TestNavbarComponent } from './test-navbar/test-navbar.component';
     EditBlogModalComponent,
     AdminDashboardComponent,
     TestNavbarComponent,
+    FooterComponent
 
   ],
   imports: [
