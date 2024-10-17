@@ -1,0 +1,14 @@
+<div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div *ngFor="let faq of faqs" class="faq-item">
+        <div class="faq-question" (click)="toggleAnswer(faq)">
+            <h3>{{ faq.question }}</h3>
+            <span *ngIf="faq.open">&#9650;</span> <!-- Up arrow when open -->
+            <span *ngIf="!faq.open">&#9660;</span> <!-- Down arrow when closed -->
+        </div>
+        <div class="faq-answer" *ngIf="faq.open">
+            <p>{{ faq.answer }}</p>
+        </div>
+    </div>
+</div>
