@@ -1,8 +1,7 @@
 # Grizzly Hacks
 <br></br>
 ## Description
-Grizzly Hacks is a newly created student organization at Georgia Gwinnett College that is responsible for organizing and hosting hackathons on campus. The organization is currently run by hackathon enthusiast who want to bring the fun and excitement of hackathons to their home campus. <br /><br />
-The Grizzly Hacks web application allows users to access information about hackathons that the RSO will be hosting on campus. The application also allows users to register and apply for an upcoming hackathon. The web application gives administration an easy way to update the event calendar on the landing page and audit accounts and applications without database knowledge. The technology used to create this web application are node, angular, bootstrap, html/css, and firebase.
+The Grizzly Hacks client, which is a RSO of people who are interested in Hackathons, has tasked the team to work on their previous website, update it with modern features, and to add new components that will allow the clients and future users to access a website that will easily portray news, host events, and provide information about previous Hackathons. The website should have different authentication levels that allow admins to easily edit and add new information onto the website, while users to gain access to features so they can join feature Hackathons and post submissions for current events.
 
 <br></br>
 ## Links
@@ -16,17 +15,15 @@ The Grizzly Hacks web application allows users to access information about hacka
 - Bootstrap
 - HTML/CSS
 - Firebase
+- TypeScript
 
 <br></br>
 ## Working Features
  - Real-time Application
- - About Section
+ - Social Media Links
  - Registration System
- - Dynamic Calendar
  - Sponsors Section
  - FAQs
- - Contact Form
- - Admin Backend
 
 <br></br>
 ## Installation Steps
@@ -74,7 +71,7 @@ export const environment = {
 ```
 ng serve
 ```
-1. After these steps, go to http://localhost:4200 in your browser.<br />Below is a screenshot od the home page of the website.Only the admins will be able to see the Admin Dashboard.<br /><br />
+1. After these steps, go to http://localhost:4200 in your browser.<br />Below is a screenshot of the home page of the website.Only the admins will be able to see the Admin Dashboard.<br /><br />
  
  ![](Documentation/WebPage.png)<br /><br />
  
