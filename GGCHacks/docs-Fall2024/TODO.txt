@@ -1,0 +1,13 @@
+TODO List - Website Wizards - 10/20/24
+
+1. Projects page
+  - Create a submissions dropbox for users
+  - Create a display gallery that showcase other user's work. Includes a description, thumbnail, author name, and date submitted
+2. User Dashboard page
+  - Includes registered and upcoming events as well as any user-only messages/alerts
+3. Improve Blog Post's UI design
+  - update css of blog post card 
+4. Update contact info
+  - Include an email address specified by GrizzlyHacks Admins for interested users
+
+3rd and Final deliverable deadline: 11/20/24
