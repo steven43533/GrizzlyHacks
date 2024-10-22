@@ -23,8 +23,6 @@ Variable 2: --spacing-sm: 8px
 Usage: Spacing used for the dropdown menu
 
 
-
-
 Jimmy Phan - Lead Programmer/Code Architecture
 
 Variable 1:#link{

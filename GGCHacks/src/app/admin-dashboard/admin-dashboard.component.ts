@@ -15,9 +15,9 @@ export class AdminDashboardComponent {
   fullUserArray: User[];
   sub: Subscription;
   search: string;
-  adminFilter: string = 'All Members';
-  applicationFilter: string = 'No Filter';
-  acceptedFilter: string = 'No Filter';
+  adminFilter = 'All Members';
+  applicationFilter = 'No Filter';
+  acceptedFilter = 'No Filter';
 
   constructor(private afs: AngularFirestore, public auth: AuthService) {
 

@@ -12,18 +12,18 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class AdminGuard {
-  
+
   constructor(private auth: AuthService, private router: Router) {
   }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
+
     if (this.auth.adminLevel > 0){
       return true;
     }
     this.router.navigate(['/home']);
     return false;
   }
-  
+
 }

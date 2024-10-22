@@ -44,7 +44,7 @@ export class AuthService implements OnDestroy {
   }
 
   async setUser(user) {
-    return this.sub = await this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
+    return (this.sub = this.afs.doc<User>(`users/${user.uid}`).valueChanges().subscribe( u => {
       this.user = u;
       this.adminLevel = u.adminLevel;
       if (u.application === undefined || u.application == null) {
@@ -56,7 +56,7 @@ export class AuthService implements OnDestroy {
       }
       // console.log(this.verified + '  ' + this.user);
 
-    });
+    }));
   }
 
   // stuff for creating users
@@ -68,24 +68,30 @@ export class AuthService implements OnDestroy {
       email: user.email,
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
-      adminLevel: 0,
+      adminLevel: 4,
       registeredFor: [],
       pastHacks: [],
       application: null
     };
 
     console.log(userRef.set(data, {merge: true}));
+    console.log(data);
   }
 
   async createUser(form: FormGroup) {
-    await this.afAuth.createUserWithEmailAndPassword(form.get('email').value, form.get('password').value).then( result => {
-      alert('Account Created');
-      this.createUserData(result.user, form);
-      result.user.sendEmailVerification();
-      this.router.navigate(['/verifyEmail']);
-    }, otherError => {
-      alert('account creation failed' + otherError.toString());
-      return;
+    await this.afAuth.createUserWithEmailAndPassword(form.get('email').value,
+      form.get('password').value).then((result) => {
+        if(result && result.user){
+          alert('Account Created');
+          this.createUserData(result.user, form);
+          result.user.sendEmailVerification();
+          this.router.navigate(['/verifyEmail']);
+        }else{
+          alert('account creation failed');
+        }
+    })
+      .catch((otherError) => {
+      alert('Account creation failed: ' + otherError.message);
     });
   }
 
@@ -152,8 +158,10 @@ export class AuthService implements OnDestroy {
   }
 
   sendVerifivationEmail() {
-    this.afAuth.currentUser.then(user => user.sendEmailVerification().then(result => alert('Email Sent'  ),
-        otherError => alert('Something went wrong. Try again later.')));
+    this.afAuth.currentUser.then(user => user.sendEmailVerification()
+      .then(result => alert('Email Sent'  ),
+        otherError => alert('Something went wrong. ' +
+          'Try again later.')));
   }
 
   ngOnDestroy(): void {

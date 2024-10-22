@@ -10,22 +10,9 @@ import {AuthService} from '../services/auth.service';
 export class HeaderComponent implements OnInit {
   isCollapsed = true;
 
-  constructor(public router: Router, public auth: AuthService, private renderer: Renderer2) { }
-
-  toggleMenu() {
-    const menu = document.getElementById('navmenu');
-    if (menu) {
-      if (this.isCollapsed) {
-        this.renderer.addClass(menu, 'show'); // Adds the 'show' class to display the menu
-      } else {
-        this.renderer.removeClass(menu, 'show'); // Removes the 'show' class to hide the menu
-      }
-      this.isCollapsed = !this.isCollapsed;
-    }
-  }
-
+  constructor(public router: Router, public auth: AuthService) { }
 
   ngOnInit() {
-
   }
+
 }

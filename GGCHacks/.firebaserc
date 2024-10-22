@@ -1,14 +1,8 @@
 {
-  "targets": {
-    "fir-test-420c8": {
-      "hosting": {
-        "GGCHacks": [
-          "fir-test-420c8"
-        ]
-      }
-    }
-  },
   "projects": {
-    "default": "grizzly-hacks"
-  }
+    "default": "grizzly-hacks",
+    "GGCHacks": "grizzly-hacks"
+  },
+
+  "etags": {}
 }
