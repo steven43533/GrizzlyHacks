@@ -48,7 +48,7 @@
       </li>
 
       <!-- Sign Out -->
-      <li class="nav-item" *ngIf="auth.user !== null">
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified">
         <button class="btn btn-sm btn-outline-secondary" type="button" (click)="auth.signOut()">Sign Out</button>
       </li>
 
