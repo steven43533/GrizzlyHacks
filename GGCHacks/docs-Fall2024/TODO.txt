@@ -6,8 +6,10 @@ TODO List - Website Wizards - 10/20/24
 2. User Dashboard page
   - Includes registered and upcoming events as well as any user-only messages/alerts
 3. Improve Blog Post's UI design
-  - update css of blog post card 
+  - update css of blog post card
 4. Update contact info
   - Include an email address specified by GrizzlyHacks Admins for interested users
+5. Add an events page
+  -Events page based off the hack uga website
 
 3rd and Final deliverable deadline: 11/20/24
