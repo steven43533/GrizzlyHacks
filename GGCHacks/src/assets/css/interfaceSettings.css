@@ -248,4 +248,10 @@
   flex-shrink: 0; /* Prevent images from shrinking */
 }
 
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 
