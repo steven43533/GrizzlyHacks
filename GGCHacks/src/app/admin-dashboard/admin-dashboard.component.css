@@ -1,3 +1,6 @@
+.card{
+  margin-top: 25px;
+}
 .accounts{
     margin: 2%;
     padding: 3%;
@@ -11,9 +14,9 @@
 .filter-box{
     margin: 0%;
     padding: 3%;
-    background-color: #f2f2f2;
+    background-color: var(--background-color);
 }
-  
+
 .btn-dropdown{
     margin-top: 0;
     margin-bottom: 0;
@@ -60,14 +63,14 @@
 .text-red {
     color: #d41515;
 }
-  
+
 .search{
     width: 100%;
 }
 
 #userRow {
     border: 1px solid black;
-    background-color: #ccf0e4;
+    background-color: var(--background-color);
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
