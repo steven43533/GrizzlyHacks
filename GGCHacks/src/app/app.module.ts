@@ -36,6 +36,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { TestNavbarComponent } from './test-navbar/test-navbar.component';
 import {FooterComponent} from "./footer/footer.component";
 import {FaqComponent} from "./faq/faq-section";
+import {ProjectSubmissionComponent} from "./project-submission/project-submission.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,8 @@ import {FaqComponent} from "./faq/faq-section";
     AdminDashboardComponent,
     TestNavbarComponent,
     FooterComponent,
-    FaqComponent
+    FaqComponent,
+    ProjectSubmissionComponent,
 
   ],
     imports: [
