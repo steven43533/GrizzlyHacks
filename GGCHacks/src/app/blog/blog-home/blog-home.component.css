@@ -31,3 +31,7 @@ body{
   background-color: var(--background-color) !important;
   color: var(--alternative-text-color) !important;
 }
+
+footer{
+   margin-top: 100px;
+}
