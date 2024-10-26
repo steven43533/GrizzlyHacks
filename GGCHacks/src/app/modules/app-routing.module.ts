@@ -12,6 +12,7 @@ import {AdminGuard} from '../guards/admin.guard';
 import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-email-user.component';
 import {BlogHomeComponent} from '../blog/blog-home/blog-home.component';
 import {BlogPostingPageComponent} from '../blog/blog-posting-page/blog-posting-page.component';
+import {ProjectSubmissionComponent} from "../project-submission/project-submission.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'blogHome', component: BlogHomeComponent},
   { path: 'blogPostingPage', component: BlogPostingPageComponent},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
-  
+  { path: 'project', component: ProjectSubmissionComponent},
   { path: '**', redirectTo: '/home'}
 ];
 

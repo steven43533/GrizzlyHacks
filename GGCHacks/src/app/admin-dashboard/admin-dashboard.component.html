@@ -4,7 +4,7 @@
         <div *ngIf="auth.adminLevel === 1">
             <h1>Admin Dashboard</h1>
         </div>
-        <div *ngIf="auth.adminLevel == 2">
+        <div *ngIf="auth.adminLevel === 2">
             <h1>Super Admin Dashboard</h1>
         </div>
         <div class="filter-box">
@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
             </div>
             <div class="row">
-                <div class="col" *ngIf="auth.adminLevel == 2">
+                <div class="col" *ngIf="auth.adminLevel === 2">
                     <h4>Member List</h4>
                     <div ngbDropdown class="d-inline-block">
                         <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
@@ -63,17 +63,17 @@
                         <div class="col">
                             <h5>{{user.firstName}} {{user.lastName}}</h5>
                             <h6>{{user.email}}</h6>
-                            <div *ngIf="user.adminLevel == 0 && auth.adminLevel == 2">
+                            <div *ngIf="user.adminLevel === 0 && auth.adminLevel === 2">
                                 <h6>Member</h6>
                             </div>
-                            <div *ngIf="user.adminLevel == 1 && auth.adminLevel == 2">
+                            <div *ngIf="user.adminLevel === 1 && auth.adminLevel === 2">
                                 <h6>Admin</h6>
                             </div>
-                            <div *ngIf="user.adminLevel == 2 && auth.adminLevel == 2">
+                            <div *ngIf="user.adminLevel === 2 && auth.adminLevel === 2">
                                 <h6>Super Admin</h6>
                             </div>
                             <div hidden="true" #app>
-                                <div *ngIf="user.application != null">
+                                <div *ngIf="user.application !== null">
                                     <hr>
                                     <div>
                                         <b>Contact Information:</b>
@@ -118,19 +118,19 @@
                         </div>
                         <div class="col justify-content-center">
                             <div class='row justify-content-end'>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 0" (click)="makeAdmin(user)">Make Admin</button>
-                                <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="takeAdmin(user)">Take Admin</button>
-                                <button class = "btn-primary" *ngIf="auth.adminLevel == 2 && user.adminLevel == 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
-                                <button class = "btn-warn" *ngIf="auth.adminLevel == 2 && user.adminLevel == 2" (click)="takeSuperAdmin(user)" [disabled]="user.email == auth.user.email">Take Super Admin</button>
+                                <button class = "btn-primary" *ngIf="auth.adminLevel === 2 && user.adminLevel === 0" (click)="makeAdmin(user)">Make Admin</button>
+                                <button class = "btn-warn" *ngIf="auth.adminLevel === 2 && user.adminLevel === 1" (click)="takeAdmin(user)">Take Admin</button>
+                                <button class = "btn-primary" *ngIf="auth.adminLevel === 2 && user.adminLevel === 1" (click)="makeSuperAdmin(user)">Make Super Admin</button>
+                                <button class = "btn-warn" *ngIf="auth.adminLevel === 2 && user.adminLevel === 2" (click)="takeSuperAdmin(user)" [disabled]="user.email === auth.user.email">Take Super Admin</button>
                             </div>
                             <div class='row justify-content-end'>
-                                <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && !app.hidden" (click)="app.hidden = true">Hide Application</button>
-                                <button class = "btn-application" *ngIf="user.application != null && user.application.submitted && app.hidden" (click)="app.hidden = false">Show Application</button>
-                                <div *ngIf="user.application == null || !user.application.submitted">
+                                <button class = "btn-application" *ngIf="user.application !== null && user.application.submitted && !app.hidden" (click)="app.hidden = true">Hide Application</button>
+                                <button class = "btn-application" *ngIf="user.application !== null && user.application.submitted && app.hidden" (click)="app.hidden = false">Show Application</button>
+                                <div *ngIf="user.application === null || !user.application.submitted">
                                     <b><p class="text-red">No Application</p></b>
                                 </div>
-                                <button class = "btn-primary" *ngIf="user.application != null && user.application.submitted && !isRegisteredForCurrentYear(user)" (click)="acceptApplication(user)">Accept Application</button>
-                                <button class = "btn-warn" *ngIf="user.application != null && user.application.submitted && isRegisteredForCurrentYear(user)" (click)="revokeApplication(user)">Revoke Application</button>
+                                <button class = "btn-primary" *ngIf="user.application !== null && user.application.submitted && !isRegisteredForCurrentYear(user)" (click)="acceptApplication(user)">Accept Application</button>
+                                <button class = "btn-warn" *ngIf="user.application !== null && user.application.submitted && isRegisteredForCurrentYear(user)" (click)="revokeApplication(user)">Revoke Application</button>
                             </div>
                         </div>
                     </div>
@@ -139,3 +139,7 @@
         </div>
     </div>
 </div>
+</div>
+<footer>
+  <app-footer></app-footer>
+</footer>

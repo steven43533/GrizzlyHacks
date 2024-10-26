@@ -177,6 +177,8 @@
   text-decoration: underline;
 }
 
+
+
   body
   {
     font-family: var(--font-family) !important;
@@ -255,6 +257,12 @@
   margin-right: 40px;
   width: 200px;
   flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 

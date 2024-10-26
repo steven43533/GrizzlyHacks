@@ -13,12 +13,13 @@
 }
 
 button {
-  margin:var(--spacing-sm) !important;
   text-shadow: 0 0 3px #000000, 0 0 5px #000000;
   font-size: 20px;
 }
 
+
 .btn-outline-secondary{
+  margin:var(--spacing-sm) !important;
   height: 40px !important;
   color: white !important;
   background-color: transparent !important;

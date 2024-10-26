@@ -3,3 +3,12 @@
   width: 100vw !important;
 }
 
+.card.w-50{
+  margin-top: 25px;
+  background-color: var(--secondary-color) !important;
+}
+
+.btn{
+  margin-top: 5px;
+}
+

@@ -19,7 +19,7 @@ import {ApplicationServiceService} from '../services/application-service.service
   templateUrl: './application.component.html',
   styleUrls: ['./application.component.css']
 })
-export class ApplicationComponent implements OnInit, OnDestroy {
+export class ApplicationComponent {
 
   form: FormGroup;
   gender = ['Male', 'Female', 'Non-Binary', 'Other', 'Prefer Not To Say'];
@@ -64,11 +64,4 @@ export class ApplicationComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-
-  }
 }

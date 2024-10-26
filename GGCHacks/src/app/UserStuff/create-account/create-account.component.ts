@@ -22,7 +22,7 @@ import {provideRouter, Router} from "@angular/router";
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })
-export class CreateAccountComponent implements OnInit {
+export class CreateAccountComponent {
 
 
   createAccountForm: FormGroup;
@@ -43,7 +43,7 @@ export class CreateAccountComponent implements OnInit {
         // lower-case letter
         CustomValidators.patternValidator(/[a-z]/, { doesntHaveSmallCase: true }),
         // has a special character
-        CustomValidators.patternValidator(/[!@#$%^&*()_+\-=\[\]\\{}|;':",./<>?]/, { doesntHaveSpecialCharacters: true }),
+        CustomValidators.patternValidator(/[!@#$%^&*()_+\-=\]\\{}|;':",./<>?]/, { doesntHaveSpecialCharacters: true }),
     // 6. Has a minimum length of 8 characters
       ]],
       cPassword:  ['', [Validators.required]]
@@ -57,8 +57,7 @@ export class CreateAccountComponent implements OnInit {
     return this.createAccountForm.get('password').value === this.createAccountForm.get('cPassword').value;
   }
 
-  ngOnInit(): void {
-  }
+
 
   getFirstName() {
     return this.createAccountForm.get('firstName');
@@ -86,7 +85,6 @@ export class CreateAccountComponent implements OnInit {
 
 class CustomValidators {
 
-  constructor() {}
 
   static passwordMatchValidator(control: AbstractControl) {
     const password: string = control.get('password').value; // get password from our password form control

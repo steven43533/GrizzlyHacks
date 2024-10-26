@@ -2,6 +2,7 @@
 
 h1{
   font-size: 80px !important;
+  color: var(--secondary-color);
 }
 
 h3{
@@ -11,6 +12,7 @@ h3{
 @media screen and (max-width: 600px){
   h1{
     font-size: 40px !important;
+
   }
 }
 
