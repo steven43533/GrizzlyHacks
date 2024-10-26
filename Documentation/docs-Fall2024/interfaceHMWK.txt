@@ -1,0 +1,62 @@
+Global CSS File:
+Name: interfaceSettings.css
+Location: src/assets/css/interfaceSettings.css
+
+Team Members and Their Variables:
+
+
+
+Destiny - UI/UX
+
+Variable 1: --primary-color (Bright Cyan)
+Usage: Background color for buttons and headers on the homepage.
+Variable 2: --font-family (Montserrat, sans-serif)
+Usage: Applied to the entire site's font style, including the hero section and features section.
+
+
+
+Kenny Amador - Data Modeler
+
+Variable 1: --alternative-text-color: #0D0D0D
+Usage: Alternative text color for when white seems to blend in not quite fit, used for the create account text.
+Variable 2: --spacing-sm: 8px
+Usage: Spacing used for the dropdown menu
+
+
+Jimmy Phan - Lead Programmer/Code Architecture
+
+Variable 1:#link{
+             color: #c9f8b8;
+             cursor: pointer;
+           }
+Usage: How links appears throughout the website, this includes link color and how the mouse changes over it.
+Variable 2:.btn-outline-secondary
+             {
+               background-color: var(--primary-color) !important;
+               color: black !important;
+               border-radius: 0px !important;
+             }
+Usage: Applied to all button variables to change the font color.
+
+
+
+Daniel Santoyo - Project Manager
+
+Variable 1: -title {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+Usage: Changes the main title position, size, font, color, and background color
+Variable 2: -caption {
+    margin-top: 15px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: center;
+  }
+Usage: Adds a caption under the main title
