@@ -6,8 +6,16 @@
     text-align:center;
 }
 
+.faq-row {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .faq-item {
     margin-bottom: 20px;
+    flex: 0 0 48%;
+    box-sizing: border-box;
 }
 
 .faq-question {
@@ -15,7 +23,7 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    display: flex;
+    display:flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -26,7 +34,7 @@
 
 .faq-answer {
     padding: 10px;
-    background-color: var(--secondary-color);
+    background-color:var(--title-color);
     border-left: 3px solid #007bff;
     margin-top: 5px;
     border-radius: 5px;

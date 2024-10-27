@@ -1,6 +1,6 @@
 <div class="faq-section">
     <h2>Frequently Asked Questions</h2>
-
+  <div class="faq-row">
     <div *ngFor="let faq of faqs" class="faq-item">
         <div class="faq-question" (click)="toggleAnswer(faq)">
             <h3>{{ faq.question }}</h3>
@@ -10,5 +10,6 @@
         <div class="faq-answer" *ngIf="faq.open">
             <p>{{ faq.answer }}</p>
         </div>
+    </div>
     </div>
 </div>

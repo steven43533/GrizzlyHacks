@@ -3,6 +3,7 @@
     /* Global Colors */
     --primary-color: #a1f8d7;   /* Bright Cyan */
     --secondary-color: #006064; /* Neon Green */
+    --title-color: #00333a;
     --text-color: #f8f8f2; /* Off-White */
     --alternative-text-color: #050505;
     --background-color: #282a36 ;/* Dark Gray */
@@ -193,7 +194,7 @@
     color: var(--text-color); /* Ensure text color is consistent */
   }
 
-  header, footer
+  header
   {
     background-color: var(--primary-color);
   }
