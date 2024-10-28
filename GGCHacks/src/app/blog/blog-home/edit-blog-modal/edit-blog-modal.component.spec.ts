@@ -47,7 +47,8 @@ describe('EditBlogModalComponent', () => {
     expect(component.editBlogForm.value).toEqual({
       title: 'Test Title',
       author: 'Test Author',
-      content: 'Test Content'
+      content: 'Test Content',
+      link: 'Test Link'
     });
   });
 
