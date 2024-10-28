@@ -21,9 +21,17 @@
 
                     </textarea>
                 </div>
-                <div class="row justify-content-center">
-                    <button type="submit" class="btn btn-primary" (click)="postBlog()" [disabled]="blogPostingForm.invalid">Submit</button>
-                </div>
+              <div class="form-group">
+                <label for="blogLink">Media link (optional)</label>
+                <textarea class="form-control" id="blogLink" rows="2" formControlName="blogLink">
+
+                    </textarea>
+              </div>
+
+              <div id = "blog-posting-footer" class="d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary" (click)="goToBlogHomePage()">Cancel</button>
+                <button type="submit" class="btn btn-primary" (click)="postBlog()" [disabled]="blogPostingForm.invalid">Submit</button>
+              </div>
             </form>
         </div>
     </div>

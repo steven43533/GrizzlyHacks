@@ -10,6 +10,7 @@ export interface Blog {
   documentID: string;
   author: string;
   content: string;
+  link: string; // blog post link can be optional
   datePosted: Timestamp;
   edited: Timestamp;
   title: string;
@@ -31,6 +32,7 @@ export class BlogService {
           documentID: doc.id,
           title: doc.data().title,
           content: doc.data().content,
+          link: doc.data().link,
           author: doc.data().author,
           datePosted: doc.data().datePosted,
           edited: doc.data().edited
@@ -38,7 +40,7 @@ export class BlogService {
       });
       this.blogsSubject.next(initialBlogs);
     });
-  
+
     // Set up the onSnapshot listener
     firebase.firestore().collection('blogs').orderBy('datePosted', 'desc').onSnapshot(snapshot => {
       const blogs = snapshot.docs.map(doc => {
@@ -46,6 +48,7 @@ export class BlogService {
           documentID: doc.id,
           title: doc.data().title,
           content: doc.data().content,
+          link: doc.data().link, //include link if present
           author: doc.data().author,
           datePosted: doc.data().datePosted,
           edited: doc.data().edited
@@ -54,10 +57,10 @@ export class BlogService {
       this.blogsSubject.next(blogs);
     });
   }
-  
+
 
   //Adds a blog to the database
-  addBlog(blogTitle: string, blogAuthor: string, blogContent: string): void {
+  addBlog(blogTitle: string, blogAuthor: string, blogContent: string, blogLink: string): void {
     //Checks if there is a count doc in the blogs collection
     let count = 0;
     firebase.firestore().collection('blogs').doc('count').get().then(doc => {
@@ -76,10 +79,15 @@ export class BlogService {
         title: blogTitle,
         content: blogContent,
         author: blogAuthor,
+        link: blogLink,
         datePosted: Timestamp.now(),
         edited: null
       };
       firebase.firestore().collection('blogs').doc(blog.documentID).set(blog);
+    })
+      // Handle any errors encountered during the add process
+    .catch(error => {
+      console.error("Error adding blog: ", error)
     });
   }
 

@@ -7,3 +7,15 @@
   width: 100vw;
 }
 
+.card-title{
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+input{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+

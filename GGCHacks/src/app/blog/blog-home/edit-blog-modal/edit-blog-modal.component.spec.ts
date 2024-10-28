@@ -32,6 +32,7 @@ describe('EditBlogModalComponent', () => {
       title: 'Test Title',
       author: 'Test Author',
       content: 'Test Content',
+      link: 'Test Link',
       datePosted: Timestamp.fromDate(new Date()),
       edited: null
     };

@@ -8,6 +8,8 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     color: var(--alternative-text-color);
+    text-align: center;
+    padding: 15px;
 }
 h6 {
     margin: 10px 0 0 0;
@@ -26,6 +28,12 @@ h6 {
     padding-right: 20px;
     color: black;
 }
+
+p {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 body{
   font-family: var(--font-family) !important;
   background-color: var(--background-color) !important;
@@ -38,4 +46,28 @@ footer{
 .everything{
   height: 100vh;
   width: 100vw;
+}
+
+.blog-cards {
+  margin-bottom: 20px; /* Add some space between cards */
+}
+
+.align-self-start {
+  margin-right: 0px; /* Optional: change to align left */
+}
+
+.align-self-end {
+  margin-left: 0px; /* Optional: change to align right */
+}
+
+.card {
+  transition: transform 0.3s; /* Optional: Adds a smooth transition */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Optional: change to effect scale on hover */
+}
+
+#blogSection{
+  padding: 10px;
 }
