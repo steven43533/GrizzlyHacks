@@ -3,7 +3,7 @@
   <div class="faq-row">
     <div *ngFor="let faq of faqs" class="faq-item">
         <div class="faq-question" (click)="toggleAnswer(faq)">
-            <h3>{{ faq.question }}</h3>
+            <h6>{{ faq.question }}</h6>
             <span *ngIf="faq.open">&#9650;</span> <!-- Up arrow when open -->
             <span *ngIf="!faq.open">&#9660;</span> <!-- Down arrow when closed -->
         </div>
