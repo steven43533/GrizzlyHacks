@@ -3,6 +3,7 @@ import { User } from '../interfaces/user';
 import { Subscription } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AuthService } from '../services/auth.service';
+import {Event} from "../EventCalendarStuff/event";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -18,9 +19,10 @@ export class AdminDashboardComponent {
   adminFilter = 'All Members';
   applicationFilter = 'No Filter';
   acceptedFilter = 'No Filter';
+  isCreatingEvent: boolean;
 
   constructor(private afs: AngularFirestore, public auth: AuthService) {
-
+    this.isCreatingEvent = false;
   }
 
   /**
@@ -206,4 +208,28 @@ export class AdminDashboardComponent {
     }
 
   }
+
+  //this object holds the new event data
+  newEvent = {
+    id: '',
+    title: '',
+    startTime: '',
+    endTime: '',
+    day: ''
+  };
+
+  //this function handles the event submission
+  submitEvent() {
+    if (!this.newEvent.title || !this.newEvent.startTime || !this.newEvent.endTime || !this.newEvent.day) {
+      console.log('Please fill all the fields');
+      return;
+    }
+    this.newEvent.id = new Date().getTime().toString();
+    console.log('Event Created:', this.newEvent);
+
+    this.isCreatingEvent = false;
+    this.newEvent = { id: '', title: '', startTime: '', endTime: '', day: '' }; // Reset form
+  }
 }
+
+

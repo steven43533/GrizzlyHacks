@@ -1,12 +1,29 @@
 .everything{
-  height: 100vh !important;
   width: 100vw !important;
 }
 
+.card-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.event-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #f9f9f9;
+  color: #000000;
+  margin: 10px 0;
+}
+
+
 .card.w-50{
   margin-top: 25px;
+  width: 70% !important;
   background-color: var(--secondary-color) !important;
 }
+
 
 .btn{
   margin-top: 5px;
@@ -17,3 +34,16 @@
   padding-top: 15px;
 }
 
+.editing{
+  padding: 15px;
+}
+
+.button-row{
+  display:flex;
+  gap: 10px;
+  justify-content: left;
+}
+
+.btn-sm {
+  width: auto;
+}

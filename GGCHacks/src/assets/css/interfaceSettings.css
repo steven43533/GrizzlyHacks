@@ -216,8 +216,8 @@
   }
   .btn-primary {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  }
 
-}
 .btn-primary:hover {
     background: linear-gradient(90deg, #ff79c6, #50fa7b);
     border-radius: 50px;

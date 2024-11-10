@@ -12,7 +12,7 @@
 }
 
 .filter-box{
-    margin: 0%;
+    margin: 0;
     padding: 3%;
     background-color: var(--background-color);
 }
@@ -74,4 +74,35 @@
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.card.w-50.h-80 {
+  width: 70% !important;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+h4 {
+  font-size: 14px;
+  padding-top: 5px;
+}
+/* Button styling */
+button {
+  margin-top: 15px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: left;
+}
+
+@media (min-width: 1024px) {
+  .d-inline-block {
+    width: 5px;
+    height: 5px;
+  }
 }

@@ -71,7 +71,7 @@ export class AuthService implements OnDestroy {
       adminLevel: 4,
       registeredFor: [],
       pastHacks: [],
-      application: null
+      application: null,
     };
 
     console.log(userRef.set(data, {merge: true}));

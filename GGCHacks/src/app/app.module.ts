@@ -37,6 +37,8 @@ import { TestNavbarComponent } from './test-navbar/test-navbar.component';
 import {FooterComponent} from "./footer/footer.component";
 import {FaqComponent} from "./faq/faq-section";
 import {ProjectSubmissionComponent} from "./project-submission/project-submission.component";
+import {EventCreatorComponent} from "./admin-dashboard/event-creator/event-creator.component";
+import {EditEventModalComponent} from "./admin-dashboard/edit-event-modal/edit-event-modal.component";
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import {ProjectSubmissionComponent} from "./project-submission/project-submissio
     FooterComponent,
     FaqComponent,
     ProjectSubmissionComponent,
+    EventCreatorComponent,
+    EditEventModalComponent
 
   ],
     imports: [
