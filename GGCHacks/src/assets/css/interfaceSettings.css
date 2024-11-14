@@ -9,7 +9,7 @@
     --background-color: #282a36 ;/* Dark Gray */
     --secondary-background-color: #241f23 ;/* Light Gray */
     --accent-color: #FF79C6;    /* Bright Pink */
-    --font-family: 'Montserrat', sans-serif;
+    --font-family: 'Rajdhani', sans-serif;
      /*Dropdown background*/
 
 
@@ -28,71 +28,108 @@
   /*Hero Section Styling */
   .hero-section {
     background-color: var(--background-color);
-    padding: 150px 0; /* Adjusted padding to push content below navbar */
+    padding: 150px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 100px;
+  font-family: var(--font-family);
+  line-height: 1.2;
+  font-weight: 300;
+  color: var(--text-color);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+  
+  /*Typing Effect*/
+  .hero-section .typing-effect {
+    display: inline; /* Ensures it stays inline with the text */
+    border-right: 3px solid var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 90px; /* Matches the hero text size */
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.2;
+  }
+  
+  .hero-section .cursor {
+    display: inline-block;
+    animation: blink 0.7s step-start infinite;
+    vertical-align: bottom; /* Aligns with the text baseline */
+    font-size: 90px; /* Matches the hero text size */
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-section h1,
+    .hero-section .typing-effect,
+    .hero-section .cursor {
+      font-size: 90px; /* Adjust font size for smaller screens */
+      white-space: normal; /* Allows wrapping */
+    }
   }
 
-  .hero-section h1 {
-    color: var(--text-color);
-    font-family: var(--font-family);
-    margin-bottom: 20px;
+  
+  /* Features Header Styling */
+  .features-header-section {
+    text-align: center;
+    padding-top: 80px;
   }
-
+  
+  
   .hero-section p {
     color: var(--text-color);
     font-size: 18px;
     margin-bottom: 30px;
   }
-
+  
   .hero-section .btn-primary {
     background-color: var(--accent-color);
     border: none;
     color: var(--text-color);
-    padding:16px 30px;
+    padding: 16px 30px;
     font-size: 24px;
     border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
   }
-
-  .hero-section .btn-primary:hover
-  {
+  
+  .hero-section .btn-primary:hover {
     background-color: var(--accent-color);
-    color: white;
+    transform: scale(1.1); /* Subtle hover animation */
+    color: #fff;
   }
 
-/* Style for the Features Header */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); /* Import the Poppins font */
+
+/* Features Header Styling */
+.features-header-section {
+  text-align: center;
+  padding-top: 80px;
+}
 
 .features-header {
-  font-size: 36px;
-  color: #ffffff;
-  font-family: 'Luckiest Guy', cursive;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  opacity: 1; /* Set to 1 for visibility */
-  transform: translateY(0); /* Reset to ensure it shows up */
-}
-
-
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.features-header-section {
-  margin: 40px 0;
+  font-size: 50px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  color: var(--text-color);
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .features-header-section.in-view .features-header {
-  opacity: 1; /* Show the element */
-  transform: translateY(0); /* Reset position */
+  opacity: 1;
+  transform: translateY(0);
 }
+
+
+
 
 /* Features Section Styling */
 .feature-box {
@@ -302,5 +339,3 @@ app-root {
   flex-direction: column;
   min-height: 100vh;
 }
-
-
