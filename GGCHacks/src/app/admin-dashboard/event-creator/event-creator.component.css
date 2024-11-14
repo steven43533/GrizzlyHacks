@@ -1,3 +1,18 @@
+.everything{
+}
+
+.admin-dashboard {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 3%;
+}
+
+.user-dashboard {
+  background-color: var(--secondary-color);
+  margin: 0;
+  padding: 3%;
+}
+
 .card.w-50.h-80 {
   width: 70% !important;
 }
