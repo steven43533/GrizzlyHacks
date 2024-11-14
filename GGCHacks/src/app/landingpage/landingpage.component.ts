@@ -12,31 +12,49 @@ export class LandingpageComponent implements OnInit {
   constructor(public router: Router, public auth: AuthService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.autoScrollSponsors();
-    }, 500); // Delay to ensure content is ready
+    // Handle sponsor scrolling
+    this.autoScrollSponsors();
+
+    // Handle feature header animations
+    this.initFeatureHeaderScroll();
   }
-  
 
   autoScrollSponsors(): void {
     const scrollingWrapper = document.querySelector('.scrolling-wrapper');
 
     if (scrollingWrapper) {
-        function seamlessScroll() {
-            scrollingWrapper.scrollLeft += 2; // Increment scrollLeft
-
-            // Check if scrolled past half the scrollable width
-            if (scrollingWrapper.scrollLeft >= scrollingWrapper.scrollWidth / 2) {
-                scrollingWrapper.scrollLeft = 0; // Reset to the start of the duplicated content
-            }
+      const seamlessScroll = () => {
+        scrollingWrapper.scrollLeft += 2; // Increment scrollLeft
+        if (scrollingWrapper.scrollLeft >= scrollingWrapper.scrollWidth / 2) {
+          scrollingWrapper.scrollLeft = 0; // Reset to the start of the duplicated content
         }
-
-        setInterval(seamlessScroll, 20); // Adjust speed as needed
+      };
+      setInterval(seamlessScroll, 20); // Adjust speed as needed
     } else {
-        console.log('Scrolling wrapper not found.');
+      console.log('Scrolling wrapper not found.');
     }
-}
+  }
 
+  initFeatureHeaderScroll(): void {
+    const featureHeaderSection = document.querySelector('.features-header-section');
 
-  
+    if (featureHeaderSection) {
+      const handleScroll = () => {
+        const rect = featureHeaderSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          featureHeaderSection.classList.add('in-view');
+        } else {
+          featureHeaderSection.classList.remove('in-view');
+        }
+      };
+
+      // Add scroll event listener
+      window.addEventListener('scroll', handleScroll);
+
+      // Initial check in case it's already in view
+      handleScroll();
+    } else {
+      console.log('Feature header section not found.');
+    }
+  }
 }

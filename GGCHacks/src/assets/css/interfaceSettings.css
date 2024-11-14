@@ -58,6 +58,42 @@
     color: white;
   }
 
+/* Style for the Features Header */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); /* Import the Poppins font */
+
+.features-header {
+  font-size: 36px;
+  color: #ffffff;
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  opacity: 1; /* Set to 1 for visibility */
+  transform: translateY(0); /* Reset to ensure it shows up */
+}
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.features-header-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.features-header-section.in-view .features-header {
+  opacity: 1; /* Show the element */
+  transform: translateY(0); /* Reset position */
+}
+
 /* Features Section Styling */
 .feature-box {
   margin: 15px 40px; /* 15px for top/bottom and 20px for left/right */
@@ -123,8 +159,8 @@
 .feature-image {
   width: 100%;
   height: 90%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 20px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
