@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 
 
 @Component({
@@ -13,11 +13,15 @@ export class ProjectSubmissionComponent implements OnInit{
 
   ngOnInit() {
     this.projectSubmission = new FormGroup({
-      'description': new FormControl(null),
-      'members': new FormControl(null),
-      'repos': new FormControl(null),
+      'description': new FormControl(null, Validators.required),
+      'members': new FormControl(null,Validators.required),
+      'repo': new FormControl(null,Validators.required),
       'logo': new FormControl(null),
     });
+  }
+
+  onSubmit(){
+    console.log(this.projectSubmission);
   }
 
 }
