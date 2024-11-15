@@ -7,5 +7,9 @@ import {FormGroup} from "@angular/forms";
   styleUrls: ['./project-submission.component.css']
 })
 export class ProjectSubmissionComponent {
-form: FormGroup;
+  form: FormGroup;
+
+  onSubmit(){
+    console.log("submit")
+  }
 }

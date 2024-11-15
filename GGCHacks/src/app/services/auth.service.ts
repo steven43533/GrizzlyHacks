@@ -68,7 +68,7 @@ export class AuthService implements OnDestroy {
       email: user.email,
       firstName: form.get('firstName').value,
       lastName: form.get('lastName').value,
-      adminLevel: 4,
+      adminLevel: 0,
       registeredFor: [],
       pastHacks: [],
       application: null,
