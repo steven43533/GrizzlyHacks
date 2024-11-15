@@ -60,6 +60,19 @@
     background-color: #220202;
 }
 
+.btn-accept {
+  margin: 5px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-color: #43b853;
+  color: #ffffff;
+}
+
+.btn-warn:hover {
+  background-color: #26632f;
+}
+
 .text-red {
     color: #d41515;
 }
