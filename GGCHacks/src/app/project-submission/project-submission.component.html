@@ -4,17 +4,17 @@
       <div class="card-title"> Submit Projects
       </div>
       <div class="card-body">
-        <form (ngSubmit)="onSubmit()">
+        <form>
           <div class="row">
             <div class="col-sm">
-              <div class="form-group required">
+              <div class="form-group">
                 <label>Description of Project*: </label>
                 <input
                   type="text"
                   id="description"
                   class="form-control"
                   ngModel
-                  name="Description">
+                  name="description">
                 </div>
 
               <div class="form-group required">
@@ -23,7 +23,7 @@
                        id="Group Members"
                        class="form-control"
                        ngModel
-                       name="groupMembers">
+                       name="members">
               </div>
 
               <div>
@@ -38,11 +38,12 @@
               <div>
                 <label>Link to repo: </label>
                 <input type="text"
-                       id="link"
+                       id="Repo"
                        class="form-control"
                        ngModel
-                       name="link">
+                       name="Repo">
               </div>
+
               <button class="btn btn-primary" type="submit">Submit</button>
               </div>
             </div>

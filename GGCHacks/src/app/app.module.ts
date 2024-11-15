@@ -64,8 +64,7 @@ import {EditEventModalComponent} from "./admin-dashboard/edit-event-modal/edit-e
     FaqComponent,
     ProjectSubmissionComponent,
     EventCreatorComponent,
-    EditEventModalComponent
-
+    EditEventModalComponent,
   ],
     imports: [
         BrowserModule,
@@ -79,6 +78,7 @@ import {EditEventModalComponent} from "./admin-dashboard/edit-event-modal/edit-e
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
+
     ],
 
   providers: [],
