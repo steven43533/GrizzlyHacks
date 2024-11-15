@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { EventService } from "../../services/event.services";
 import { Event } from "../../EventCalendarStuff/event";
 import firebase from "firebase/compat";
@@ -14,7 +14,8 @@ import { EditEventModalComponent } from "../edit-event-modal/edit-event-modal.co
   templateUrl: './event-creator.component.html',
   styleUrls: ['./event-creator.component.css'],
 })
-export class EventCreatorComponent {
+export class EventCreatorComponent implements OnInit {
+  @Input() isAdminDashboard: boolean = false;
   newEvent: Event = {
     id: '',
     title: '',

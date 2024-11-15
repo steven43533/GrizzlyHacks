@@ -4,29 +4,59 @@
       <div class="card-title"> Submit Projects
       </div>
       <div class="card-body">
-        <form [formGroup]="form">
+        <form [formGroup]="projectSubmission" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-sm">
-              <div class="form-group required">
+              <div class="form-group">
                 <label>Description of Project*: </label>
-                <input type="text">
+                <input
+                  type="text"
+                  id="description"
+                  class="form-control"
+                  formControlName="description"
+                  name="description">
+                <span
+                  *ngIf="!projectSubmission.get('description').valid && projectSubmission.get('description').touched"
+                  class="help-block">Please enter a description for the project
+                </span>
                 </div>
 
               <div class="form-group required">
                 <label>Group Members*: </label>
-                <input type="text">
+                <input type="text"
+                       id="members"
+                       class="form-control"
+                       formControlName="members"
+                       name="members">
+                <span
+                  *ngIf="!projectSubmission.get('members').valid && projectSubmission.get('members').touched"
+                  class="help-block">Please enter at least one name
+                </span>
               </div>
+
               <div>
                 <label>Group Logo: </label>
-                <input type="text">
+                <input type="text"
+                       id="logo"
+                       class="form-control"
+                       formControlName="logo"
+                       name="logo">
               </div>
+
               <div>
                 <label>Link to repo: </label>
-                <input type="text">
+                <input type="text"
+                       id="repo"
+                       class="form-control"
+                       formControlName="repo"
+                       name="repo">
+                <span
+                  *ngIf="!projectSubmission.get('repo').valid && projectSubmission.get('repo').touched"
+                  class="help-block">Please enter a link to the repository</span>
+
               </div>
-              <div>
-                <label>required*</label>
-              </div>
+
+              <button class="btn btn-primary" type="submit">Submit</button>
               </div>
             </div>
         </form>

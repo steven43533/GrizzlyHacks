@@ -1,18 +1,25 @@
-<div class = "event-adder">
+<div class="everything">
+<div [ngClass] = "{ 'admin-dashboard': isAdminDashboard, 'user-dashboard': !isAdminDashboard }">
+  <div *ngIf="isAdminDashboard">
+  <h3>Scheduled Events</h3>
+  </div>
   <div *ngIf="events && events.length > 0">
-    <h3>Scheduled Events</h3>
     <div *ngFor="let event of events" class="event-card">
       <p><strong>Title:</strong> {{ event.title }}</p>
       <p><strong>Start Time:</strong> {{ event.startTime }}</p>
       <p><strong>End Time:</strong> {{ event.endTime }}</p>
       <p><strong>Day:</strong> {{ event.day }}</p>
+      <div *ngIf="auth.adminLevel >= 1 && isAdminDashboard">
       <button class="btn btn-edit" (click)="editEvent(event)">Edit</button>
       <button class="btn btn-delete" (click)="deleteEvent(event)">Delete</button>
+      </div>
     </div>
   </div>
+  <div *ngIf="isAdminDashboard">
   <h4>Add Event</h4>
   <div *ngIf="!isCreatingEvent">
     <button class = "btn btn-primary btn-sm" (click) = "isCreatingEvent = true">Create Event</button>
+  </div>
   </div>
   <div class="event-creator" *ngIf = "isCreatingEvent">
 
@@ -43,4 +50,5 @@
       <button class = "btn btn-primary btn-sm"(click)="isCreatingEvent = false">Back</button>
     </div>
   </div>
+</div>
 </div>

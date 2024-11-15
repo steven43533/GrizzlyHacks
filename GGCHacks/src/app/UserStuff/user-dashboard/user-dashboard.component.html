@@ -45,16 +45,7 @@
       <div class="card-title">
         <h3>My Events</h3>
       </div>
-      <div class = "card-body">
-        <div *ngIf="events && events.length > 0">
-          <div *ngFor="let event of events" class="event-card">
-            <p><strong>Title:</strong> {{ event.title }}</p>
-            <p><strong>Start Time:</strong> {{ event.startTime }}</p>
-            <p><strong>End Time:</strong> {{ event.endTime }}</p>
-            <p><strong>Day:</strong> {{ event.day }}</p>
-          </div>
-        </div>
-      </div>
+      <app-event-creator [isAdminDashboard]="false"></app-event-creator>
     </div>
   </div>
 </div>

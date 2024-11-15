@@ -7,7 +7,7 @@
         <div *ngIf="auth.adminLevel === 2">
           <h1>Super Admin Dashboard</h1>
         </div>
-        <app-event-creator></app-event-creator>
+        <app-event-creator [isAdminDashboard]="true"></app-event-creator>
         <div class="filter-box">
           <h3>Filters</h3>
           <div class="row justify-content-center">
