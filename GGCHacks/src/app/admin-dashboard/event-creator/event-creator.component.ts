@@ -7,6 +7,7 @@ import auth = firebase.auth;
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { EditEventModalComponent } from "../edit-event-modal/edit-event-modal.component";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -15,6 +16,7 @@ import { EditEventModalComponent } from "../edit-event-modal/edit-event-modal.co
   styleUrls: ['./event-creator.component.css'],
 })
 export class EventCreatorComponent implements OnInit {
+  events: Event[] = [];
   @Input() isAdminDashboard: boolean = false;
   newEvent: Event = {
     id: '',
@@ -22,18 +24,20 @@ export class EventCreatorComponent implements OnInit {
     startTime: '',
     endTime: '',
     day: '',
-  }
+  };
 
   isCreatingEvent = false;
   userId: string = '';
-  events: Event[] = [];
 
-  constructor(private afAuth: AngularFireAuth, private eventService: EventService, private modalService: NgbModal, public auth: AuthService) {
+  constructor(private router: Router, private afAuth: AngularFireAuth, private eventService: EventService, private modalService: NgbModal, public auth: AuthService) {
     this.afAuth.user.subscribe(user => {
       if (user) {
         this.userId = user.uid;
       }
     })
+    this.router.events.subscribe(() => {
+      this.ngOnInit();  // Refetch events on navigation
+    });
   }
 
   createEvent(): void {
@@ -62,14 +66,18 @@ export class EventCreatorComponent implements OnInit {
 
     // update the local events array
     alert('Event created successfully');
-    this.fetchEvents(); // Replace or update this logic if needed
+    this.ngOnInit(); // Replace or update this logic if needed
   }
 
 
   ngOnInit(): void {
+    this.eventService.events$.subscribe(events => {
+      this.events = events;  // Update the local events when the service's events change
+    });
+
     this.eventService.getEvents().subscribe(events => {
-      this.events = events;
-    })
+      this.eventService.setEvents(events);  // Ensure events are initially loaded into the service
+    });
   }
 
   fetchEvents(): void {

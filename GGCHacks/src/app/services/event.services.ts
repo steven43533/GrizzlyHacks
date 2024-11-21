@@ -10,7 +10,7 @@ import {Event} from "../EventCalendarStuff/event";
   providedIn: 'root',
 })
 export class EventService {
-  private  eventsSubject = new Subject<Event[]>();
+  private eventsSubject = new Subject<Event[]>();
   events$: Observable<Event[]> = this.eventsSubject.asObservable().pipe(startWith([]));
 
   constructor() {
@@ -87,8 +87,18 @@ export class EventService {
       });
   }
 
+  setEvents(events: Event[]): void {
+    this.eventsSubject.next(events);  // Update the events in the BehaviorSubject
+  }
+
   getEvents(): Observable<Event[]> {
     return this.events$;
+  }
+
+  private fetchUpdatedEvents(): void {
+    this.getEvents().subscribe(events => {
+      this.setEvents(events);  // Update the events in the service
+    });
   }
 }
 
