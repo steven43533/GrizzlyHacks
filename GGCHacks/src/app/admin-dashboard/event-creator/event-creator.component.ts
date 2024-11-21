@@ -29,15 +29,12 @@ export class EventCreatorComponent implements OnInit {
   isCreatingEvent = false;
   userId: string = '';
 
-  constructor(private router: Router, private afAuth: AngularFireAuth, private eventService: EventService, private modalService: NgbModal, public auth: AuthService) {
+  constructor( private afAuth: AngularFireAuth, private eventService: EventService, private modalService: NgbModal, public auth: AuthService) {
     this.afAuth.user.subscribe(user => {
       if (user) {
         this.userId = user.uid;
       }
     })
-    this.router.events.subscribe(() => {
-      this.ngOnInit();  // Refetch events on navigation
-    });
   }
 
   createEvent(): void {
