@@ -1,4 +1,4 @@
-TODO List - Website Wizards - 10/20/24
+TODO List - Website Wizards - 11/21/24
 
 1. Projects page
   - Create a submissions dropbox for users
@@ -11,5 +11,7 @@ TODO List - Website Wizards - 10/20/24
   - Include an email address specified by GrizzlyHacks Admins for interested users
 5. Add an events page
   -Events page based off the hack uga website
-
-3rd and Final deliverable deadline: 11/20/24
+6. Update Feature Cards so that they can be used to showcase old and upcoming events
+  -Feature cards need to be revamped so it provides useful information.
+7. Join Us button should provide an application that visitors can use
+  -Right now only users with accounts can make applications, provide an application that even guests without an account can use
