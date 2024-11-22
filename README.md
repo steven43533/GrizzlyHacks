@@ -75,7 +75,7 @@ ng serve
 ```
 1. After these steps, go to http://localhost:4200 in your browser.<br />Below is a screenshot of the home page of the website.Only the admins will be able to see the Admin Dashboard.<br /><br />
  
- ![](Documentation/WebPage.png)<br /><br />
+ ![](Documentation/docs-Fall2024/LandingPage.png)<br /><br />
  
 <br></br>
 ## Website Wizards - Fall 2024
@@ -108,7 +108,7 @@ ng serve
 
 <br></br>
 ## Project Flyer and Video
-All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).<br /><br />
+**OUTDATED** All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).<br /><br />
 **UPDATED Website Demo as of Nov 21/2024** 
 link to the [video](https://www.youtube.com/watch?v=DUOhE-9DSAE)
 
