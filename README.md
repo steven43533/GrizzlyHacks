@@ -108,11 +108,11 @@ ng serve
 
 <br></br>
 ## Project Flyer and Video
-All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).
+All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).<br /><br />
 **UPDATED Website Demo as of Nov 21/2024** 
 link to the [video](https://www.youtube.com/watch?v=DUOhE-9DSAE)
 
-![](Documentation/WebPage.png)
+![](Documentation/docs-Fall2024/GrizzlyHacksFlyer.png)
 
 You can also view our website by clicking on this [link](https://grizzly-hacks.web.app).
 
