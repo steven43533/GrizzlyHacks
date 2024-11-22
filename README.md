@@ -22,8 +22,10 @@ The Grizzly Hacks client, which is a RSO of people who are interested in Hackath
  - Real-time Application
  - Social Media Links
  - Registration System
+ - Event and Blog Post System
  - Sponsors Section
  - FAQs
+ - Mobile Device Friendly
 
 <br></br>
 ## Installation Steps
@@ -107,6 +109,11 @@ ng serve
 <br></br>
 ## Project Flyer and Video
 All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).
+**UPDATED Website Demo as of Nov 21/2024** 
+link to the [video](https://www.youtube.com/watch?v=DUOhE-9DSAE)
+
+![](Documentation/WebPage.png)
+
 You can also view our website by clicking on this [link](https://grizzly-hacks.web.app).
 
 <br></br>
