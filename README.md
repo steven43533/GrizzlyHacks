@@ -104,6 +104,9 @@ ng serve
 - **Steven Lopez**
   - Code Architecture/Lead Programmer
   - Project Manager
+**Derron Pierre**
+-Data modeler
+-_Documentation Lead_
 
 ## Website Wizards - Fall 2024
 
