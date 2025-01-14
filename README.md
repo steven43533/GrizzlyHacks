@@ -106,8 +106,8 @@ ng serve
   - Project Manager
 
 - **Derron Pierre**
-- _Data modeler_
-- _Documentation Lead_
+   - _Data modeler_
+   - _Documentation Lead_
 
 ## Website Wizards - Fall 2024
 
