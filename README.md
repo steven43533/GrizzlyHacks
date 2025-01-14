@@ -104,7 +104,8 @@ ng serve
 - **Steven Lopez**
   - Code Architecture/Lead Programmer
   - Project Manager
-**Derron Pierre**
+
+-**Derron Pierre**
 -Data modeler
 -_Documentation Lead_
 
