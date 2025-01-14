@@ -78,6 +78,11 @@ ng serve
  ![](Documentation/docs-Fall2024/LandingPage.png)<br /><br />
  
 <br></br>
+## HoneyPot - Spring 2025 :paintbrush:
+* **William Randazzo**
+  * _UI/UX_
+  * Client Liaison
+
 ## Website Wizards - Fall 2024
 
 * **Kenny Amador** :construction_worker:
