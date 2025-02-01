@@ -1,0 +1,1 @@
+--William Randazzo implemented cards into assignment7.HTML, and userHover into InterfaceSettings.css
