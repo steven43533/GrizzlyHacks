@@ -1,0 +1,49 @@
+<style>
+/*
+uses the color pallete the clients showed us row 6
+*/
+:root{
+    --blueGray: #424f64;
+    --lightGreen: #b6fd98;
+    --beige: #eadfb4;
+    --lightBlue: #71c8e2;
+    --darkerBlueGray: #1d2430;
+}
+.mybody {
+    background-color: #71c8e2;
+  }
+  
+  .h1 {
+    border-bottom: 2px solid #1d2430;
+    color: var(--blueGray);
+  }
+  
+  .container {
+    color: var(--blueGray);
+    background-color: #eadfb4;
+    padding: 15px;
+  }
+  
+  .mybutton {
+    background-color: #eadfb4;
+    color: var(--blueGray);
+    border: 1px solid #1d2430;
+    padding: 5px;
+  }
+  
+  
+  .mycustombtn{
+    background: #000; 
+    border: 10px solid #1d2430;
+    padding: 5px;
+  }
+
+  .userHover{
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+
+  .userHover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px #000;
+  }
+</style>
