@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CreateAccountComponent } from './create-account.component';
-import { AuthService } from '../../services/auth.service';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../../../environments/environment';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { CreateAccountComponent } from "./create-account.component";
+import { AuthService } from "../../services/auth.service";
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "../../../environments/environment";
 
-describe('CreateAccountComponent', () => {
+describe("CreateAccountComponent", () => {
   let component: CreateAccountComponent;
   let fixture: ComponentFixture<CreateAccountComponent>;
 
@@ -15,10 +15,9 @@ describe('CreateAccountComponent', () => {
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebase),
       ],
-      declarations: [ CreateAccountComponent ],
-      providers: [ AuthService ]
-    })
-    .compileComponents();
+      declarations: [CreateAccountComponent],
+      providers: [AuthService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,8 +26,7 @@ describe('CreateAccountComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
-  
 });

@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UserDashboardComponent } from './user-dashboard.component';
-import { AuthService } from '../../services/auth.service';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { environment } from '../../../environments/environment';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { UserDashboardComponent } from "./user-dashboard.component";
+import { AuthService } from "../../services/auth.service";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { environment } from "../../../environments/environment";
+import { ReactiveFormsModule } from "@angular/forms";
 
-describe('UserDashboardComponent', () => {
+describe("UserDashboardComponent", () => {
   let component: UserDashboardComponent;
   let fixture: ComponentFixture<UserDashboardComponent>;
 
@@ -15,12 +15,11 @@ describe('UserDashboardComponent', () => {
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
       ],
-      declarations: [ UserDashboardComponent ],
-      providers: [ AuthService ]
-    })
-    .compileComponents();
+      declarations: [UserDashboardComponent],
+      providers: [AuthService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -29,7 +28,7 @@ describe('UserDashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

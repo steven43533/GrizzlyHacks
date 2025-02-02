@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { UserGuardGuard } from './user-guard.guard';
-import { AuthService } from '../services/auth.service';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../../environments/environment';
+import { TestBed } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
+import { UserGuardGuard } from "./user-guard.guard";
+import { AuthService } from "../services/auth.service";
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "../../environments/environment";
 
-describe('UserGuardGuard', () => {
+describe("UserGuardGuard", () => {
   let guard: UserGuardGuard;
 
   beforeEach(() => {
@@ -19,8 +19,7 @@ describe('UserGuardGuard', () => {
     guard = TestBed.inject(UserGuardGuard);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(guard).toBeTruthy();
   });
-
 });

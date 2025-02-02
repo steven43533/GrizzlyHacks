@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../../../environments/environment';
-import { ActivatedRoute } from '@angular/router';
-import { ResetPasswordComponent } from './reset-password.component';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { RouterTestingModule } from "@angular/router/testing";
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "../../../environments/environment";
+import { ActivatedRoute } from "@angular/router";
+import { ResetPasswordComponent } from "./reset-password.component";
 
-describe('ResetPasswordComponent', () => {
+describe("ResetPasswordComponent", () => {
   let component: ResetPasswordComponent;
   let fixture: ComponentFixture<ResetPasswordComponent>;
 
@@ -17,14 +17,14 @@ describe('ResetPasswordComponent', () => {
         RouterTestingModule,
         AngularFireModule.initializeApp(environment.firebase),
       ],
-      declarations: [ ResetPasswordComponent ],
+      declarations: [ResetPasswordComponent],
       providers: [
         {
           provide: ActivatedRoute,
           useValue: {
             snapshot: {
               queryParams: {
-                oobCode: 'test_code',
+                oobCode: "test_code",
               },
             },
           },
@@ -39,8 +39,7 @@ describe('ResetPasswordComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
-
 });

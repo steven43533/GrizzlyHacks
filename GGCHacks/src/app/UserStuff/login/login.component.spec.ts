@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LoginComponent } from './login.component';
-import { AuthService } from '../../services/auth.service';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from '../../../environments/environment';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { LoginComponent } from "./login.component";
+import { AuthService } from "../../services/auth.service";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { environment } from "../../../environments/environment";
+import { ReactiveFormsModule } from "@angular/forms";
 
-describe('LoginComponent', () => {
+describe("LoginComponent", () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
@@ -15,12 +15,11 @@ describe('LoginComponent', () => {
       imports: [
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
       ],
-      declarations: [ LoginComponent ],
-      providers: [ AuthService ]
-    })
-    .compileComponents();
+      declarations: [LoginComponent],
+      providers: [AuthService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -29,7 +28,7 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

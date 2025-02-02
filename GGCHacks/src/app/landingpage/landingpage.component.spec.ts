@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { LandingpageComponent } from './landingpage.component';
-import { AuthService } from '../services/auth.service';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../../environments/environment';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
+import { LandingpageComponent } from "./landingpage.component";
+import { AuthService } from "../services/auth.service";
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "../../environments/environment";
 
-describe('LandingpageComponent', () => {
+describe("LandingpageComponent", () => {
   let component: LandingpageComponent;
   let fixture: ComponentFixture<LandingpageComponent>;
 
@@ -15,10 +15,9 @@ describe('LandingpageComponent', () => {
         RouterTestingModule,
         AngularFireModule.initializeApp(environment.firebase),
       ],
-      declarations: [ LandingpageComponent ],
-      providers: [ AuthService ]
-    })
-    .compileComponents();
+      declarations: [LandingpageComponent],
+      providers: [AuthService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,8 +26,7 @@ describe('LandingpageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
-
 });

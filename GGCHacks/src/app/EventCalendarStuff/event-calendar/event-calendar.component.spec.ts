@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { environment } from '../../../environments/environment';
-import { EventCalendarComponent } from './event-calendar.component';
-import { CalendarServiceService } from '../calendar-service.service';
-import { AuthService } from '../../services/auth.service';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { environment } from "../../../environments/environment";
+import { EventCalendarComponent } from "./event-calendar.component";
+import { CalendarServiceService } from "../calendar-service.service";
+import { AuthService } from "../../services/auth.service";
 
-describe('EventCalendarComponent', () => {
+describe("EventCalendarComponent", () => {
   let component: EventCalendarComponent;
   let fixture: ComponentFixture<EventCalendarComponent>;
 
@@ -24,8 +24,7 @@ describe('EventCalendarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
-
 });

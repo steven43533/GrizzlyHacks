@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VerifyEmailComponent } from './verify-email.component';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFireModule } from '@angular/fire/compat';
-import { ActivatedRoute } from '@angular/router';
-import { environment } from '../../../environments/environment';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { VerifyEmailComponent } from "./verify-email.component";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { AngularFireModule } from "@angular/fire/compat";
+import { ActivatedRoute } from "@angular/router";
+import { environment } from "../../../environments/environment";
+import { RouterTestingModule } from "@angular/router/testing";
 
-describe('VerifyEmailComponent', () => {
+describe("VerifyEmailComponent", () => {
   let component: VerifyEmailComponent;
   let fixture: ComponentFixture<VerifyEmailComponent>;
 
@@ -16,7 +16,7 @@ describe('VerifyEmailComponent', () => {
         AngularFireModule.initializeApp(environment.firebase),
         RouterTestingModule,
       ],
-      declarations: [ VerifyEmailComponent ],
+      declarations: [VerifyEmailComponent],
       providers: [
         AngularFireAuth,
         {
@@ -24,14 +24,13 @@ describe('VerifyEmailComponent', () => {
           useValue: {
             snapshot: {
               queryParams: {
-                oobCode: 'testCode',
+                oobCode: "testCode",
               },
             },
           },
         },
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -40,8 +39,7 @@ describe('VerifyEmailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
-
 });
