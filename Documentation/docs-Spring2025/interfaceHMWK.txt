@@ -1,1 +1,6 @@
+PATH:
+~\GrizzlyHacks\Documentation\docs-Spring2025\interfaceSettings.css
+
 --William Randazzo implemented cards into assignment7.HTML, and userHover into InterfaceSettings.css
+
+--Steven Lopez implemented 2 new global variables to InterfaceSettings.css; .card-body and .interest-container. Both global variables are used in assignment7.html
