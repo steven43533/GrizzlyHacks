@@ -4,4 +4,6 @@ PATH:
 --William Randazzo implemented cards into assignment7.HTML, and userHover into InterfaceSettings.css
 
 --Steven Lopez implemented 2 new global variables to InterfaceSettings.css; .card-body and .interest-container. Both global variables are used in assignment7.html
+
+
 -- Derron Pierre implemented global variables to assignment7.html they were cardBackgroundColor and card Text color. 
