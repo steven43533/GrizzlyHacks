@@ -8,13 +8,13 @@
 
 .faq-row {
     display:flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .faq-item {
+    width: 100%;
     margin-bottom: 20px;
-    flex: 0 0 48%;
     box-sizing: border-box;
 }
 
