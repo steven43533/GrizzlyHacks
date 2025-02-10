@@ -38,7 +38,7 @@ import { FaqComponent } from "./faq/faq-section";
 import { ProjectSubmissionComponent } from "./project-submission/project-submission.component";
 import { EventCreatorComponent } from "./admin-dashboard/event-creator/event-creator.component";
 import { EditEventModalComponent } from "./admin-dashboard/edit-event-modal/edit-event-modal.component";
-import { SponsorComponentComponent } from './sponsor-component/sponsor-component.component';
+import { SponsorComponent } from "./sponsor/sponsor.component";
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import { SponsorComponentComponent } from './sponsor-component/sponsor-component
     ProjectSubmissionComponent,
     EventCreatorComponent,
     EditEventModalComponent,
-    SponsorComponentComponent,
+    SponsorComponent,
   ],
   imports: [
     BrowserModule,
