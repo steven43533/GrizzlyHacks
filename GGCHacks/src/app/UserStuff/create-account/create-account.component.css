@@ -1,36 +1,47 @@
-.error{
+.error {
   color: red;
 }
 
 
-.everything{
+.everything {
   font-family: var(--font-family) !important;
   background-color: var(--background-color) !important;
 }
 
-header{
+header {
   background: transparent;
 }
 
-body{
+body {
   background: transparent;
 }
 
-footer{
+footer {
   background: transparent;
 }
 
-.form{
+.form {
   align-content: center;
 }
 
-.card
-{
+.card {
   margin: 50px;
   padding: 75px;
+  width: 50%;
 }
 
-.btn{
+.btn {
   margin-top: 25px;
-  color:var(--alternative-text-color) !important;
+  color: var(--alternative-text-color) !important;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait),
+only screen and (max-width: 900px) and (orientation: landscape) {
+
+  .card {
+    margin-top: 30px;
+    padding: 45px;
+    width: 90%;
+  }
+
 }
