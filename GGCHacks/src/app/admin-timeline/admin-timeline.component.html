@@ -1,0 +1,48 @@
+<div class="admin-container">
+    <h1>Admin - Manage Timeline Events</h1>
+    
+    <!-- Event Form for Create / Edit -->
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>Title:</label>
+        <input formControlName="title" type="text" required>
+      </div>
+      <div>
+        <label>Location:</label>
+        <input formControlName="location" type="text">
+      </div>
+      <div>
+        <label>Description:</label>
+        <textarea formControlName="description"></textarea>
+      </div>
+      <div>
+        <label>Start Time:</label>
+        <input formControlName="startTime" type="datetime-local" required>
+      </div>
+      <div>
+        <label>End Time:</label>
+        <input formControlName="endTime" type="datetime-local" required>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">{{ selectedEvent ? 'Update' : 'Create' }} Event</button>
+        <button type="button" (click)="onCancel()" *ngIf="selectedEvent">Cancel</button>
+      </div>
+    </form>
+    
+    <hr>
+    
+    <!-- List of Existing Events -->
+    <h2>Existing Events</h2>
+    <div *ngFor="let event of events" class="event-item">
+      <h3>{{ event.title }}</h3>
+      <p>{{ event.description }}</p>
+      <small>
+        {{ event.startTime | date:'medium' }} - {{ event.endTime | date:'medium' }}
+      </small>
+      <div class="item-buttons">
+        <button (click)="onEdit(event)">Edit</button>
+        <button (click)="onDelete(event)">Delete</button>
+      </div>
+    </div>
+  </div>
+  

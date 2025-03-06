@@ -13,6 +13,8 @@ import { VerifyEmailUserComponent } from "../UserStuff/verify-email-user/verify-
 import { BlogHomeComponent } from "../blog/blog-home/blog-home.component";
 import { BlogPostingPageComponent } from "../blog/blog-posting-page/blog-posting-page.component";
 import { ProjectSubmissionComponent } from "../project-submission/project-submission.component";
+import { TimelineComponent } from "../timeline/timeline.component";
+import { AdminTimelineComponent } from "../admin-timeline/admin-timeline.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -39,6 +41,8 @@ const routes: Routes = [
     canActivate: [AdminGuard],
   },
   { path: "project", component: ProjectSubmissionComponent },
+  {path: "timeline", component: TimelineComponent},
+  {path: "admin/timeline", component: AdminTimelineComponent},
   { path: "**", redirectTo: "/home" },
 ];
 

@@ -1,0 +1,25 @@
+<div class="timeline-container">
+    <div><h1>Start of day!</h1></div>
+    <ng-container *ngIf="events$ | async as events; else loading">
+      <div *ngFor="let event of events" class="timeline-event">
+        <div class="event-marker"></div>
+        <div class="event-content">
+          <h2 class="event-title">{{ event.title }}</h2>
+          <h3 class="event-location">{{ event.location }}</h3>
+          <p class="event-description">{{ event.description }}</p>
+          <small class="event-time">
+            {{ event.startTime | date:'medium' }} -
+            {{ event.endTime | date:'medium' }}
+          </small>
+        </div>
+      </div>
+    </ng-container>
+    <div><h1>End of day!</h1></div>
+  </div>
+  
+  <ng-template #loading>
+    <div class="loading-container">
+      <div class="spinner"></div>
+    </div>
+  </ng-template>
+  

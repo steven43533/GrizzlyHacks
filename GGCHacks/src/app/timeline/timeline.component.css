@@ -1,0 +1,88 @@
+.timeline-container {
+    position: relative;
+    margin: 20px;
+    padding-left: 40px; /* Space for the timeline line and markers */
+  }
+  
+  /* Vertical timeline line */
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
+  }
+  
+  .timeline-event {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  
+  
+  /* Event card styling */
+  .event-content {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .event-title {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+
+  }
+  
+  .event-location {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .event-description {
+    margin: 10px 0;
+    font-size: 0.95em;
+    color: #555;
+
+  }
+  
+  .event-time {
+    color: #555;
+    font-size: 0.85em;
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px; /* adjust as needed */
+  }
+  
+  .spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue (customize to your theme) */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
