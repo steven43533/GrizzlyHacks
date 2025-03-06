@@ -16,7 +16,7 @@ export class AdminTimelineComponent implements OnInit {
     private timelineService: TimelineService,
     private fb: FormBuilder
   ) {
-    // Create the reactive form for events.
+    // Create a reactive form for both creating and editing events.
     this.eventForm = this.fb.group({
       title: ['', Validators.required],
       location: [''],
@@ -35,11 +35,12 @@ export class AdminTimelineComponent implements OnInit {
   
   onSubmit(): void {
     if (this.eventForm.invalid) return;
-    const eventData = this.eventForm.value;
+    
+    const formValue = this.eventForm.value;
     
     // If editing an existing event, update it.
     if (this.selectedEvent) {
-      this.timelineService.updateEvent(this.selectedEvent.documentID, eventData)
+      this.timelineService.updateEvent(this.selectedEvent.documentID, formValue)
         .then(() => {
           this.eventForm.reset();
           this.selectedEvent = null;
@@ -47,7 +48,7 @@ export class AdminTimelineComponent implements OnInit {
         .catch(error => console.error('Update error:', error));
     } else {
       // Otherwise, create a new event.
-      this.timelineService.addEvent(eventData)
+      this.timelineService.addEvent(formValue)
         .then(() => this.eventForm.reset())
         .catch(error => console.error('Creation error:', error));
     }
@@ -55,14 +56,18 @@ export class AdminTimelineComponent implements OnInit {
   
   onEdit(event: TimelineEvent): void {
     this.selectedEvent = event;
-    // Pre-fill the form with the event data.
+    
+    // Convert startTime and endTime to Date objects if necessary.
+    const start: Date = event.startTime instanceof Date ? event.startTime : event.startTime.toDate();
+    const end: Date = event.endTime instanceof Date ? event.endTime : event.endTime.toDate();
+    
+    // Patch the form with the event details.
     this.eventForm.patchValue({
       title: event.title,
       location: event.location,
       description: event.description,
-      // Assuming event.startTime and event.endTime are Date objects.
-      startTime: this.formatDateForInput(event.startTime.toDate()),
-      endTime: this.formatDateForInput(event.endTime.toDate())
+      startTime: this.formatDateForInput(start),
+      endTime: this.formatDateForInput(end)
     });
   }
   
@@ -78,9 +83,30 @@ export class AdminTimelineComponent implements OnInit {
     this.eventForm.reset();
   }
   
-  // Utility to format Date into a string acceptable for datetime-local inputs.
+  concludeDay(): void {
+    // First confirmation
+    if (confirm("Are you sure you want to conclude the day? This will permanently delete all events.")) {
+      // Second confirmation
+      if (confirm("This action cannot be undone. Are you really sure you want to conclude the day?")) {
+        // Delete all events by iterating over the current events array.
+        const deletionPromises = this.events.map(event =>
+          this.timelineService.deleteEvent(event.documentID)
+        );
+        Promise.all(deletionPromises)
+          .then(() => {
+            alert("All events have been deleted. Day concluded.");
+          })
+          .catch(error => {
+            console.error("Error deleting events:", error);
+            alert("An error occurred while deleting events.");
+          });
+      }
+    }
+  }
+  
+  // Helper function to format a Date for a datetime-local input.
   private formatDateForInput(date: Date): string {
     const pad = (n: number) => n < 10 ? '0' + n : n;
-    return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
   }
 }
