@@ -5,7 +5,7 @@ import { Timestamp } from '@angular/fire/firestore';
 
 export interface TimelineEvent {
   documentID: string;
-  author: string;
+  createdBy: string;
   title: string;
   location: string;
   description: string;
@@ -26,7 +26,6 @@ export class TimelineService {
       .onSnapshot(snapshot => {
         const events = snapshot.docs.map(doc => ({
           documentID: doc.id,
-          author: doc.data().author,
           title: doc.data().title,
           description: doc.data().description,
           location: doc.data().location,
@@ -53,7 +52,6 @@ export class TimelineService {
   addEvent(event: Partial<TimelineEvent>): Promise<firebase.firestore.DocumentReference> {
     // Convert startTime and endTime to Firestore Timestamps.
     const eventData = {
-      author: event.author || '',
       title: event.title || '',
       location: event.location || '',
       description: event.description || '',
@@ -70,7 +68,6 @@ export class TimelineService {
    */
   updateEvent(documentID: string, event: Partial<TimelineEvent>): Promise<void> {
     const eventData = {
-      author: event.author || '',
       title: event.title || '',
       location: event.location || '',
       description: event.description || '',

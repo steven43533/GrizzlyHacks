@@ -1,28 +1,18 @@
-.timeline-container {
-    position: relative;
-    margin: 20px;
-    padding-left: 40px; /* Space for the timeline line and markers */
-  }
-  
-  /* Vertical timeline line */
-  .timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #ccc;
-  }
-  
-  .timeline-event {
+.timeline-header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.timeline-event {
     position: relative;
     margin-bottom: 30px;
     display: flex;
     align-items: flex-start;
   }
-  
-  
   
   /* Event card styling */
   .event-content {
@@ -38,38 +28,39 @@
     margin: 0;
     font-size: 1.2em;
     font-weight: bold;
-    color: #555;
+    color: #fff;
 
   }
   
   .event-location {
     margin: 5px 0;
     font-size: 1em;
-    color: #555;
+    color: #fff;
   }
   
   .event-description {
     margin: 10px 0;
     font-size: 0.95em;
-    color: #555;
+    color: #fff;
 
   }
   
   .event-time {
-    color: #555;
+    color: #fff;
     font-size: 0.85em;
+    background-color: black;
   }
 
   .loading-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 150px; /* adjust as needed */
+    min-height: 150px; 
   }
   
   .spinner {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue (customize to your theme) */
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -84,5 +75,142 @@
       transform: rotate(360deg);
     }
   }
+  
+  .timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8px;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
+  }
+  
+  .timeline-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .event-marker {
+    width: 12px;
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
+  }
+  
+  .event-content {
+    background: #fff;
+    background-color: #282a36;    
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .event-title,
+  .event-location,
+  .event-description,
+  .event-time {
+    margin: 5px 0;
+  }
+  
+  .timeline-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 2px 8px;
+    font-weight: bold;
+    color: #555;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .top-label {
+    top: -20px; 
+    color: greenyellow;
+    background-color: #282a36;
+  }
+  
+  .bottom-label {
+    bottom: -20px; 
+    color: red;
+    background-color: #282a36;
+  }
+
+  @keyframes pulse-slow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .sleeping-bear {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 50%;
+    animation: pulse-slow 8s ease-in-out infinite;
+  }
+
+  .no-events-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;
+    padding: 20px;
+    margin: auto;           
+  }
+
+  .bear-image {
+    width: 140px;  
+    height: 140px;  
+    object-fit: cover; 
+    border-radius: 50%; 
+  }
+
+  @media (max-width: 600px) {
+    .bear-image { 
+      width: 90px;
+      height: 90px; 
+    }
+  }
+  
   
   

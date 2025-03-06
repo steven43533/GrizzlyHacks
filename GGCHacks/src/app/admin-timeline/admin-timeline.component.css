@@ -6,7 +6,7 @@
   background: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
-  color: #333; /* Dark text for all children */
+  color: #333; 
 }
 
 .admin-container form div {
@@ -14,13 +14,13 @@
 }
 
 h1,h2,h3 {
-  color: #333; /* Dark text for headings */
+  color: #333; 
 }
 
 .admin-container input,
 .admin-container textarea,
 .admin-container label {
-  color: #333; /* Make sure inputs, textareas, and buttons also have dark text */
+  color: #333; 
 }
 
 .admin-container label {
@@ -34,7 +34,7 @@ h1,h2,h3 {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  color: #333;  /* Ensure input text is also dark */
+  color: #333; 
 }
 
 .form-buttons {
@@ -58,9 +58,9 @@ h1,h2,h3 {
   margin-right: 10px;
 }
 
-/* Edit button: a friendly blue */
+
 .edit-button {
-  background-color: #3498db; /* Friendly blue */
+  background-color: #3498db;
   color: #fff;
   font-size: 1em;
   padding: 8px 16px;
@@ -73,9 +73,8 @@ h1,h2,h3 {
   background-color: #2980b9;
 }
 
-/* Delete button: a warning red, similar to Conclude Day */
 .delete-button {
-  background-color: #e74c3c; /* Warning red */
+  background-color: #e74c3c;
   color: #fff;
   font-size: 1em;
   padding: 8px 16px;
@@ -88,7 +87,7 @@ h1,h2,h3 {
   background-color: #c0392b;
 }
 
-/* Conclude Day button, if not already styled */
+
 .conclude-day button {
   background-color: #e74c3c;
   color: #fff;
@@ -105,7 +104,7 @@ h1,h2,h3 {
 }
 
 .create-button {
-  background-color: #27ae60; /* Vibrant, welcoming green */
+  background-color: #27ae60; 
   color: #fff;
   font-size: 1em;
   padding: 10px 20px;
@@ -116,12 +115,11 @@ h1,h2,h3 {
 }
 
 .create-button:hover {
-  background-color: #219150; /* Darker green on hover */
+  background-color: #219150; 
 }
 
-/* Optional: different style for update mode */
 .update-button {
-  background-color: #3498db; /* Friendly blue */
+  background-color: #3498db; 
   color: #fff;
   font-size: 1em;
   padding: 10px 20px;
@@ -135,3 +133,8 @@ h1,h2,h3 {
   background-color: #2980b9;
 }
 
+.error-message {
+  color: #e74c3c;  
+  font-size: 0.85em;
+  margin-top: 4px;
+}

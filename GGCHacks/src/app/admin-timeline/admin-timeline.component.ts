@@ -27,17 +27,40 @@ export class AdminTimelineComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    // Subscribe to the list of events.
     this.timelineService.getEvents().subscribe(events => {
       this.events = events;
+    });
+    this.eventForm = this.fb.group({
+      title: ['', Validators.required],
+      location: [''],
+      description: [''],
+      startTime: ['', Validators.required],
+      endTime: ['', Validators.required]
+    });
+  
+    // Subscribe to changes on the startTime control.
+    this.eventForm.get('startTime').valueChanges.subscribe(value => {
+      if (value) {
+        // Create a Date object from the start time string.
+        const startDate = new Date(value);
+        // Calculate end time by adding 30 minutes (30 * 60 * 1000 milliseconds).
+        const endDate = new Date(startDate.getTime() + 30 * 60 * 1000);
+        // Format the date for datetime-local input.
+        const formattedEndTime = this.formatDateForInput(endDate);
+        // Patch the endTime control without emitting another event.
+        this.eventForm.patchValue({ endTime: formattedEndTime }, { emitEvent: false });
+      }
     });
   }
   
   onSubmit(): void {
-    if (this.eventForm.invalid) return;
+    if (this.eventForm.invalid) {
+      this.eventForm.markAllAsTouched();
+      return;
+    }
     
     const formValue = this.eventForm.value;
-    
+        
     // If editing an existing event, update it.
     if (this.selectedEvent) {
       this.timelineService.updateEvent(this.selectedEvent.documentID, formValue)
