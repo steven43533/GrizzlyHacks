@@ -2,10 +2,13 @@
   <div class="timeline-header">
     <h1>Schedule for the day</h1>
     <img src="../../assets/images/bear-eating-honey.jpg" alt="A grizzly bear eating honey." class="bear-image">
+    
   </div>
 </ng-container>
 
 <div class="timeline-container">
+  <!-- Refresh Button -->
+  <button class="refresh-button" (click)="refreshPage()">Refresh Events</button>
   <ng-container *ngIf="(events$ | async)?.length > 0">
     <div class="timeline-label top-label">Start</div>
   </ng-container>
@@ -41,7 +44,6 @@
     </div>
   </ng-template>
   
-
   <ng-container *ngIf="(events$ | async)?.length > 0">
     <div class="timeline-label bottom-label">End</div>
   </ng-container>

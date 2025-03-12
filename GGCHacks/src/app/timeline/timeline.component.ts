@@ -17,5 +17,9 @@ export class TimelineComponent implements OnInit {
     this.events$ = this.timelineService.events$;
   }
 
+  refreshPage(): void {
+    this.timelineService.getEvents();
+  }
+
 
 }
