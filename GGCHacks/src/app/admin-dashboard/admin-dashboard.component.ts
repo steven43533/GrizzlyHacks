@@ -63,8 +63,11 @@ export class AdminDashboardComponent {
    * Destroys the component and unsubscribes from the database.
    */
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
+  
 
   makeAdmin(user: User) {
     if (
