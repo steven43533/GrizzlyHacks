@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   { path: "project", component: ProjectSubmissionComponent },
   {path: "timeline", component: TimelineComponent},
-  {path: "admin/timeline", component: AdminTimelineComponent},
+  {path: "admin/timeline", component: AdminTimelineComponent, canActivate: [AdminGuard]},
   { path: "**", redirectTo: "/home" },
 ];
 

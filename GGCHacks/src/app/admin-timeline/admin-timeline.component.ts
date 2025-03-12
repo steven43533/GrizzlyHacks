@@ -27,9 +27,14 @@ export class AdminTimelineComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.timelineService.getEvents().subscribe(events => {
-      this.events = events;
-    });
+    // Delaying the execution as without it the events array is empty until a user clicks on the site.
+    setTimeout(() => {
+      this.timelineService.getEvents().subscribe(events => {
+        this.events = events;
+      });
+    }
+    , 1000);
+    
     this.eventForm = this.fb.group({
       title: ['', Validators.required],
       location: [''],
