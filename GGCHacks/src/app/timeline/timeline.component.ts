@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { TimelineService } from '../services/timeline.service';
 import { Observable } from 'rxjs';
 import { TimelineEvent } from '../services/timeline.service';
@@ -7,18 +7,31 @@ import { TimelineEvent } from '../services/timeline.service';
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [TimelineService]
 })
 export class TimelineComponent implements OnInit {
-  events$: Observable<TimelineEvent[] | null>;
-  constructor(public timelineService: TimelineService) {}
+  events$: Observable<TimelineEvent[]>;
+  constructor(public timelineService: TimelineService, private cdr: ChangeDetectorRef) {}
+  
 
   ngOnInit(): void {
-    this.events$ = this.timelineService.events$;
+    this.events$ = this.getEvents();
+    
+    this.events$.subscribe(() => {
+      this.cdr.markForCheck();
+    });
+   
+
   }
+  
 
   refreshPage(): void {
     this.timelineService.getEvents();
+  }
+
+  getEvents(): Observable<TimelineEvent[]> {
+    return this.timelineService.getEvents();
   }
 
 

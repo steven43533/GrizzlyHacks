@@ -17,26 +17,39 @@ export interface TimelineEvent {
   providedIn: 'root'
 })
 export class TimelineService {
-  private eventsSubject = new BehaviorSubject<TimelineEvent[] | null>(null);
+  //private eventsSubject = new BehaviorSubject<TimelineEvent[] | null>(null);
+  private eventsSubject = new BehaviorSubject<TimelineEvent[]>([]);
   events$: Observable<TimelineEvent[]> = this.eventsSubject.asObservable();
   
   constructor() {
     firebase.firestore().collection('timeline')
-      .orderBy('startTime', 'asc') // Order by startTime in ascending order
+      .orderBy('startTime', 'asc')
       .onSnapshot(snapshot => {
-        const events = snapshot.docs.map(doc => ({
-          documentID: doc.id,
-          title: doc.data().title,
-          description: doc.data().description,
-          location: doc.data().location,
-          startTime: doc.data().startTime.toDate(), 
-          endTime: doc.data().endTime.toDate()  
-        } as TimelineEvent));
+  
+        if (snapshot.empty) {
+          console.warn('No events found in Firestore.');
+          this.eventsSubject.next([]); // 🔥 Emit empty array instead of null
+          return;
+        }
+  
+        const events = snapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            documentID: doc.id,
+            title: data.title || 'Untitled Event',
+            description: data.description || 'No description provided.',
+            location: data.location || 'Unknown location',
+            startTime: data.startTime?.toDate ? data.startTime.toDate() : new Date(),
+            endTime: data.endTime?.toDate ? data.endTime.toDate() : new Date()
+          } as TimelineEvent;
+        });
+  
         this.eventsSubject.next(events);
       }, error => {
-        console.error('Error fetching timeline events:', error);
+        this.eventsSubject.next([]); // 🔥 Emit empty array if there's an error
       });
   }
+  
   
   /**
    * Returns an observable stream of timeline events.
