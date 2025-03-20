@@ -50,6 +50,15 @@
   justify-content: left;
 }
 
+.btn-primary {
+  margin: 5px;
+  background-color: #063346 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-style: solid;
+  border-color: #00000f;
+}
+
 .btn-edit {
   margin: 5px;
   border: none;
