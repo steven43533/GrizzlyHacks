@@ -20,3 +20,12 @@ label{
 #link {
   color: #1e7e34;
 }
+
+.btn-primary {
+  margin: 5px;
+  background-color: #006064 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-style: solid;
+  border-color: #00000f;
+}

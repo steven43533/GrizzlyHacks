@@ -2,7 +2,7 @@
   <div *ngIf="blogs$ | async as blogs">
     <div id="adminTools" class="row justify-content-center" *ngIf="auth?.user?.adminLevel === 2 && auth.verified">
       <div class="card w-50 h-80">
-        <button class="btn btn-primary" routerLink="/blogPostingPage">Create Blog</button>
+        <button class="btn-primary" routerLink="/blogPostingPage">Create Blog</button>
       </div>
     </div>
     <div id="blogSection" *ngIf="blogs && blogs.length !== 0">
@@ -14,11 +14,15 @@
               <h6 class="card-subtitle mb-2 text-muted">By: {{blog.author}}, {{blog.datePosted.toDate().toLocaleDateString()}}</h6>
               <p class="card-text">{{blog.content}}</p>
               <div *ngIf="blog.link && blog.link.trim() !== ''">
-                <a [href]="blog.link" target="_blank" class="card-link">{{ blog.link }}</a>
+                <a [href]="blog.link" target="_blank">
+                  <button type="button">
+                    Click me!
+                  </button>
+                </a>
               </div>
               <div *ngIf="auth?.user?.adminLevel === 2 && auth.verified">
-                <button class="btn btn-primary" (click)="editBlog(blog)">Edit</button>
-                <button class="btn btn-danger" (click)="deleteBlog(blog)">Delete</button>
+                <button class="btn-primary" (click)="editBlog(blog)">Edit</button>
+                <button class="btn-danger" (click)="deleteBlog(blog)">Delete</button>
               </div>
             </div>
           </div>
