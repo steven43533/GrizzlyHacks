@@ -1,0 +1,27 @@
+<h2>Judge Tracker</h2>
+
+<label for="eventSelect">Select Hackathon Event:</label>
+<select id="eventSelect" [(ngModel)]="selectedEvent" (change)="onEventChange(selectedEvent)">
+  <option *ngFor="let event of events" [value]="event">{{ event }}</option>
+</select>
+
+<table *ngIf="judges.length > 0; else noJudges">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let judge of judges">
+      <td>{{ judge.id }}</td>
+      <td>{{ judge.name }}</td>
+      <td>{{ judge.event }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noJudges>
+  <p>No judges found for this event.</p>
+</ng-template>
