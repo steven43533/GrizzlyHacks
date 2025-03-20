@@ -1,3 +1,24 @@
+@media screen and (max-width: 768px) {
+    .faq-section {
+        width: 100%;
+    }
+    .faq-row{
+        flex-direction: column;
+    }
+    .faq-item {
+        width: 100%;
+    }
+    .faq-question {
+        padding: 12px;
+        font-size: 17px;
+    }
+    .faq-answer {
+        font-size: 17px;
+        border-left: 3px solid #ff5722;
+    }
+
+    
+}
 .faq-section {
     width: 80%;
     margin: 0 auto;
@@ -37,5 +58,4 @@
     background-color:var(--title-color);
     border-left: 3px solid #007bff;
     margin-top: 5px;
-    border-radius: 5px;
-}
+    border-radius: 5px;}
