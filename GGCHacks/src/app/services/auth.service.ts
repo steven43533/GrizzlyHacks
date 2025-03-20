@@ -76,6 +76,7 @@ export class AuthService implements OnDestroy {
 
     console.log(userRef.set(data, {merge: true}));
     console.log(data);
+    userRef.set(data, {merge: true})
   }
 
   async createUser(form: FormGroup) {
