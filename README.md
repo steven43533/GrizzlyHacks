@@ -331,6 +331,40 @@ You can also view our website by clicking on this [link](https://grizzly-hacks.w
 
 [Repo Link](https://github.com/GGC-SD/GrizzlyHacks)
 
+## Working features added by HoneyPot Spring 2025
+1. Timeline/Scheduler
+Admins can now create, edit, and delete Hackathon event entries on a timeline to keep attendees informed of the day’s schedule.
+
+2. Blog Section Redesign
+The blog page was restyled to use a cleaner, card-based layout for better readability and visual appeal. It also now known as Events!, "blog" was retired.
+
+3. Home Page Updates
+The home page was improved by removing the carousel, updating the FAQ section, and making the overall design more user-friendly.
+
+4. Featured Events Flyer Zoom
+Users can now hover over featured event flyers to view an enlarged version for easier reading and interaction.
+
+5. Mobile-Friendly Auth Pages
+The login and registration pages were redesigned for better mobile responsiveness and accessibility.
+
+6. Alumni Registration
+Alumni can now register on the platform without needing a .edu email, improving inclusivity.
+
+7. Backend Performance Improvements
+The backend was optimized to load user and event lists faster, scaling better with increasing traffic.
+
+8. Button Consistency
+Button styles were standardized across the site for a more polished and cohesive user experience.
+
+9. Admin Dashboard Bug Fixes
+Various bugs that prevented users from rendering properly in the admin dashboard were resolved.
+
+10. Admin Dashboard UI Enhancements
+The layout and color scheme of the admin dashboard were updated for improved usability and clarity.
+
+11. Updated Color Palette
+The website’s color scheme was updated site-wide to match the branding guidelines provided by GGC officers.
+
 ## Troubleshooting Common Issues
 
 ### 1. Node.js and npm/yarn are not installed or are outdated
