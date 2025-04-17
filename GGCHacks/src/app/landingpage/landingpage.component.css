@@ -127,7 +127,8 @@ body{
 }
 
 .feature-card:hover {
-  transform: scale(2);
+  transform: scale(2.5);
+  z-index: 10;
   box-shadow: 0 8px 16px rgba(0, 0, 0);
 }
 
@@ -144,3 +145,4 @@ body{
 .feature-description{
   opacity: 100%;
 }
+
