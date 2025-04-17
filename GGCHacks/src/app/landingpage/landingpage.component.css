@@ -121,7 +121,9 @@ body{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0,1) !important; 
+  border: 2px solid #000000;
+  background-color: #006064 !important;
 }
 
 .feature-card:hover {
@@ -137,4 +139,8 @@ body{
 
 .feature-card:hover .feature-image {
   transform: scale(1);
+}
+
+.feature-description{
+  opacity: 100%;
 }
