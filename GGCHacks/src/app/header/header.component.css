@@ -1,45 +1,28 @@
 .navbar-brand {
-  width: 75px !important;
-  height: 75px !important;
-
-}
-
-.navbar {
-  width: 100% !important;
-  position: relative !important;
-  z-index: 1000 !important;
-  background: var(--secondary-color)  !important;
-
+  width: 75px;
+  height: 75px;
 }
 
 button {
-  text-shadow: 0 0 3px #000000, 0 0 5px #000000;
-  font-size: 20px;
-}
-
-
-.btn-outline-secondary{
-  margin:var(--spacing-sm) !important;
-  height: 40px !important;
-  color: white !important;
-  background-color: transparent !important;
-  border: none !important;
+  font-size: 25px;
+  margin: 10px;
+  height: 40px;
+  color: white;
+  background-color: transparent;
+  border: none;
   border-radius: 0px;
 }
 
-.btn-outline-secondary:hover{
-  background-color: var(--primary-color) !important;
-  border-radius: 0px;
+
+
+.nav-item:hover {
+  background-color: #f3cd94;
+  border-radius: 15px;
+  color: #1d2430;
 }
 
-.btn-outline-secondary:active,
-.btn-outline-secondary:focus{
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
 
-@media (max-width: 344px) and (max-height: 882px){
+@media (max-width: 344px) and (max-height: 882px) {
   .navbar-brand {
     width: 55px !important;
     height: 55px !important;
@@ -47,5 +30,3 @@ button {
     padding-right: 15px !important;
   }
 }
-
-
