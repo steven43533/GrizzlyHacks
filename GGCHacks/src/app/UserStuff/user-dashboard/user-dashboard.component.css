@@ -1,6 +1,7 @@
-.everything{
-  width: 100vw !important;
+.everything {
+  margin-top: 40px; /* Adjust this number to your liking */
 }
+
 
 .card-container{
   display:flex;
