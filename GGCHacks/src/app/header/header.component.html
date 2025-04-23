@@ -19,7 +19,7 @@
 
       <!-- Blog Button -->
       <li class="nav-item">
-        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/blogHome">Blog</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/blogHome">Events!</button>
       </li>
 
       <!-- Login -->
@@ -40,6 +40,16 @@
       <!--Admin Dashboard-->
       <li class="nav-item" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">
         <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/admin">Admin Dashboard</button>
+      </li>
+
+      <!-- Admin Timeline component -->
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="admin/timeline">Manage Timeline</button>
+      </li>
+
+      <!-- View Daily Schedule for non-admin users-->
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/timeline">View Daily Schedule</button>
       </li>
 
       <!-- Sign Out -->
