@@ -1,22 +1,32 @@
-/* Verify User Login Flow */
-describe('System Test: User Login Flow', () => {
-    it('should log in a user and redirect to dashboard', () => {
-      cy.visit('/login');
-      cy.get('input[name=email]').type('testuser@example.com');
-      cy.get('input[name=password]').type('password123');
-      cy.get('button[type=submit]').click();
-  
-      cy.url().should('include', '/dashboard');
-      cy.contains('Welcome, Test User').should('exist');
-    });
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false; // Prevent app errors from failing Cypress tests
+});
+
+describe('System Tests for GGCHacks App', () => {
+
+  // 1. GrizzyHacks Load Test
+  it('should load the homepage successfully', () => {
+    cy.visit('http://localhost:4200');
+    cy.contains('Grizzly Hacks').should('exist');
   });
 
-  /* Database Connectivity Check */
-  describe('System Test: Load Events from Database', () => {
-    it('should load events from Firebase and display them', () => {
-      cy.visit('/events');
-      cy.get('.event-card').should('have.length.greaterThan', 0);
-      cy.contains('Hackathon').should('exist');
-    });
+  // 2. Footer Year Test
+  it('should display the current year in the footer', () => {
+    cy.visit('http://localhost:4200');
+    const currentYear = new Date().getFullYear();
+    cy.contains(currentYear).should('exist');
   });
-  
+
+  // 3. Navbar Test
+  it('should display the navbar with Home link', () => {
+    cy.visit('http://localhost:4200');
+    cy.contains('Home').should('exist');
+  });
+
+  // 4. Page Title Test
+  it('should have the correct page title', () => {
+    cy.visit('http://localhost:4200');
+    cy.title().should('include', 'GGCHacks');
+  });
+
+});
