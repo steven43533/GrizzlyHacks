@@ -4,7 +4,7 @@ import { JudgeService } from '../judge.service';
 interface Judge {
   firstName: string;
   lastName: string;
-  hackathon: string[];
+  hackathons: string[];
 }
 interface Hackathon {
   name: string;
@@ -33,7 +33,7 @@ export class JudgeTrackerComponent {
     this.judges.push({
       firstName: this.newFirstName.trim(),
       lastName: this.newLastName.trim(),
-      hackathon: [...this.hackathonList]
+      hackathons: [...this.hackathonList]
 
     });
     this.newFirstName = '';
