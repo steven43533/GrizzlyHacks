@@ -39,8 +39,13 @@ import { ProjectSubmissionComponent } from "./project-submission/project-submiss
 import { EventCreatorComponent } from "./admin-dashboard/event-creator/event-creator.component";
 import { EditEventModalComponent } from "./admin-dashboard/edit-event-modal/edit-event-modal.component";
 import { SponsorComponent } from "./sponsor/sponsor.component";
+<<<<<<< HEAD
 import { JudgeTrackerComponent } from './judge-tracker/judge-tracker.component';
 
+=======
+import { TimelineComponent } from './timeline/timeline.component';
+import { AdminTimelineComponent } from './admin-timeline/admin-timeline.component';
+>>>>>>> refs/remotes/origin/Judges
 
 @NgModule({
   declarations: [
@@ -68,7 +73,12 @@ import { JudgeTrackerComponent } from './judge-tracker/judge-tracker.component';
     EventCreatorComponent,
     EditEventModalComponent,
     SponsorComponent,
+<<<<<<< HEAD
     JudgeTrackerComponent,
+=======
+    TimelineComponent,
+    AdminTimelineComponent,
+>>>>>>> refs/remotes/origin/Judges
   ],
   imports: [
     BrowserModule,

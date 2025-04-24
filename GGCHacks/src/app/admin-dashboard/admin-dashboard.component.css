@@ -1,63 +1,69 @@
-.card{
+.card {
   margin-top: 25px;
 }
-.accounts{
-    margin: 2%;
-    padding: 3%;
-    background-color: #f2f2f2;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+
+.accounts {
+
+  background-color: #006064;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.filter-box{
-    margin: 0;
-    padding: 3%;
-    background-color: var(--background-color);
+.filter-box {
+  margin: 0;
+  padding: 3%;
+  background-color: var(--background-color);
 }
 
-.btn-dropdown{
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 10px;
-    background-color: #585858;
-    color: #ffffff;
+.btn-dropdown {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 10px;
+  background-color: #585858;
+  color: #ffffff;
 }
 
 .btn-primary {
-    margin: 5px;
+  margin: 5px;
+  background-color: #006064 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-style: solid;
+  border-color: #00000f;
+
 }
 
 .btn-application {
-    margin: 5px;
-    border: none;
-    border-radius: 0px;
-    box-shadow: none;
-    background-color: #0d8abf;
-    color: #ffffff;
+  margin: 5px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-color: #0d8abf;
+  color: #ffffff;
 }
 
 .btn-application:hover {
-    background-color: #063346;
+    background-color: #00000f;
 }
 
 .btn-warn {
-    margin: 5px;
-    border: none;
-    border-radius: 0px;
-    box-shadow: none;
-    background-color: #d41515;
-    color: #ffffff;
+  margin: 5px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-color: #d41515;
+  color: #ffffff;
 }
 
 .btn-warn:hover {
-    background-color: #580a0a;
+  background-color: #580a0a;
 }
 
 .btn-warn:disabled {
-    color: #4d4d4d;
-    background-color: #220202;
+  color: #4d4d4d;
+  background-color: #220202;
 }
 
 .btn-accept {
@@ -74,19 +80,19 @@
 }
 
 .text-red {
-    color: #d41515;
+  color: #d41515;
 }
 
-.search{
-    width: 100%;
+.search {
+  width: 100%;
 }
 
 #userRow {
-    border: 1px solid black;
-    background-color: var(--background-color);
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
+  border: 1px solid black;
+  background-color: var(--background-color);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .card.w-50.h-80 {
@@ -98,10 +104,16 @@ h1 {
   padding: 10px;
 }
 
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
 h4 {
   font-size: 14px;
   padding-top: 5px;
 }
+
 /* Button styling */
 button {
   margin-top: 15px;
