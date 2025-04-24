@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { JudgeService } from '../judge.service';
+import { JudgeService } from '../services/judge.service';
 
 interface Judge {
   firstName: string;
