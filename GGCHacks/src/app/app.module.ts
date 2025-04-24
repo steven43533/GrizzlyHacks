@@ -39,6 +39,8 @@ import { ProjectSubmissionComponent } from "./project-submission/project-submiss
 import { EventCreatorComponent } from "./admin-dashboard/event-creator/event-creator.component";
 import { EditEventModalComponent } from "./admin-dashboard/edit-event-modal/edit-event-modal.component";
 import { SponsorComponent } from "./sponsor/sponsor.component";
+import { JudgeTrackerComponent } from './judge-tracker/judge-tracker.component';
+
 
 @NgModule({
   declarations: [
@@ -66,6 +68,7 @@ import { SponsorComponent } from "./sponsor/sponsor.component";
     EventCreatorComponent,
     EditEventModalComponent,
     SponsorComponent,
+    JudgeTrackerComponent,
   ],
   imports: [
     BrowserModule,

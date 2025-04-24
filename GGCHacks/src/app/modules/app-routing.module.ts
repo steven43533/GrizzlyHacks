@@ -13,6 +13,7 @@ import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-em
 import {BlogHomeComponent} from '../blog/blog-home/blog-home.component';
 import {BlogPostingPageComponent} from '../blog/blog-posting-page/blog-posting-page.component';
 import {ProjectSubmissionComponent} from "../project-submission/project-submission.component";
+import { JudgeTrackerComponent } from '../judge-tracker/judge-tracker.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'blogPostingPage', component: BlogPostingPageComponent},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
   { path: 'project', component: ProjectSubmissionComponent},
+  { path: 'judges', component: JudgeTrackerComponent, canActivate: [AdminGuard] },
   { path: '**', redirectTo: '/home'}
 ];
 
