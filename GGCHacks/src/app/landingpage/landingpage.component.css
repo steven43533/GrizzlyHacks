@@ -16,16 +16,6 @@ h3{
   }
 }
 
-.btn-lg{
-  font-family: 'Luckiest Guy', cursive;
-  text-shadow: 2px 2px 2px #003c1d;
-  font-size: 30px;
-}
-
-.btn-link{
-  color: white !important;
-  font-size: 20px;
-}
 
 h1, h3, h5{
   font-family: 'Luckiest Guy', cursive;
@@ -82,48 +72,16 @@ h6{
   color: #00704a;
 }
 
-.sponsors{
-  color: white;
-}
-
-.btn-primary {
-  margin: 5px;
-  background-color: #006064 !important;
-  background-image: none !important;
-  color: #ffffff !important;
-  border-style: solid;
-  border-color: #00000f;
-}
-
 .row{
   padding: 2%;
-}
-
-table{
-  color: white !important;
-}
-
-body{
-  color: transparent;
-}
-
-.accordion{
-  width: 75%;
-}
-
-.card{
-  border: none !important;
-  outline: none !important;
-  margin-bottom: -17% !important;
 }
 
 .feature-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0,1) !important; 
-  border: 2px solid #000000;
-  background-color: #006064 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0,1); 
+  border: 2px solid #1d2430;
 }
 
 .feature-card:hover {
@@ -140,9 +98,5 @@ body{
 
 .feature-card:hover .feature-image {
   transform: scale(1);
-}
-
-.feature-description{
-  opacity: 100%;
 }
 

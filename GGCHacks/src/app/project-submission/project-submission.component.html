@@ -1,69 +1,56 @@
-<div class="everything">
+<div class="wrapper">
   <div class="row justify-content-center">
     <div class="card w-50">
-      <div class="card-title"> Submit Projects
+
+      <div class="card-title text-center pt-3">
+        <h3>Submit Project</h3>
       </div>
+
       <div class="card-body">
         <form [formGroup]="projectSubmission" (ngSubmit)="onSubmit()">
-          <div class="row">
-            <div class="col-sm">
-              <div class="form-group">
-                <label>Description of Project*: </label>
-                <input
-                  type="text"
-                  id="description"
-                  class="form-control"
-                  formControlName="description"
-                  name="description">
-                <span
-                  *ngIf="!projectSubmission.get('description').valid && projectSubmission.get('description').touched"
-                  class="help-block">Please enter a description for the project
-                </span>
-                </div>
+          <div class="form-group mb-4">
+            <label for="description">Description of Project <span class="text-danger">*</span></label>
+            <input type="text" id="description" class="form-control" formControlName="description" name="description">
+            <span class="text-danger"
+              *ngIf="projectSubmission.get('description')?.invalid && projectSubmission.get('description')?.touched">
+              Please enter a description for the project.
+            </span>
+          </div>
 
-              <div class="form-group required">
-                <label>Group Members*: </label>
-                <input type="text"
-                       id="members"
-                       class="form-control"
-                       formControlName="members"
-                       name="members">
-                <span
-                  *ngIf="!projectSubmission.get('members').valid && projectSubmission.get('members').touched"
-                  class="help-block">Please enter at least one name
-                </span>
-              </div>
+          <div class="form-group mb-4">
+            <label for="members">Group Members <span class="text-danger">*</span></label>
+            <input type="text" id="members" class="form-control" formControlName="members" name="members">
+            <span class="text-danger"
+              *ngIf="projectSubmission.get('members')?.invalid && projectSubmission.get('members')?.touched">
+              Please enter at least one name.
+            </span>
+          </div>
 
-              <div>
-                <label>Group Logo: </label>
-                <input type="text"
-                       id="logo"
-                       class="form-control"
-                       formControlName="logo"
-                       name="logo">
-              </div>
+          <div class="form-group mb-4">
+            <label for="logo">Group Logo</label>
+            <input type="text" id="logo" class="form-control" formControlName="logo" name="logo">
+          </div>
 
-              <div>
-                <label>Link to repo: </label>
-                <input type="text"
-                       id="repo"
-                       class="form-control"
-                       formControlName="repo"
-                       name="repo">
-                <span
-                  *ngIf="!projectSubmission.get('repo').valid && projectSubmission.get('repo').touched"
-                  class="help-block">Please enter a link to the repository</span>
+          <div class="form-group mb-4">
+            <label for="repo">Link to Repo</label>
+            <input type="text" id="repo" class="form-control" formControlName="repo" name="repo">
+            <span class="text-danger"
+              *ngIf="projectSubmission.get('repo')?.invalid && projectSubmission.get('repo')?.touched">
+              Please enter a valid repository link.
+            </span>
+          </div>
 
-              </div>
-
-              <button class="btn-primary" type="submit">Submit</button>
-              </div>
-            </div>
+          <div class="text-center">
+            <button type="submit" [disabled]="projectSubmission.invalid">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
+    </div>
   </div>
 </div>
-</div>
-<footer>
+
+<footer class="mt-5">
   <app-footer></app-footer>
 </footer>
