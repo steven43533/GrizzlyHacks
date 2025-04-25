@@ -138,3 +138,73 @@ h1,h2,h3 {
   font-size: 0.85em;
   margin-top: 4px;
 }
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .admin-container form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .admin-container label {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+  }
+
+  .admin-container input,
+  .admin-container textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .form-buttons button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .item-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .item-buttons button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .event-item {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .conclude-day {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .conclude-day button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
