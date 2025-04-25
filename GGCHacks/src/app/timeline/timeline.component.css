@@ -8,230 +8,246 @@
 }
 
 .timeline-event {
-    position: relative;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  /* Event card styling */
-  .event-content {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-    border-radius: 4px;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .event-title {
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #fff;
-
-  }
-  
-  .event-location {
-    margin: 5px 0;
-    font-size: 1em;
-    color: #fff;
-  }
-  
-  .event-description {
-    margin: 10px 0;
-    font-size: 0.95em;
-    color: #fff;
-
-  }
-  
-  .event-time {
-    color: #fff;
-    font-size: 0.85em;
-    background-color: black;
-  }
-
-  .loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 150px; 
-  }
-  
-  .spinner {
-    border: 8px solid #f3f3f3; 
-    border-top: 8px solid #3498db; 
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1.5s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .timeline-container {
-    position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 8px;
-    bottom: 0;
-    width: 2px;
-    background: #ccc;
-  }
-  
-  .timeline-event {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
-    
-  }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.5);
-      opacity: 0.5;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  .event-marker {
-    width: 12px;
-    height: 12px;
-    background: #007bff;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    animation: pulse 2s infinite;
-  }
-  
-  .event-content {
-    background: #fff;
-    background-color: #282a36;    
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
-  .event-title,
-  .event-location,
-  .event-description,
-  .event-time {
-    margin: 5px 0;
-  }
-  
-  .timeline-label {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 2px 8px;
-    font-weight: bold;
-    color: #555;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  }
-  
-  .top-label {
-    top: -20px; 
-    color: greenyellow;
-    background-color: #282a36;
-  }
-  
-  .bottom-label {
-    bottom: -20px; 
-    color: red;
-    background-color: #282a36;
-  }
-
-  @keyframes pulse-slow {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  .sleeping-bear {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 50%;
-    animation: pulse-slow 8s ease-in-out infinite;
-  }
-
-  .no-events-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;     
-    text-align: center;
-    padding: 20px;
-    margin: auto;           
-  }
-
-  .bear-image {
-    width: 140px;  
-    height: 140px;  
-    object-fit: cover; 
-    border-radius: 50%; 
-  }
-
-  /* Ensure the header container is positioned relatively */
-.timeline-header {
   position: relative;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
 }
 
-/* Low profile refresh button placed at the top right */
+/* Event card styling */
+.event-content {
+  background-color: #282a36;    
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.event-content:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.event-title {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.event-location {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #fff;
+}
+
+.event-description {
+  margin: 10px 0;
+  font-size: 0.95em;
+  color: #fff;
+}
+
+.event-time {
+  color: #fff;
+  font-size: 0.85em;
+  background-color: black;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px; 
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; 
+  border-top: 8px solid #3498db; 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.timeline-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.event-marker {
+  width: 12px;
+  height: 12px;
+  background: #007bff;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite;
+}
+
+.timeline-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.top-label {
+  top: -20px; 
+  background-color: #282a36;
+  color: greenyellow;
+}
+
+.bottom-label {
+  bottom: -20px; 
+  background-color: #282a36;
+  color: red;
+}
+
+.top-label:hover {
+  transform: scale(1.1);
+  background-color: #333;
+  color: greenyellow;
+  cursor: pointer;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.bottom-label:hover {
+  transform: scale(1.1);
+  background-color: #333;
+  color: red;
+  cursor: pointer;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sleeping-bear {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 50%;
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.no-events-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  padding: 20px;
+  margin: auto;           
+}
+
+.bear-image {
+  width: 140px;  
+  height: 140px;  
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+
+.bear-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}  
+
+/* Ensure the header container is positioned relatively */
+.timeline-header h1 {
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.timeline-header h1:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Refresh button styled like labels but yellow */
 .refresh-button {
   position: absolute;
   top: -25px;
   right: 120px;
   background: none;
-  border: 1px solid #ccc;
-  color: #ccc;
+  border: 1px solid #fff;
+  color: yellow;
   padding: 5px 10px;
   font-size: 14px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Hover state for better feedback */
 .refresh-button:hover {
-  color: #333;
-  border-color: #999;
+  background-color: #333;
+  color: yellow;
+  border-color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile media query: stick the button to the top of the page */
+/* Mobile media query */
 @media (max-width: 600px) {
   .refresh-button {
     position: fixed;
@@ -239,16 +255,9 @@
     right: 10px;
     z-index: 500;
   }
-}
 
-  
-
-  @media (max-width: 600px) {
-    .bear-image { 
-      width: 90px;
-      height: 90px; 
-    }
+  .bear-image { 
+    width: 90px;
+    height: 90px; 
   }
-  
-  
-  
+}
