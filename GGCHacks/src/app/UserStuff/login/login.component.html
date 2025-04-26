@@ -1,6 +1,6 @@
 <div class="everything p-0">
   <div class="row justify-content-center pt-lg-5">
-    <div class="card w-50">
+    <div class="card">
       <div>
         <div class="card-title">
           <h5>Log In!</h5>
@@ -25,16 +25,16 @@
               </div>
             </div>
             <div class="row justify-content-center">
-              <button class="btn btn-primary" (click)="isLoginButtonUnusable = true; loginUser(loginForm)"
-                      [disabled]="isLoginButtonUnusable">Login
+              <button class="btn-primary" (click)="isLoginButtonUnusable = true; loginUser(loginForm)"
+                [disabled]="isLoginButtonUnusable">Login
               </button>
             </div>
           </form>
           <div *ngIf="passwordReset">
             <p> Email</p>
             <input class="form-control" #email>
-            <button class="btn btn-primary" (click)="auth.passwordRecovery(email.value)">Reset Password</button>
-            <button class="btn btn-primary" (click)="passwordReset = false">Back</button>
+            <button class="btn-primary" (click)="auth.passwordRecovery(email.value)">Reset Password</button>
+            <button class="btn-primary" (click)="passwordReset = false">Back</button>
           </div>
         </div>
       </div>

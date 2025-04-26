@@ -1,4 +1,4 @@
-#link{
+#link {
   color: #c9f8b8;
   cursor: pointer;
 }
@@ -7,30 +7,50 @@
   height: 100vh;
 }
 
-header{
+header {
   background: transparent !important;
 }
 
-body{
+body {
   background: transparent !important;
 }
 
-footer{
+footer {
   background: transparent !important;
 }
 
-.form{
+.form {
   align-content: center;
 }
 
-.card
-{
+.card {
   margin: 50px;
   padding: 75px;
+  width: 40%;
 }
 
-.btn{
+.btn {
   margin-top: 25px;
   margin-right: 10px;
-  color:var(--alternative-text-color);
+  color: var(--alternative-text-color);
+}
+
+.btn-primary {
+  margin: 5px;
+  background-color: #006064 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-style: solid;
+  border-color: #00000f;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait),
+only screen and (max-width: 900px) and (orientation: landscape) {
+
+  .card {
+    margin-top: 30px;
+    padding: 45px;
+    width: 90%;
+  }
+
 }
