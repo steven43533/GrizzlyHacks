@@ -13,8 +13,8 @@ This semester, my team and I worked on improving the Grizzly Hacks website. We m
 
 ## Links
 
-- [Deployed Project]
-- [Project Documentation]
+- [Deployed Project](https://grizzly-hacks.web.app/home)
+- [Project Documentation](https://github.com/GGC-SD/GrizzlyHacks/tree/master/Documentation)
 
 <br></br>
 
@@ -258,13 +258,13 @@ http://localhost:4200
 
 ### 📸 Screenshot Preview 
 
-> ![](Documentation/docs-Fall2024/LandingPage.png)
+> ![](Documentation/docs-Spring2025/landing-page-gh.png)
 
 ---
 
 <br></br>
 
-## HoneyPot - Spring 2025 :paintbrush:
+## HoneyPot - Spring 2025
 
 - **William Randazzo**
 
@@ -318,10 +318,12 @@ http://localhost:4200
 ## Project Flyer and Video
 
 **OUTDATED** All the features are demonstrated in this [video](https://www.youtube.com/watch?v=1dRrcsm5qKo).<br /><br />
-**UPDATED Website Demo as of Nov 21/2024**
+**OUTDATED Website Demo as of Nov 21/2024**
 link to the [video](https://www.youtube.com/watch?v=DUOhE-9DSAE)
 
-![](Documentation/docs-Fall2024/GrizzlyHacksFlyer.png)
+**UPDATED** - Latest vlog as on Spring 2025, link to the [video](https://youtu.be/PQhXv2pKJ5I)
+
+![](Documentation/docs-Spring2025/honeypot-flyer.png)
 
 You can also view our website by clicking on this [link](https://grizzly-hacks.web.app).
 
