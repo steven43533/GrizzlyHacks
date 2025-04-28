@@ -11,7 +11,7 @@
           <div class="card userHover" [ngClass]="{'align-self-start': i % 2 === 0, 'align-self-end': i % 2 !== 0}">
             <div class="card-body text-center">
               <h2 class="card-title">{{blog.title}}</h2>
-              <h6 class="card-subtitle mb-2 text-muted">By: {{blog.author}}, {{blog.datePosted.toDate().toLocaleDateString()}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">By: {{blog.author}}, {{blog.datePosted.toDate().toLocaleDateString()}}</h6> <!-- Redone into event instead of blog, may want to clean up wording-->
               <p class="card-text">{{blog.content}}</p>
               <div *ngIf="blog.link && blog.link.trim() !== ''">
                 <a [href]="blog.link" target="_blank">
