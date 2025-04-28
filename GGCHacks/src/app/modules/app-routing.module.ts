@@ -14,6 +14,8 @@ import {VerifyEmailUserComponent} from '../UserStuff/verify-email-user/verify-em
 import {BlogHomeComponent} from '../blog/blog-home/blog-home.component';
 import {BlogPostingPageComponent} from '../blog/blog-posting-page/blog-posting-page.component';
 import {ProjectSubmissionComponent} from "../project-submission/project-submission.component";
+import { TimelineComponent } from "../timeline/timeline.component";
+import { AdminTimelineComponent } from "../admin-timeline/admin-timeline.component";
 import { JudgeTrackerComponent } from '../judge-tracker/judge-tracker.component';
 
 const routes: Routes = [
@@ -29,7 +31,10 @@ const routes: Routes = [
   { path: 'blogPostingPage', component: BlogPostingPageComponent},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
   { path: 'project', component: ProjectSubmissionComponent},
+  {path: "timeline", component: TimelineComponent},
+  {path: "admin/timeline", component: AdminTimelineComponent, canActivate: [AdminGuard]},
   { path: 'judges', component: JudgeTrackerComponent, canActivate: [AdminGuard] },
+
   { path: '**', redirectTo: '/home'}
 ];
 
