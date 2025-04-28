@@ -4,7 +4,7 @@
     <!-- Admin Tools -->
     <div *ngIf="auth?.user?.adminLevel === 2 && auth.verified" class="row justify-content-center mb-4">
       <div class="text-center p-3">
-        <button  routerLink="/blogPostingPage">Create Blog</button>
+        <button routerLink="/blogPostingPage">Create Blog</button>
       </div>
     </div>
 
@@ -18,11 +18,8 @@
               <h6 class="card-subtitle mb-2 text-muted">By: {{blog.author}}, {{blog.datePosted.toDate().toLocaleDateString()}}</h6> <!-- Redone into event instead of blog, may want to clean up wording-->
               <p class="card-text">{{blog.content}}</p>
               <div *ngIf="blog.link && blog.link.trim() !== ''">
-
-                <a [href]="blog.link" target="_blank">
-                  <button class="btn btn-secondary">Visit Link</button>
-                </a>
-              </ng-container>
+                <a [href]="blog.link" target="_blank" class="btn btn-secondary">Visit Link</a>
+              </div>
 
               <!-- Admin Blog Controls -->
               <div *ngIf="auth?.user?.adminLevel === 2 && auth.verified">
