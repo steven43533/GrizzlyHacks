@@ -1,0 +1,45 @@
+.hackathon-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .hackathon-input .input-field {
+    flex: 1;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: green;
+  }
+  
+
+  
+  .hackathon-list {
+    margin-left: 15px;
+    margin-top: 5px;
+  }
+  
+  .btn-danger {
+    margin-top: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  

@@ -56,9 +56,14 @@
           <button class="btn btn-sm " type="button" routerLink="/timeline">View Daily Schedule</button>
         </li>
 
-        <li class="nav-item" *ngIf="auth.user !== null && auth.verified">
-          <button class="btn btn-sm" type="button" routerLink="/project">Projects</button>
-        </li>
+      <!-- Judge Tracker -->
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified && auth.adminLevel > 0">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/judges">Judge Tracker</button>
+      </li>
+
+      <li class="nav-item" *ngIf="auth.user !== null && auth.verified">
+        <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/project">Projects</button>
+      </li>
 
         <!-- Sign Out -->
         <li class="nav-item" *ngIf="auth.user !== null && auth.verified">

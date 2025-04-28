@@ -39,8 +39,8 @@ import { ProjectSubmissionComponent } from "./project-submission/project-submiss
 import { EventCreatorComponent } from "./admin-dashboard/event-creator/event-creator.component";
 import { EditEventModalComponent } from "./admin-dashboard/edit-event-modal/edit-event-modal.component";
 import { SponsorComponent } from "./sponsor/sponsor.component";
-import { TimelineComponent } from './timeline/timeline.component';
-import { AdminTimelineComponent } from './admin-timeline/admin-timeline.component';
+import { JudgeTrackerComponent } from "./judge-tracker/judge-tracker.component";
+
 
 @NgModule({
   declarations: [
@@ -68,8 +68,7 @@ import { AdminTimelineComponent } from './admin-timeline/admin-timeline.componen
     EventCreatorComponent,
     EditEventModalComponent,
     SponsorComponent,
-    TimelineComponent,
-    AdminTimelineComponent,
+    JudgeTrackerComponent,
   ],
   imports: [
     BrowserModule,
