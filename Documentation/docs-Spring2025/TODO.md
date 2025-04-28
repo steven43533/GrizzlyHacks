@@ -20,7 +20,8 @@
 | 3 | Project submissions page needs to be fixed | High | Steven | 
 | 4 | The featured events needs CRUD functions for admins to manage | High | Steven |
 | 5 | The footer and page content needs to be adjusted to kill dead space in between | Medium | Steven |
-| 6 | 
+| 6 | Please sync up judges branch with firebase | High | Derron | Some of the code has already been started in the Service.ts portion
+| 7 | Please try to fully integrate the project section | High | Derron | 
 
 
 ---
