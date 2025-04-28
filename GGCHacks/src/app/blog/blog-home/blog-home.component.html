@@ -1,11 +1,15 @@
 <div class="everything">
-  <div *ngIf="blogs$ | async as blogs">
-    <div id="adminTools" class="row justify-content-center" *ngIf="auth?.user?.adminLevel === 2 && auth.verified">
-      <div class="card w-50 h-80">
-        <button class="btn-primary" routerLink="/blogPostingPage">Create Blog</button>
+  <ng-container *ngIf="blogs$ | async as blogs">
+    
+    <!-- Admin Tools -->
+    <div *ngIf="auth?.user?.adminLevel === 2 && auth.verified" class="row justify-content-center mb-4">
+      <div class="text-center p-3">
+        <button  routerLink="/blogPostingPage">Create Blog</button>
       </div>
     </div>
-    <div id="blogSection" *ngIf="blogs && blogs.length !== 0">
+
+    <!-- Blog Section -->
+    <section id="blogSection" *ngIf="blogs.length > 0">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" *ngFor="let blog of blogs; let i = index">
           <div class="card userHover" [ngClass]="{'align-self-start': i % 2 === 0, 'align-self-end': i % 2 !== 0}">
@@ -14,23 +18,26 @@
               <h6 class="card-subtitle mb-2 text-muted">By: {{blog.author}}, {{blog.datePosted.toDate().toLocaleDateString()}}</h6> <!-- Redone into event instead of blog, may want to clean up wording-->
               <p class="card-text">{{blog.content}}</p>
               <div *ngIf="blog.link && blog.link.trim() !== ''">
+
                 <a [href]="blog.link" target="_blank">
-                  <button type="button">
-                    Click me!
-                  </button>
+                  <button class="btn btn-secondary">Visit Link</button>
                 </a>
-              </div>
+              </ng-container>
+
+              <!-- Admin Blog Controls -->
               <div *ngIf="auth?.user?.adminLevel === 2 && auth.verified">
-                <button class="btn-primary" (click)="editBlog(blog)">Edit</button>
-                <button class="btn-danger" (click)="deleteBlog(blog)">Delete</button>
+                <button class="btn btn-primary" (click)="editBlog(blog)">Edit</button>
+                <button class="btn btn-danger" (click)="deleteBlog(blog)">Delete</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+  </ng-container>
 </div>
+
 <footer>
   <app-footer></app-footer>
 </footer>

@@ -1,39 +1,36 @@
 <div class="everything">
-    <div class="row justify-content-center">
-        <div class="card w-50">
-            <form [formGroup]="blogPostingForm">
-                <div class="row justify-content-center">
-                    <h1>Blog Posting Page</h1>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="form-group">
-                        <label for="blogTitle">Title</label>
-                        <input class="form-control" id="blogTitle" placeholder="Title" formControlName="blogTitle">
-                    </div>
-                    <div class="form-group">
-                        <label for="blogAuthor">Author</label>
-                        <input class="form-control" id="blogAuthor" placeholder="Author" formControlName="blogAuthor">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="blogContent">Content</label>
-                    <textarea class="form-control" id="blogContent" rows="3" formControlName="blogContent">
+  <div class="row justify-content-center">
+    <div class="card p-4">
+      <form [formGroup]="blogPostingForm">
 
-                    </textarea>
-                </div>
-              <div class="form-group">
-                <label for="blogLink">Media link (optional)</label>
-                <textarea class="form-control" id="blogLink" rows="2" formControlName="blogLink">
+        <h1 class="text-center mb-4">Blog Posting Page</h1>
 
-                    </textarea>
-              </div>
-
-              <div id = "blog-posting-footer" class="d-flex justify-content-end">
-                <button type="button" class="btn-secondary" (click)="goToBlogHomePage()">Cancel</button>
-                <button type="submit" class="btn-primary" (click)="postBlog()" [disabled]="blogPostingForm.invalid">Submit</button>
-              </div>
-            </form>
+        <div class="mb-3">
+          <label for="blogTitle" class="form-label">Title</label>
+          <input type="text" id="blogTitle" class="form-control" placeholder="Enter title" formControlName="blogTitle">
         </div>
-    </div>
-</div>
 
+        <div class="mb-3">
+          <label for="blogAuthor" class="form-label">Author</label>
+          <input type="text" id="blogAuthor" class="form-control" placeholder="Enter author" formControlName="blogAuthor">
+        </div>
+
+        <div class="mb-3">
+          <label for="blogContent" class="form-label">Content</label>
+          <textarea id="blogContent" class="form-control" rows="4" placeholder="Write your blog..." formControlName="blogContent"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="blogLink" class="form-label">Media Link (optional)</label>
+          <textarea id="blogLink" class="form-control" rows="2" placeholder="Add a related link (if any)" formControlName="blogLink"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 mt-4" id="blog-posting-footer">
+          <button type="button" class="btn btn-secondary" (click)="goToBlogHomePage()">Cancel</button>
+          <button type="submit" class="btn btn-primary" (click)="postBlog()" [disabled]="blogPostingForm.invalid">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
