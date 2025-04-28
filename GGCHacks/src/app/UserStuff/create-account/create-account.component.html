@@ -7,7 +7,7 @@
       </div>
       <div class="card-body">
 
-        <form [formGroup]="createAccountForm">
+        <form [formGroup]="createAccountForm"> <!--Got rid of validators for requiring edu emails-->
 
           <div class="row">
             <div class="col">
@@ -35,7 +35,7 @@
                 <label>Email</label>
                 <input formControlName="email" class="form-control">
                 <div *ngIf="getEmail().dirty && getEmail().touched">
-                  <p *ngIf="getEmail().hasError('required') && !getEmail().hasError('pattern')" class="error">Email
+                  <p *ngIf="getEmail().hasError('required') && !getEmail().hasError('pattern')" class="error">Email <!-- Still rquires basic patterns and valid chars -->
                     Required</p>
                   <p *ngIf="!getEmail().hasError('required') && getEmail().hasError('pattern')" class="error">Email must
                     be an .edu email.</p>
