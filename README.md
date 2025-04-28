@@ -13,7 +13,7 @@ This semester, my team and I worked on improving the Grizzly Hacks website. We m
 
 ## Links
 
-- [Deployed Project](https://github.com/steven43533/GrizzlyHacks/tree/master/Documentation)
+- [Deployed Project](https://grizzly-hacks.web.app/home)
 - [Project Documentation](https://github.com/GGC-SD/GrizzlyHacks/tree/master/Documentation)
 
 <br></br>
