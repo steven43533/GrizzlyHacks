@@ -31,8 +31,8 @@ const routes: Routes = [
   { path: 'blogPostingPage', component: BlogPostingPageComponent},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
   { path: 'project', component: ProjectSubmissionComponent},
-  {path: "timeline", component: TimelineComponent},
-  {path: "admin/timeline", component: AdminTimelineComponent, canActivate: [AdminGuard]},
+  {path: 'timeline', component: TimelineComponent},
+  {path: 'admin/timeline', component: AdminTimelineComponent, canActivate: [AdminGuard]},
   { path: 'judges', component: JudgeTrackerComponent, canActivate: [AdminGuard] },
 
   { path: '**', redirectTo: '/home'}
