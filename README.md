@@ -277,8 +277,16 @@ http://localhost:4200
   - Project Manager
 
 - **Derron Pierre**
+  
   - _Data modeler_
   - _Documentation Lead_
+
+- **Isaiah Jimenez**
+  
+  - _Code Architecture_
+  - _Testing_
+
+
 
 ## Website Wizards - Fall 2024
 
