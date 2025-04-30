@@ -1,3 +1,16 @@
+/* This is for the asterisk symbol */
+.required-asterisk {
+  color: black;
+  font-weight: bold;
+}
+
+/* This is for the error message styling */
+.error {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
 .card {
   margin-top: 40px;
 }

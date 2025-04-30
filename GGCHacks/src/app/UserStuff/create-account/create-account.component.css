@@ -1,5 +1,7 @@
 .error {
-  color: red;
+  color: black; /* This is change the error message color */
+  font-size: 1.1rem; /* This can change the size of the font for the error message */
+  font-weight: bold;
 }
 
 
