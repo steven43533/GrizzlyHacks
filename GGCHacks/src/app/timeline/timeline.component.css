@@ -227,7 +227,7 @@
 
 /* Hover state for better feedback */
 .refresh-button:hover {
-  color: #333;
+  color: #333; /* Hover Effect text color (inside) */
   border-color: #999;
 }
 

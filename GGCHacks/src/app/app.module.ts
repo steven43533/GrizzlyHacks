@@ -41,6 +41,8 @@ import { EditEventModalComponent } from "./admin-dashboard/edit-event-modal/edit
 import { SponsorComponent } from "./sponsor/sponsor.component";
 import { TimelineComponent } from './timeline/timeline.component';
 import { AdminTimelineComponent } from './admin-timeline/admin-timeline.component';
+import { JudgeTrackerComponent } from "./judge-tracker/judge-tracker.component";
+
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { AdminTimelineComponent } from './admin-timeline/admin-timeline.componen
     SponsorComponent,
     TimelineComponent,
     AdminTimelineComponent,
+    JudgeTrackerComponent,
   ],
   imports: [
     BrowserModule,

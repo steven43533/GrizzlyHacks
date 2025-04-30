@@ -18,7 +18,7 @@ export class FaqComponent implements OnInit{
       open: false
     },
     {
-      question: 'It’s my first hackathon, can I attend?',
+      question: 'It is my first hackathon, can I attend?',
       answer: 'Yes! Experience is not required. Hackathons are an open, creative, and learning environment for everyone. If you are new to hackathons, the Beginner Hacker track may be for you!',
       open: false
     },
@@ -48,7 +48,7 @@ export class FaqComponent implements OnInit{
       open: false
     },
     {
-      question: 'What if I don’t have a team?',
+      question: 'What if I do not have a team?',
       answer: 'No worries, we will have a time before the hacking starts for you to meet new people to work with.',
       open: false
     },
